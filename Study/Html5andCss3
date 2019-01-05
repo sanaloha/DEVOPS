@@ -1,0 +1,568 @@
+Css
+
+Brackets text editor brackets.io 1.2
+blind text
+
+Source: Udemy
+====
+Flat Web Design
+
+Beautiful Typography
+
+1. Use a font-size between 15 and 25 pixels for body text
+2. Use (really) big font sizes for headlines
+3. Use a line spacing between 120 and 150% of the font size
+4. 45 to 90 characters per line
+5. Use good fonts
+6. Chose a font which reflects the look and feel you want for your website
+7. Use only one font
+
+Using Colors Like a Pro
+
+1. Use only one base color
+2. Use a tool if you want to use more colors
+3. Use color to draw attention
+4. Never use black in your design
+5. Choose colors wisely
+
+Working with Images
+
+1. Put text directly on the image
+2. Overlay the image
+3. Put your text in a box
+4. Blur the image
+5. The floor fade
+
+Working with icons
+
+1. Use icons to list features/steps
+2. Use icons for actions and links
+3. Icons should be recognizable
+4. Label your icons
+5. Icons should not take a center stage
+6. Use icon fonts whenever possible
+
+Spacing and layout
+
+1. Put whitespace between your elements
+2. Put whitespace between your groups of elements
+3. Put whitespace between you website's sections
+4. Define where you want your audience to look first
+5. Establish a flow that corresponds to your content's message
+6. Use whitespace to build that flow
+=========================
+
+Typography
+	--Body should use font size between 15-20
+	--Header should be of 32-45
+	--Line spacing shoould be 150%
+	--Line hould have 75-90 characters
+	--Text Font sarif or San-sarif low font weight google font website, 
+	--
+	
+--colors
+	--Use only single base color(black, white, grey)[flat ui colors]
+		--color wheel tool, adole-color-cc or paleton
+	--Never use black in ur design
+	--Red is a great color to use when power, passion, strength and excitement want to be transmitted. Brighter tones are more energetic and darker shades are more powerful and elegant.
+	Orange draws attention without being as overpowering as red. It means cheerfulness and creativity. Orange can be associated with friendliness, confidence, and courage.
+	Yellow is energetic and gives the feeling of happiness and liveliness. Also, it associates with curiosity, intelligence, brightness, etc.
+	Green is the color of harmony, nature, life and health. Also, it is often associated with money. In design, green can have a balancing and harmonizing effect.
+	Blue means patience, peace, trustworthiness, and stability. It is one of the most beloved colors, especially by men. It is associated with professionalism, trust and honor. That's actually why the biggest social networks use blue.
+	Purple is traditionally associated with power, nobility and wealth. In your design, purple can give a sense of wisdom, royalty, nobility, luxury, and mystery.
+	Pink expresses romance, passivity, care, peace, affection, etc.
+	Brown is the color of relaxation and confidence. Brown means earthiness, nature, durability, comfort, and reliability.
+=====Images
+	--Overlays, color gradience other than black and white
+	--Put ur text in a box, box should be opaque.
+	--Blur the image
+	--Floor Fade
+	
+=====Icons
+	-Use icons to list Features/Steps
+	-Use ivcons for actions or link
+		-Icons should be recongnizable
+		-Label your icons
+	-Shoul not take a centre stage they should be supportive
+	-Use Icon Fonts whenever possible
+	-
+=====Spacing and layout
+	--put whitespace between your elements
+	--put whitespace between your groups of elements
+	--put whitespace between your website's sections
+	--dont exxgerrate
+	-Define Hirarchy
+		-Define where you want ur audience to look first
+		-Establish a flow that corresponds to your content's message
+		-Use whitespaces to build that flow
+		
+Let's quickly summarize the main content of the web design section:
+
+Most of your content will be text, so beautiful typography is a key element to a good looking website.
+Images are getting more and more important in webdesign, so choosing great images and putting text on them is an essential part of your work.
+Icons are also a good way of setting a friendly tone for your website, but use them carefully.
+The adequate use of whitespace makes a website look professionally designed, so use it a lot, but in the correct way.
+Build a layout by defining the visual hierarchy of your content. Whitespace is also important for this.
+Your website should be designed in a way that ensures that both the user and the owner of the website achieve their goals. This is the user experience.
+It is very important that you get inspired by studying well-designed websites from other designers.
+	
+======
+Download the 7 steps here
+Section 5, Lecture 34
+1. Define your project
+
+Start off by defining the goal of your project. This can be showing your portfolio to the world, selling an e-book, building a blog, etc.
+Also define your audience. Ask yourself: which is the typical user that will visit my website?
+This is important, because you should always design with your goal and audience in mind.
+
+2. Plan out everything
+
+Once your project is defined, plan your content carefully. This includes text, images, videos, icons, etc.
+Remember what I told you about visual hierarchy. It plays an important role when you start thinking about what you want on your website and what you don't. Defining the content before actually starting the design is called the content-first approach. It means that you should design for the content, instead of designing a webpage and then filling it with some stuff.
+Define the navigation.
+Define the site structure. You can draw a sitemap in this step if we're talking about a bigger project.
+
+3. Sketch your ideas before you design
+
+Now it's time to get inspired and think about your design.
+Then, get the ideas out of your head. And with that I mean that you should sketch your ideas before you start designing. It will help you explore ideas and create a concept of what you want to build. Using pencil and paper is a great way of quickly retaining your valuable ideas.
+Make as many sketches as you want, but don't spend too much time perfecting anything. Once you have an initial idea, you can concentrate on the details when designing in HTML and CSS.
+I advise you to never, ever start designing without having an idea of what you want to build. Getting inspiration is very important in this phase, and I already told you how to do that!
+
+4. Design and develop your website
+
+After sketching, start to design your website using all the guidelines and tips you've learned in the web design section.
+You'll do that using HTML and CSS, which is called designing in the browser. Designing in the browser is basically designing and developing at the same time.
+There are more and more designers leaving traditional design programs such as Photoshop and start designing in the browser. The biggest reason for this is that you can't design responsive websites in photoshop. It also saves you tons of time.
+In this phase, you'll use your sketches, content and planning decisions you've made in steps 1, 2 and 3.
+
+5. It's not done yet: optimization
+
+Before you can actually launch your beautiful masterpiece for the world to see it, we have to optimize its performance in terms of site speed.
+You also need to do some basic search engine optimization (SEO) for search engines such as google.
+
+6. Launch the masterpiece
+
+Your optimized website is now finally ready to launch.
+All you need for launching is a webserver that will host your website and deliver it to the world.
+
+7. Site maintenance
+
+The launch of your website is not the end of the story.
+Now it's time to monitor your users' behavior and make some changes to your website if necessary.
+You should also update your content regularly in order to show your users that your website is alive! For instance, a blog can be a great way of doing that.
+
+####################
+Course Content
+Search:
+Search course content
+Section: 1
+4 / 4
+Course introduction
+Section: 2
+8 / 8
+Dive into HTML
+Section: 3
+10 / 10
+Formatting with CSS
+Section: 4
+12 / 12
+Web design basics
+Section: 5
+5 / 26
+The killer website project
+32. Download the Code
+0:00
+ Omnifood - After Section 6.zip
+ Omnifood Contents.zip
+ grid.css
+33. The 7 real-world steps to a fully functional website
+6:13
+34. Download the 7 steps here
+0:00
+35. Omnifood Project FAQs — READ BEFORE YOU START!
+0:00
+36. Starting to put the 7 steps into action
+6:00
+ OmnifoodContents.zip
+37. First development steps
+14:40
+38. Setting up the fluid grid for responsive web design
+10:04
+ Grid
+39. Building the header - Part 1
+16:08
+40. Building the header - Part 2
+21:59
+41. Building the header - Part 3
+20:09
+42. Building the features section - Part 1
+15:07
+43. Building the features section - Part 2
+17:56
+44. Building the favorite meals section - Part 1
+12:22
+45. Building the favorite meals section - Part 2
+11:35
+46. Building the how-it-works section - Part 1
+9:09
+47. Building the how-it-works section - Part 2
+17:27
+48. Building the cities section - Part 1
+12:43
+49. Building the cities section - Part 2
+16:17
+50. Building the customer testimonials section - Part 1
+6:06
+51. Building the customer testimonials section - Part 2
+15:29
+52. Building the sign-up section - Part 1
+9:53
+53. Building the sign-up section - Part 2
+18:57
+54. Building the contact form form - Part 1
+16:33
+55. Building the contact form form - Part 2
+9:25
+56. Building the footer - Part 1
+6:42
+57. Building the footer - Part 2
+18:20
+Section: 6
+0 / 3
+Responsive web design with media queries
+Section: 7
+0 / 7
+Let's add some cool effects
+Section: 8
+0 / 5
+Optimizing and launching our website
+Section: 9
+0 / 1
+Conclusion
+Section: 10
+0 / 4
+BONUS lectures
+We're testing translated captions for this lecture
+Omnifood Project FAQs — READ BEFORE YOU START!
+Section 5, Lecture 35
+Frequently Asked Questions — Omnifood Project
+There are some questions that students keep asking me in the course Q&A. So I decided to address some of them in this document.
+
+Please read this list of questions carefully before you move on with the course. If you have one of these questions while you're building the project, you can come back here and read the answer.
+
+
+My code is broken and I can’t move forward in the course. What should I do?
+Brackets: Live preview not working. What to do?
+Brackets: Quick edit not working. What to do?
+Brackets: What are those weird JSLint warnings?
+How does the vertical centering in the header work?
+My icons are not working. What can I do?
+The background image looks different in the course, it doesn’t move. Why?
+My background images looks different on iOS devices than in the course. Why?
+Autoprefixer is not working. What should I do?
+My website is not loading correctly on a server. What’s wrong?
+The responsive navigation disappears after resizing the window. Why is that?
+There are some other problems going on with the navigation. How can I fix these?
+My jQuery code is not working at all. What can I do?
+The map is not working. What can I do?
+Where is the code for the bonus lectures?
+When do you use px and when do you use %? I’m confused by this.
+What’s the difference between relative and absolute positioning?
+What’s the main difference between classes and IDs?
+Why did you use the figure and ul elements for the meals section instead of just using plain img elements?
+What’s the difference between the body selector and the universal selector (*)?
+Why does the order in which we place the scripts matter?
+How and why does the clearfix hack work?
+Can I build an app/shopping cart/store with this course?
+What’s the difference between Bootstrap and the grid system used in the course?
+What’s your opinion about Wordpress, Wix, etc?
+
+
+And here go all the answers
+1. My code is broken and I can’t move forward in the course. What should I do?
+
+Don’t panic, this is completely normal :)
+
+Start by spending some time trying to solve the problem on your own. This is very important for your learning process! To find errors, you can compare your code with the downloadable code for each section.
+
+If you really can’t solve the problem on your own, please post your code to a new codepen (http://codepen.io/pen/), hit save, copy your link and start a new post in the Q&A.
+
+Please explain your problem in a very specific way: that will guarantee you get a good answer! You can even post a screenshot of the problem (not the code!).
+
+
+
+2. Brackets: Live preview not working. What to do?
+
+It's very difficult for me to find out what's wrong with Brackets on your computer. Sometimes it's enough to just restart Brackets or the Chrome window.
+
+If that doesn't help, please try the official Brackets troubleshoot guide on github:
+
+https://github.com/adobe/brackets/wiki/Troubleshooting#livedev
+
+You can also just ignore Live Preview and open the index.html file directly.
+
+
+
+3. Brackets: Quick edit not working. What to do?
+
+I have actually stopped using the quick edit functionality long ago, because it never really works as expected, so don't worry about it. You don't need to use quick edit at all. Just add the code to your CSS stylesheet wherever you see fit.
+
+
+
+4. Brackets: What are those weird JSLint warnings?
+
+These errors that Brackets shows you are because it expects pure JavaScript code, and not jQuery code, as we are using here. In other words, Brackets thinks we have errors in our JavaScript code, because it doesn't seem to understand that we're using the jQuery framework.
+
+
+
+5. How does the vertical centering in the header work?
+
+Please see the following answer about this question here:
+
+https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/questions/851800
+
+
+
+6. My icons are not working. What can I do?
+
+Sometimes using the icons on the local computer doesn't work very reliably. Please use the following icons instead:
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">  
+
+
+
+7. The background image looks different in the course, it doesn’t move. Why?
+
+I show you how to do that effect later in the course, it appeared in one video by mistake because I produced one after all the other videos.
+
+But here's how you get that effect with the background image:
+
+background-attachment: fixed;  
+
+
+
+8. My background images looks different on iOS devices than in the course. Why?
+
+The reason why it doesn't work is that the property:
+
+background-attachment: fixed;  
+
+doesn't work on iOS devices. What we can do in this situation is to target iOS devices using media queries, and apply the following rule:
+
+background-attachment: scroll;  
+
+Please take a look at this resource: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+Alternatively, you could just ignore background-attachment: fixed;  altogether for smaller screen widths. That should be easier.
+
+
+
+9. Autoprefixer is not working. What should I do?
+
+You can try to highlight individual sections and prefix only those sections one by one, sometimes that works.
+
+Also, it only works if you have no bugs in your CSS code at all. You can check if you have some here:
+
+https://jigsaw.w3.org/css-validator/
+
+
+
+10. My website is not loading correctly on a server. What’s wrong?
+
+This problem is most likely related with lowercase and uppercase filenames. On Windows or macOS it doesn't matter if you use lowercase and uppercase in filenames. However, on the server, which is typically Linux, it does matter.
+
+For example, if your file is called style.css and you include it in your HTML as Style.css, it won’t work on the server. So please make sure that you include all your files with the exact correct filename.
+
+
+
+11. The responsive navigation disappears after resizing the window. Why is that?
+
+This is actually a small bug in my code. There is a post in the Q&A that shows you how to solve that issue:
+
+https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/questions/821648
+
+
+
+12. There are some other problems going on with the navigation. How can I fix these?
+
+I already did that for you! I coded up a new version of the responsive navigation, it fixes all the issues there with the existing one.
+
+Please replace all the navigation-related CSS code in your 767px media query by the one in this fiddle:
+
+https://jsfiddle.net/d83ykzku/1/
+
+Please also replace the jQuery code for the navigation with the one you can find in the link above. You can of course change the colors and style :)
+
+
+
+13. My jQuery code is not working at all. What can I do?
+
+Has the jQuery worked before? Are you sure you included the script.js file correctly, as well as the jQuery library? Are you using the correct class names in both HTML and jQuery code?
+
+If your answer is YES, then post a question like I explained before.
+
+
+
+14. The map is not working. What can I do?
+
+Please take a look at this post in the Q&A where I solve one of the possible problems with this:
+
+https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/questions/1589266
+
+https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/questions/1967866
+
+
+
+15. Where is the code for the bonus lectures?
+
+Map lecture: https://jsfiddle.net/uo3uxo1f/
+
+PHP contact form lecture: https://jsfiddle.net/mf0ydjfq/
+
+
+
+16. When do you use px and when do you use %? I’m confused by this.
+
+Okay, that is a very good question. So, we use px and % in different situations. We use percentages more for "layout" elements, which means elements that define the layout and that we want to change according to the screen width. Also, percentages are most useful for defining horizontal distances between elements, such as widths  or margin-left  or margin-right , not vertical distances, because responsive web design works with screen widths (horizontal). In other words, everything that we want to change based on the screen width when the screen becomes smaller, should be defined in %.
+
+Also, font-sizes are always defined in %, except for the base font-size  defined for the body element, so that we can easily change font-sizes for smaller screen sizes. More about that later in Section 6.
+
+We use px to define some margins and paddings, and sometimes to define smaller distances and distances that doesn't need to change when the screen changes. For the paddings, please note that we can only use px here thanks to box-sizing: border-box;  , which ensures that the box width (defined in %) always stays the same no matter how much padding we add inside of it.
+
+
+
+17. What’s the difference between relative and absolute positioning?
+
+Relative positioning simply positions the elements relative to the other elements on the webpage. Elements just appear on the website in the order they are defined in the HTML document. You can use margins to relatively position elements, i.e. to create space between elements.
+
+In absolute positioning, we can use the top , bottom , left  and right  properties to perfectly position an element inside its relatively positioned parent, wherever we want. This gives us a lot of control, which is extremely useful, and you will see examples of this throughout the course. We need to explicitly say that the parent has position: relative, otherwise the browser would not know where to position the absolute element.
+
+
+
+18. What’s the main difference between classes and IDs?
+
+The main difference is that you can use classes as many times as you want on each website, but IDs only once.
+
+This can be a problem. Imagine that you use an ID for something you think you will only use once, but later you decide you want to reuse that style. Then you'd have to go back and change from ID to class, and you’d also have to update your CSS. That's why you should only use classes and no IDs. I agree that this may not be the case with this exact project, but it will help you in the future.
+
+The important issue here is code maintenance. It's easier to maintain code which has just classes and not a mixture of classes and IDs. That's why I have chosen to never use IDs and recommend students to do the same.  
+
+19. Why did you use the figure and ul elements for the meals section instead of just using plain img elements? (This logic applies to all questions of this type)
+
+Please understand that in this course I had to mix a real website with teaching things to students. That's why in some circumstances, like having the figures just with an image and no caption, I do things just to show you new elements or stuff like that. That's why I used the figure element. This gives you a foundation so that you can now go ahead and add a <figcaption>   to it.
+
+As of the unordered list, this is just to make it more semantic. These images are, in fact, like a list of meals with an image, right? And if we feel like it's a list, then we should express that with HTML, even if it doesn't look any different in the final website. That's called semantic HTML, and it’s important to use it.
+
+
+
+20. What’s the difference between the body selector and the universal selector (*)?
+
+The universal selector simply selects each and every element on the webpage and applies the styles to all of them, unless we apply a different style somewhere else.
+
+The body and html are different. We apply styles to the body/html elements that will be inherited by other elements. These are most commonly styles related to text, like the font-family, font-size or font-weight properties, because these properties get inherited by other elements. This means that once we define them on a parent element, all of the child elements will also get these properties automatically. And that's why we define these right on the html and body elements, because they are the parent elements of all the other elements.
+
+
+
+21. Why does the order in which we place the scripts matter?
+
+Our own script.js file should always be the last one. That's because of the dependencies we have in our code. For example, with jQuery, we use it in our script.js file., so it's a dependency. And we need to load that dependency before we can use it, of course. And that's why the jQuery should be loaded first. And the same of course applied to other external scripts.
+
+
+
+22. How and why does the clearfix hack work?
+
+The .clearfix class has the pseudo-element :after  because we want to properties, especially clear: both  (which does the real work of clearing the floats) to happen at the end of the element (after) on which we use the clearfix class. As for the other properties, there is no real explanation, this is just a "hack", which means that it solves the problem in a strange way. This (or in a slightly different version) is how everybody uses the clearfix.
+
+
+
+23. Can I build an app/shopping cart/store with this course?
+
+So this course only covers HTML and CSS, which are front-end technologies, or client-based technologies, meaning that these run in the user's browser. You use them to build the user interface that the user sees and interacts with.
+
+Now, a shopping cart is somewhat different, because it involves some functionality, some logic, that needs to be programmed. We can't do that with HTML and CSS. This is called back-end development, and it usually involves a server and database, and you need some more advanced coding skills for it.
+
+You can learn some more on this blog post I wrote some time ago:
+
+http://codingheroes.io/blog/
+
+
+24. What’s the difference between Bootstrap and the grid system used in the course?
+
+The difference between Bootstrap and this small Grid System is that Bootstrap is an entire framework including thousands of lines of HTML, CSS and JavaScript, which you can use for quickly building a website using pre-defined building blocks. It also includes a sophisticated grid system. Now, the Grid System we use in this course is just a small CSS file which defines the rows and columns of our small fluid grid. If you look at the code, you'll see it's so simple that you could even hand-code it yourself :)
+
+I thinks it's important to learn Bootstrap as well, because it's most likely the most popular framework in the world, but it's equally important to first fully understand the fundamentals of HTML, CSS and responsive web design without any framework.
+
+
+
+25. What’s your opinion about Wordpress, Wix, etc?
+
+In my opinion, before you start creating websites using one of these tools, you should know how the underlying technologies of web development work, and that's HTML, CSS and also JavaScript (not so much covered in this course, but in a future course).
+
+First, knowing the fundamental building blocks of the web allows you to create 100% custom websites without any themes or constraints. You are not bound to a template or theme that someone else designed. Creativity is the only limit when you really know what you're doing, and that is very empowering.
+
+Second, I think it's far more professional to actually know how stuff works under the surface, then just make a website for a client using some Wordpress theme or wix template.
+
+And third, HTML, CSS and JavaScript are used to build web applications, so if you want to do that, you obviously will have to know them really well.
+
+ 
+Questions
+Search for a question:
+Search for a question
+12 questions in this lecture
+
+AO
+When I change the screen size of browser everything is falling apart from its position. please help?
+NG
+link rel problem.
+Hey!My code works on codepen.io but is not working in Brackets. This code is showing in red colour:   <link rel="stylesheet" type="text/css" href="resources/css/style.css">Probably something is wrong with this line. Could you help me please? All my files are located as on the video.Here's a link with my code: https://codepen.io/anon/pen/mLJgaMI also attach screenshot.[image]https://codepen.io/anon/pen/mL...
+WH
+My background image didn't be darker as yours.
+[image]
+BT
+reset
+Hi Guys, I my code works properly (H1 is aligned centre) in https://codepen.io/anon/pen/eMZZVM therefore html and css is considered correct but it doesn't align centre when I preview it in chrome from brackets. Live preview works, so I assume reset by normalize.css is not in effect but I cannot make it work by replacing latest normalize.css with 3.0.2 as used in video or removing it completely. Any ideas are welcome.
+MW
+Clearfix not working in my code
+HiI have exactly followed your .clearfix css code and html class names for "How it works - Simple as 1 2 3" section. But its just not working for me.Can you please explain what could be the real issue there... tx.Manish
+BN
+how to push the icon to stay in center always?
+[image]how to make the icon stay center of the content?
+DT
+Website loading with out css now
+Hi :DUpon adding in the ionicon files and duplicating and adding it to a line in <head> section everything stopped working.  I then reverted out to try and isolate what was causing the bug. So I slowly ctl+z backwards to go back to a stage where I knew everything was working.  Here is the code I copy and pasted back to. https://codepen.io/anon/pen/zEQqLjI have over notated the html I know just taking notes so I can use this as references in future work. You will see in line 6 i have even gone and duplicated my css calling it style2 to see if there was corruption in my style.css file or that I had accidentally messed up when copy and pasting files out of the ionicon file.  All files copied out of the ionicon file are in the correct destinations. In fact that should not even cause an issue here as I reverted and took out all of that html.  Even on Codepen the website looks different to my live link.  I also dont understand why the css for the nav bar for example changed.I have tried to debug and go over everything, I simply am unable to find the error.The website is now loading like this:[image]
+AD
+I didn't understand answer for question 20, explained in Section 5, Lecture 35.
+I didn't understand answer for question 20, explained in Section 5, Lecture 35. which has first preference universal selector (*) or body selector
+LW
+ion icons
+Hi , after adding the ion icon css file on html and loading the heart icon from lecture 41 , all I see is the small square box nothing else for all the icons I tried. I have also tried your alternative option with the link.... please please help me
+what is the difference between creating a website with wix and making my own website from scratch by myself?
+the difference between wix and website from scratch 
+Question 8: background-attachment: scroll; doesnt work in iOS 10
+Hi, I have tried background-attachment: scroll;  in the media query and in iOS 10 (ipad, iphone retina) is not working at all (i uploaded the site to AWS), I tested on chrome, safari by resizing screen and works perfectly... do you have any other thing we can try? Here is the link to the website: http://html5-css3-omnifood-website.s3-website-us-east-1.amazonaws.com/ Open on an ipad (or iphone 7) so you see the gray screen (also for testimonial bg screen): The code at styles.css  is the following: header { /* Darkening the image with a linear gradient */ /* Path is relative to styles.css*/ background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.4))), url(img/hero-min.jpg); background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(img/hero-min.jpg); /* Makes the image fits full width */ -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; /* Center the image */ background-position: center; /* Fill viewport with the image: 100% of viewport */ height: 100vh; /* Paralax Effect */ background-attachment: fixed; } The media query I have used is this: @media only screen and (max-width: 767px) { header { background-attachment: scroll; } ... The rest of the code } Also if you have some material about mobile first design or progressive design, I would be super grateful, thank you very much for the course, it was awesome! Jessie
+AS
+I have same doubt which is asked in question 16. in this lecture, but I have quite a problem to understand it because you said that margin-left and margin- right should be in % but you use margin-left as well right in px. Please clear this doubt.
+Question Details
+ 
+##############
+
+First App
+
+--download normalize.css
+-setting up fluid grid
+--responsivegridsystem.com
+--margin top right bottom left
+
+HGS
+1 september 2015
+ 0to255.com
+================
+Adding maps
+
+gmaps.js
+
+latitude vs longitude
+
+
+ 

@@ -1,0 +1,15 @@
+<!-- Media Object -->
+
+<div class="media">
+<img class="d-flex mr-3">
+<div class="media-body">
+
+<h5 class="mt-0">Media heading</h5>
+	Welcome to the files
+</div>
+</div>
+
+<br><br>
+
+<!--  Nesting Media Objects  -->
+

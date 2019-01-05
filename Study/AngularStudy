@@ -1,0 +1,73 @@
+Angular:
+Project: Tour Of Heroes
+https://angular.io
+
+====Technologies====
+
+1. Nodejs 9.5.0, Angular js(https://angular.io)
+	-Node.js command prompt
+	-node.js 9.5.0 (X64) and npm
+		-npm -version 5.6.0
+2. Visual Studio Code 1.2
+3. Angular 4
+4. 
+Angular Tour Of Heroes
+
+http://localhost:4200
+
+https://www.concretepage.com/angular-2/angular-2-4-angular-ide-eclipse-hello-world-example
+https://www.sublimetext.com/3 
+
+https://getbootstrap.com/docs/3.3/examples/starter-template
+
+Node + Express
+mongoosejs.com
+mongo db compass
+
+
+
+
+Steps
+1) OPen node.js command and type
+	npm install -g angular-ide
+	
+3) Run the below command
+	Install angular IDE
+	ngide install C:\Users\311832\Desktop\Gctms\Angular\IDE
+	
+4) go to C:\Users\311832\Desktop\Gctms\Angular\CLI
+https://code.visualstudio.com/docs/nodejs/angular-tutorial
+	npm install -g @angular/cli
+	
+5) Create new project
+my-app is the name of the folder for your application. This may take a few minutes to create the Angular application in TypeScript and install its dependencies.
+	ng new my-app
+6) Let's quickly run our Angular application by navigating to the new folder and typing ng serve to start the web server and open the application in a browser:
+cd my-app
+ng serve
+7) 
+You should see "Welcome to app!!" on http://localhost:4200 in your browser. We'll leave the web server running while we look at the application with VS Code.
+	
+8) To open your Angular application in VS Code, open another terminal (or command prompt) and navigate to the my-app folder and type code .:
+cd my-app
+code .
+9) Debugger Configuration
+
+10) https://angular.io/tutorial
+https://angular.io/tutorial/toh-pt4
+Every component must be declared in exactly one NgModule.
+Summary
+You used the CLI to create a second HeroesComponent.
+You displayed the HeroesComponent by adding it to the AppComponent shell.
+You applied the UppercasePipe to format the name.
+You used two-way data binding with the ngModel directive.
+You learned about the AppModule.
+You imported the FormsModule in the AppModule so that Angular would recognize and apply the ngModel directive.
+You learned the importance of declaring components in the AppModule and appreciated that the CLI declared it for you.
+
+======
+https://getbootstrap.com/docs/3.3/examples/starter-template
+
+Node + Express
+mongoosejs.com
+mongo db compass

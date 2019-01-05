@@ -1,0 +1,46 @@
+Angular
+========================================================
+
+Lec#4 Installation
+
+	--Install nodejs
+	--install angular CLI
+		Once you've successfully installed it using the installer, we can think about setting up an Angular application because this is actually what we'll start with in this course.
+		For this, we'll use another tool called the Angular CLI. CLI stands for Command Line Interface and it's the de facto way of creating Angular apps.
+		Because of the more complex build workflow I mentioned, we need a lot of tools that compile our code,
+		optimize it and setting all of that up on our own is pretty cumbersome and error-prone.
+		The CLI gives us a project setup where all of that is taken care of and where we can focus on writing
+		our Angular code; our logic.
+		The CLI is installed like this and it uses NPM,
+		the Node Package Manager, to install the CLI tool globally on our machine
+		
+		--npm install -g @angular/cli
+		with ng new (this is a command now available due to the CLI package and is basically a command made available by that)
+		
+Lect#6 Installing IDE
+	--Install visual studia code
+		-inside it under extensions install Angular Essentials, Material Icon Theme
+		-
+		
+==========Section2
+
+Lec#
+
+
+=========Exercise:
+--Self exercise
+	1)  -create an angular project using material named "message-editor"
+		Pre-requisites
+			i) Visual Studio Code     Link: https://code.visualstudio.com/download,  https://code.visualstudio.com/docs
+				-angular essentials  : inside vs code extensions search for it.
+			ii) node npm
+			Install Node.js® and npm
+					-https://nodejs.org/en/download/
+			iii) Angular CLI: Then install the Angular CLI globally.
+				npm install -g @angular/cli   
+			iv) Angular latest version
+			v) Angular material
+			
+		-inside visual studio install Angular essentials
+	--Open nodejs, go to the drive u want to create a project
+		--and type  ng new message-editor

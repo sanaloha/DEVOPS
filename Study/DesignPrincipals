@@ -1,0 +1,61 @@
+Design Principles
+1) Microservices
+2) 
+
+======================================================================================
+1) Factory Method Pattern
+-Identify the aspects that vary
+
+Factory pattern defines an interface for creating an object, but lets subclass decide
+which class to instantiate.
+Factory method lets a class defer instantiation to subclass.
+=======================================================================================
+Creational Design Patterns
+	Singleton Pattern
+	Factory Pattern
+	Abstract Factory Pattern
+	Builder Pattern
+	Prototype Pattern
+========================================================================================
+Structural Design Patterns
+	Adapter Pattern
+	Composite Pattern
+	Proxy Pattern
+	Flyweight Pattern
+	Facade Pattern
+	Bridge Pattern
+	Decorator Pattern
+========================================================================================
+Behavioral Design Patterns
+	Template Method Pattern
+	Mediator Pattern
+	Chain of Responsibility Pattern
+	Observer Pattern
+	Strategy Pattern
+	Command Pattern
+	State Pattern
+	Visitor Pattern
+	Interpreter Pattern
+	Iterator Pattern
+	Memento Pattern
+=======================================================================================
+2) Java 10 new features
+	-functinal interfaces
+	-lambda expressions
+	-Stream API
+	-
+
+3) What is Autowiring
+4) Design Spring MVC
+5) Comparator and comparable
+6) Singleton pattern
+7) What is IOC and DC
+8) how to secure rest services
+7) Spring core elements and lifecycle
+8) Three tier architecture
+9) Collections
+10) How to create immutable class
+11) Spring 
+12) Difference b/w deep and shallow cloning
+13)Singletons
+14) Spring MVC

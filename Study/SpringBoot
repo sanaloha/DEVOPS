@@ -1,0 +1,46 @@
+====SpringBoot====
+
+https://www.youtube.com/watch?v=msXL2oDexqw&index=0&list=PLmbC-xnvykcghOSOJ1ZF6ja3aOgZAgaMO
+====TASK:====
+Can you please evaluate - Monitoring spring boot applications with TICK stack - 
+https://aboullaite.me/spring-boot-metrics-monitoring-using-tick-stack/
+https://www.sanfoundry.com/java-program-implement-singly-linked-list/
+====way to test rest request====
+Add chrome extension postman
+
+--Ways to start project
+	-Spring Initializer at start.spring.io, it provide a visual way of creating spring projectm, loaded with various options.
+	-CLI - command line initializer
+	
+====Download STS from====
+https://spring.io/tools/sts/all
+--start.spring.io
+STS 3.9.4 or go to https://spring.io/
+Scroll down upto the point you see STS
+===== What is Lambda====
+https://youtu.be/lpcOSXWPXTk?list=PLmbC-xnvykcghOSOJ1ZF6ja3aOgZAgaMO
+
+====Spring 2.02====
+1) Create a maven project
+2) Create an app class CourseApiApp
+	-mark it with annotation @SpringBootApplication
+	-call the static run method inside the main
+3) need to add a controller here it is a rest controller
+4) Need to create Topic class
+5) Need to create a service class
+	-Basically a singleton class whose instance can be injected
+	-Add operations on topic object here
+	
+========================
+Questions
+
+1) How to create immutable classes
+2) Difference b/w deep and shallow cloning
+3) Java 8 features
+4) Threading concepts
+5) Singletons
+6) Spring MVC
+7) Spring boot Archtecture
+8) Runtime Complexities
+
+

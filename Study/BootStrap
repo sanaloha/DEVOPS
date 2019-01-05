@@ -1,0 +1,186 @@
+Welcome to Bootstrap 4 From Scratch With 5 Projects
+	Brad Traversy has been programming for around 12 years and teaching for almost 5 years. He is the owner of Traversy Media which is a
+	successful web development YouTube channel and specializes in everything from HTML5 to front end frameworks like Angular as well as
+	server side technologies like Node.js, PHP and Python. Brad has mastered explaining very complex topics in a simple manner that is 
+	very understandable. Invest in your knowledge by watching Brad's courses.
+Sourc: Udemy
+
+-Fast development
+-Browser compatibility
+-Screens with device compatibility
+-open source ui framework, predefined html/css templates
+-Responsive layouts
+
+
+www.w3schools.com/bootstrap4
+www.w3schools.com/bootstrap4
+----Editors
+Atom
+Visual studio code
+	-emmet its already installed with VS code
+	-Install Live Server
+	-Install Prettier Code Formatter
+	-Install vscode icon
+	-Install vscode icon
+	
+	for settings press ctrl+,
+
+Qn what is Sandbox
+How to install
+-include the CDN. or downloadfiles or use npm or user Bower package manager
+----Boot Strap Components
+
+---Javascript Widgets
+
+----Boot Strop 4 moved from Less to Sass which is a css pre-compiler
+	-Flat Style over gradients
+	-More color classes
+	-.btn-outline-* classes
+	-More subtle look
+	-rem and em units instead of pixels
+	-includes flexbox utilities
+	-Dropped support for IE8+IE9
+	-Dropped Glyphicons use Font-awesome instead
+
+----Dev Setup
+--install nodejs
+--Editor Atom atom.io
+	-install emmet for HTML developments 2.4.3
+	-atom-live-server 2.2.0
+--git-bash command line not powershell no windows cmd
+	-git-scm.com download gitbash
+--
+=============================================
+==Activity
+getbootstrap.com
+-btn-primary bt-lg btn-sm
+- "btn= btn-primary btn-block"
+-  data-toggle="button"
+-dropdown class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+- "btn-group" "btn-toolbar" "btn-group-vertical"
+
+=============Navbar
+--class="navbar navbar-expand-sm navbar-ligh bg-light"
+--"navbar-brand" "navbar-nav" "nav-item" "nav-link"
+-- "navbar-togggler" data-toggle="collapse" data-target="#navbarNav"
+-class="collapse navbar-collapse" id="navbarNav"
+----Form class="form-inline my-2 my-lg-0"
+--"form-conrol mmr-sm-2"
+===============Forms and inputs
+--form-group
+--form-control  form-control-file form-text form-control-lg
+-"form-check" form-check-label form-check-input
+--form-inline 
+--instead of using form-group we can use "form-row" inner elements would be of class "col"
+-input type might be of form-check-input or form-control
+-class ="form-control is-valid"   class="form-control is-invalid" class="invalid-feedback"
+
+====input groups
+
+"input-group" "input-group-addon" "input-group-btn"
+
+=====alerts and progress bars
+class="alert alert-primary" "alert alert-info" "alert alert-warning" "alert alert-success" "alert alert-light"
+--
+<div class="alert alert-success alert-dismissible fade show">
+<button class="close" data-dismiss="alert" type="button" >
+	<span>&times;</span>
+<button />
+<strong> dismissible</strong>Blog
+</div>
+--
+alert-link
+
+<div class="progress">
+	<div class="progress-bar bg-success" style="width:35%;">35%</div>
+</div>
+<div class="progress">
+	<div class="progress-bar bg-info" style="width:40%;">40%</div>
+</div>
+<div class="progress">
+	<div class="progress-bar bg-warning progress-bar-striped" style="width:80%;">80%</div>
+</div>
+<div class="progress">
+	<div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:95%;">95%</div>
+</div>
+	
+====Tables and paginations
+class="table" "table table-inverse"
+class="table table-striped" class="table table-bordered" class="table table-hover" class="table table-sm"
+<table><thead class="thead-inverse"></thead> </table>
+--class="pagination
+	class="page-item" class="page-link"
+	
+example:
+<nav>
+	<ul class="pagination justify-content-center" > 
+		<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		
+		
+	</ul>
+
+</nav>
+we can use ustify-content-end, class="pagination pagination-lg" class="pagination pagination-sm"
+
+====Cards this is brand new feature of bootstrap
+
+====Media objects
+
+==========Section 5
+Javascript widgets
+Carousel
+what are attributes data-
+eg. data-slide="next" data-slide-to="0"
+--class="carousel" "carousel-control-prev" "carousel-control-prev-icon" "carousel-item" "carousel-inner"
+--"carousel-control-prev" "carousel-control-prev-icon"  "carousel-indicators" "carousel-caption"
+=====Tool tips
+
+--class="btn btn-success"
+--use data-toggle="tooltip" data-placement="top"
+--initialize tool tips using js
+--ToolTip with HTML
+	-data-html="true"
+--Trigger with js
+	-show, hid and toggle 
+	-
+======Popovers
+data-toogle="popover"
+data-placement="top"
+data-content="popover explanation
+
+$('[data-toggle="popover"]').popover();
+--dimissile popover
+-data-trigger="focus"
+==============popup
+--button or link
+--define modal 
+<button class="btn btn-primary" trigger data-toggle="modal" data-target="#myModal"  />
+--Define the modal
+	--<div class="modal" id="myMo..">
+			<div class="mdoal-dialog">
+				<div class="mdoal-content">
+				 <div class="mdoal-header">
+					<h5 class="mdoal-title">
+						<button class="close" data-dismiss="modal>&times;</button>			
+
+					<div class="modal-body">
+					
+			<div class="modal-footer" >
+			<div class="modal-body" >
+		<button class="btn btn-primary" data-dismiss="modal">Close</button>
+		
+--Login Modal
+		
+===========================
+New Project
+https://github.com//bradtraversy/bs4starter
+
+font-awesome.min.css
+popper.min.js
+
+pexels.com for images
+

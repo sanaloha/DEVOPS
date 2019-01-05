@@ -1,0 +1,245 @@
+====Spring Demo====
+Cousre: Udemy
+Course Name: 
+https://repo.spring.io/release/org/springframework/spring/
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-container-config
+
+====Interview Quetions====
+https://www.edureka.co/blog/interview-questions/spring-interview-questions/
+====Lectures====
+Lecture477
+luv2code.com/jacson-databinding-json-demo
+search.maven.org
+Lecture#482
+www.getPostman.com
+www.jsontest.com
+https://jsonplaceholder.typicode.com
+luv2code.com/spring-rest-demo
+https://www.journaldev.com/3633/hibernate-interview-questions-and-answers
+========================
+Spring
+1.0 2004
+2.0 2006
+3.0 2009
+4.0 2013
+4.3 March 2013
+5.0 Sept 2017
+
+Spring 5 uses Servlet API 4.0
+new Reactive framework Spring WebFlux
+
+https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-5-FAQ
+Download the spring jars from 
+https://repo.spring.io/release/org/springframework/spring/
+==========================================
+Inversion of control
+	-using xml configuration
+	-Using annotation
+	-Using java classes
+	
+Injecting literal values
+Injecting values from properties files
+	-Create the property files
+	-Load the property files in spring container
+	-Refernce values from property file
+	
+	Annotations - Default Bean Names - The Special Case
+
+Section 8, Lecture 73
+Annotations - Default Bean Names ... and the Special Case
+
+In general, when using Annotations, for the default bean name, Spring uses the following rule.
+If the annotation's value doesn't indicate a bean name, an appropriate name will be built based on the short name 
+of the class (with the first letter lower-cased).
+For example:
+HappyFortuneService --> happyFortuneService
+------
+However, for the special case of when BOTH the first and second characters of the class name are upper case, then the name is NOT converted.
+For the case of RESTFortuneService RESTFortuneService --> RESTFortuneService No conversion since the first two characters are upper case.
+Behind the scenes, Spring uses the Java Beans Introspector to generate the default bean name. Here's a screenshot of the documentation for the key method.
+
+Also, here's a link to the documentation.
+- https://docs.oracle.com/javase/8/docs/api/java/beans/Introspector.html#decapitalize(java.lang.String)
+---
+As always, you can give explicity names to your beans.
+@Component("foo")
+public class RESTFortuneService .... {
+    
+}
+Then you can access it using the name of "foo". Nothing tricky to worry about :-) Hope this helps. Happy Coding! :-)
+=============
+@Qualifier is a nice feature, but it is tricky when used with Constructors.The syntax is much different from other examples and not exactly intuitive. 
+Consider this the "deep end of the pool" when it comes to Spring configuration LOL :-)
+You have to place the @Qualifier annotation inside of the constructor arguments. Here's an example from our classroom example. I updated it to make use 
+of constructor injection, with @Autowired and @Qualifier. Make note of the code in bold below:
+------------------------------------------------------------------
+package com.luv2code.springdemo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TennisCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    // define a default constructor
+    public TennisCoach() {
+        System.out.println(">> TennisCoach: inside default constructor");
+    }
+    
+   @Autowired
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+
+        System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
+        
+        fortuneService = theFortuneService;
+    }
+        
+    
+    /*
+    @Autowired
+    public void doSomeCrazyStuff(FortuneService theFortuneService) {
+        System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
+        fortuneService = theFortuneService;
+    }
+    */
+    
+    /*
+    @Autowired
+    public TennisCoach(FortuneService theFortuneService) {
+        fortuneService = theFortuneService;
+    }
+    */
+    
+    @Override
+    public String getDailyWorkout() {
+        return "Practice your backhand volley";
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return fortuneService.getFortune();
+    }
+
+}
+
+---
+For detailed documentation on using @Qualified with Constructors, see this link in the Spring Reference Manual
+https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-autowired-annotation-qualifiers
+=============================
+FAQ: How to inject properties file using Java annotations
+Section 8, Lecture 75
+FAQ: How to inject properties file using Java annotations
+
+Answer:
+This solution will show you how inject values from a properties file using annotatons. The values will no longer be hard coded in the Java code.
+1. Create a properties file to hold your properties. It will be a name value pair.  
+	New text file:  src/sport.properties
+	foo.email=myeasycoach@luv2code.com
+	foo.team=Silly Java Coders
+	**Note the location of the properties file is very important. It must be stored in src/sport.properties
+
+2. Load the properties file in the XML config file.
+	File: applicationContext.xml
+	Add the following lines:
+	<context:property-placeholder location="classpath:sport.properties"/>  
+	This should appear just after the <context:component-scan .../> line
+3. Inject the properties values into your Swim Coach: SwimCoach.java
+	@Value("${foo.email}")
+	private String email;
+	@Value("${foo.team}")
+	private String team;
+------------
+DOWNLOAD FULL SOURCE CODE
+You can download entire code from here:
+- http://www.luv2code.com/downloads/spring-hibernate/spring-props-annotation-demo.zip
+================Annotation
+-minimizes the xml configuration
+-Injcetion can be done via constructor, setter and field
+-Qaulifiers
+========
+==================Spring MVC
+Dispatcher servlet
+"Hey, for any URL pattern coming in, I'd like for you to pass it off to the DispatcherServlet." So, in this case, our URL pattern's going to be slash,
+meaning all web requests, coming in,should be handled by the DispatcherServlet.If you want to have a different pattern, here,
+
+Part1:Add Configurations to file WEB-INF/web.xml
+	1) Configure Spring MVC Dispatcher Servlet
+	2) Add Url Mappings to Spring MVC Dispatcher Servlet
+
+Part2: Add Configurations to WEB-INF/spring-mvc-demp-servlet.xml
+	3) Add support for Spring Component Scannin
+	4) Add support for Conversion,Formatting and Validation
+	5) Configure Spring MVC Spring Resolver
+
+Question:How to configure the Spring Dispatcher Servlet using all Java Code (no xml)?
+
+Answer: The Spring documentation covers this process:
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-container-config
+
+======Controller
+-Create a controller class
+-Define a controller method
+-Add request mapping to controller method
+-Return a view name
+-Develop the view page
+============================
+@Controller inherits from @Component and its called as special components
+
+Question:How to check if a port is busy
+	Step 1: (open the CMD command)
+	C:\Users\username>netstat -o -n -a | findstr 0.0:8080
+	TCP 0.0.0.0:3000 0.0.0.0:0 LISTENING 3116
+	Now , we can see that LISTENING port is 3116 for 8080 ,
+	We need to kill 3116 now
+	Step 2:-
+	C:\Users\username>taskkill /F /PID 3116
+	Step 3: Go to Eclipse and start Server , it will run
+4) View Resolver
+
+===============Forms
+So in our Spring controller, before we show the form, we must add a model attribute. So this is basically a bean
+that's gonna be used to hold the form data, and this will give us support for data binding. So we'll actually bind
+form data to our bean. All right, so here's the code snippet from our controller for actually showing the form.
+(Models: models are used to share data around controllers and views see use of modelAttribute)
+===============================
+Now, you're probably wondering, what's up with the path= firstName and the path= lastName, kind of how does that map out?
+Well, this actually binds this form field to a property on the bean. When the form is first loaded, what Spring MVC will 
+do behind the scenes is that they'll actually use this to populate the form field. When they have path= firstName, Spring
+MVC will call student.getFirstName, and they use that model attribute from up top to retrieve that data. If it's null, then
+that form field will simply be empty. So in our case of creating a new student from scratch, then it'll be empty, but you can
+easily prepopulate that accordingly if you'd like. We'll do a similar thing here for last name, form:input path= lastName.
+Behind the scenes, Spring MVC will call student.getLastName. Now, when the form is submitted, Spring will actually call the setter methods.
+All right, so they're real simple.When they submit, they call setter methods. So here for first name, form:input path= firstName, Spring
+will call student.setFirstName and only use whatever data the user entered there in the form field. A similar thing for last name,
+student.setLastName. Again, Spring will call the setter methods when they actually submit the form. All right, so the form data's been submitted.
+
+Now, how do we actually read the data in our controller?
+
+Well, in our controller, we can simply make use of a new Spring annotation called @ModelAttribute, and we give the name of the attribute.
+So again, we're using student, in all lower case. They'll actually bind that object to this parameter being passed in theStudent.
+Some work behind the scenes, Spring will actually take that model attribute and bind it to this variable here, theStudent,and we can use
+it in our controller.
+======================================
+Load from properties
+====Bean Validations
+www.beanvalidation.org
+www.hibernate.org/validator
+www.hibernate.org
+main->aopproxy->loggingaspect->accountDao(targetobject)
+========================================================================
+
+Spring AOP
+	-Uses aop proxy pattern
+	-Uses runtime weaving
+	-Uses AOP jars 
+	-Its lightweight form of AOP
+=====================================
+Design patterns used in Spring
+	
+
+
+
+
+

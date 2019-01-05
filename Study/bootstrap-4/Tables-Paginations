@@ -1,0 +1,20 @@
+Tables and paginations
+class="table" "table table-inverse"
+class="table table-striped" class="table table-bordered" class="table table-hover" class="table table-sm"
+<table><thead class="thead-inverse"></thead> </table>
+--class="pagination
+	class="page-item" class="page-link"
+	
+example:
+<nav>
+	<ul class="pagination justify-content-center" > 
+		<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		
+		
+	</ul>
+</nav>
+we can use ustify-content-end, class="pagination pagination-lg" class="pagination pagination-sm"

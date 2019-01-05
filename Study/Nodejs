@@ -1,0 +1,287 @@
+Node js
+
+--nodejs.com
+
+--Lecture 11
+	--loadash
+		-unique..
+--Lecture 12
+-
+	-install nodemon
+			nodmon however works a little differently it's a command line utility that gets executed from the terminal.
+			It's going to be a completely new way of starting our application and to install modules to be run from
+			the command line and we have to tweak the install command that we used in the last video.
+	
+--Lect#14
+	-install yargs to simplify inputs
+	-npm install yargs@4.7.1 --save
+	
+--Lec#15
+	-JASON.stringify(obj);
+	-JSON.parse(string);
+	
+--Lec#16
+	-Adding and Saving Notes
+		-Use of trycatch
+			-use of fs.readFileSync and fs.writeFileSync
+		-Use of filter command to find duplicates
+		-Use of error functions
+		
+		
+-Lec#17
+
+	-Refactor 
+	
+==
+--Lec#20 Debugging nodejs
+	-->node inspect filename
+		debug> list(10);
+		-use of n, use of c
+		debug>repl    just like onsole in chrome
+		-use of debugger statement in the file
+	--use dbugger with nodemon
+	
+--Lec#21 Debugging via chrome dev tools
+	>node --inspect-brk file name 
+		It is the inspect hyphen be r.k flag this tells node that we want to run in inspect mode but we don't
+		actually want to connect via that command line. So we don't want to see all that output and we don't want
+		to issue commands like an OR c. We also want a break before that first line just like we did last time from here.
+		We're going to type the things that you'd expect.
+	
+	--open chrome browser and type chrome://inspect and Open dedicated DevTools for Node
+		
+
+
+--Lec#24 Async basics
+			-google api
+Lec#27 call stack and event loop
+		--Call Stack -> Node APis eventloops ->CallBack Queues
+		
+Lec#27 call back functions and API
+	--https://maps.googleapis.com/maps/api/geocode/json?address=1301 lombard street
+	1301 lombard street
+	--Extension JSON view for chrome
+	--www.npmjs.com/package/request
+		npm install request@2.73.0
+	--http://links.mead.io/api-fix
+	
+Lec#30 What makes HTTP Request
+	-status code 200 ok, 500 sever crash
+	
+Lec#31 Encoding user input
+	>node
+	-encodeURIComponent('130 lombar street')
+	-decodeURIComponent('sn%20sing');
+Lec#32 Callback Errors
+	-ZERO_RESULTS
+Lec#32 Abstracting callbacks
+	-
+
+Lec#34 Wiring up
+	-forecast.io, developer.forecast.io
+	-api key
+	
+--Section 4 Lec#36 Intro to ES6 Promise
+	--new Promise((resolve, reject) =>{})
+	--promise.then(()=>{},()=>{})
+-- Lec#37 Advanced Promise
+
+--Section 5 Web Servers and Application Deployment
+--Lec#41 Express
+	--Now all of this is going to get done that using a library called Express which is the most popular NPM
+	library.It's actually one of the reasons that Noad got so popular because it was so easy to make rest API and
+	static web servers.
+	--expressjs.com 
+	--npm install express@4.14.0 --save   here it is 4.16.3
+--Lec#41 Creating a web server
+		-use of middleware
+		
+--Lec#42 Rendering templates with data
+	--handlebarsjs.co
+	--npmjs.com/package/hbs
+		-npm install hbs@4.0.0 --save
+			And I will be using the saved flag to update package.Jason No actually configuring express to use this handlebars view engine is super simple.
+			All we have to do is import and add one statement to our express configuration over inside of atom we're going to do just that inside of atom.
+			Let's get started by loading in handlebars Konst.
+		-view engine
+		Views is the default directory that express uses for your templates.
+	
+	--res.render
+--Lec#43 Advanced templating
+	-Partials  hbs.registerPartials()
+		take the directory you want to use for all of your handlebar partial files and we're going to be specifying
+	-hbs.registerPartials()
+		the helper as the first argument and the function to run as the second the first argument right here
+		is going to be get current year in our case we're going to create a helper that returns that current
+		year.current and year we are going to use the helper get current year and there's no need for any special syntax.
+		When you use something inside of curly braces that clearly isn't a partial handlebars is first going
+		to look for a helper with that name.
+		If there is no helper it will look for a piece of data with that get current year name.
+		In this case it is going to find the helper.
+		So everything is going to work as expected.
+--Lec#44 Express Middleware
+	how you register middleware then and we provided the middleware function we want to use now middleware
+	can do anything.You could just execute some code like logging something to the screen.
+	You could make a change to the request or the response object will be doing just that in later sections.
+	When we add API authentication we'll want to make sure the right header is sent that letter is going
+	to be expected to have an API token.
+	We can use middleware to determine whether or not someone's logged in.
+	
+	--app.use()
+	--maintenance middleware using use, dont call next
+--Lc#45 Adding Version control GIT
+	---git-scm.com
+	--git init
+	--git status
+	--git add filename
+	--create .gitignore file
+	--git commit -m 'initial commit'
+--Lec#47 Setting up github and sshkeys
+
+	--google out github ssh keys
+	
+	--ls -al ~/.ssh
+	--ssh-keygen -t rsa -b 4096 -C 'emailid'
+		Now that our keys are generated the last thing we need to do is start up the S-sh agent and add this
+		key so it knows that it exists.We're going to do this by running two commands.First up we're going to run evil then we're going to open some quotes inside of here we'll use the dollar
+		sign and open and close some parentheses just like this.
+		And inside of our parentheses we're going to type S-sh hyphen agent space with the flag.
+		This is going to start up the SS agent program and it's also going to print the process id to confirm
+		it is indeed running.
+		And right here we get Agent PD 1 6 5 4 7 the process ID is obviously going to be different as long as
+		you get something back like this.
+		You are good to go.
+		-eval "$(ssh-agent -s)"
+		-ssh-add ~/.ssh/id_rsa
+		--go to github.com and login to existing account and copy the public key to ssh section
+		--ssh -T git@github.com test connections
+		
+		--go to github.com and create new repository
+--Lec#48 Deploying the app
+	--heroku.com sign up there
+	--toolbelt.heroku.com download and install
+	go to command line
+	--heroku -help
+	--heroku login
+	--heroku keys:add
+	--heroku keys
+	--ssh -v git@heroku.com
+	--setting environment variable
+--Lec#49 Adding a new feature and deploying
+
+======Section7 MongoDB, Mongoose, and Rest Api's
+
+Lec#71 Installing Mongo db and ROBO MOngo
+	--mongodb.com 
+	--go to mogno db installed dir and run the below command to start it
+	>mongod.exe --dpath /users/santosh/mongo-data
+	Open other cmd and got the above dir
+	>mongo.exe this This is going to connect to our local Mongo DB database and it's going to put us in sort of a command
+	
+	--robomongo.org
+	
+Lec#63 Connecting to Mongo and writing data
+	-google node mongodb native
+	--npm install mongodb@2.2.5 --save
+	
+Lec#64 ObjectID
+	That means if two computers generate object IDs their machine ID is going to be different.
+	This is going to ensure that the ID is unique.Next up we have two bytes the process id just another way to create a unique identifier.
+	Last up we have a three byte counter.This is similar to what my Eskew Ellwood do.
+	This is only three bytes of the ID.As we talked about we have a time stamp which is going to be unique a machine identifier a process ID.
+	And lastly just a random value.That is what makes up the object id you see right here.
+	Well the object id is the default value for underscore ID if nothing is provided you can indeed do whatever
+	you like with that property.
+	
+	--object destructuring actually go ahead and use it.Object restructuring lets you pull out properties from an object creating variables.
+	This means if we have an object called user and it set equal to an object with a name property set to
+	Andrew and then age property set to 25.
+	We can easily pull out one of these into a variable.
+	Let's say for example we want to grab name and create a name a variable to do that using object destructuring
+	in ESX.
+	
+	
+Lec#64 Fetching data
+	--
+
+Lec#67 Deleting Documents
+	-deleteMany, deleteOne, findOneAndDelete
+
+Lec#68 Updating data
+	-findOneAndUpdate
+
+Lec#69 The Mongoose ORM
+
+Lec#70 
+	--mongoosejs.com/docs/guide
+	--install mongoose
+		--npm i mongoose@4.5.9 --save
+	--
+Lec#71 Validators
+You can make certain properties required and you can set up smart defaults so if something like complete
+it is not provided you can have a default value that gets set.
+All of this functionality is built into mongoose.	
+	--mongoosejs.com/docs/validation.html
+	--mongoose schema
+	
+Lec#72 Postman installation
+	--getpostman.com
+	--chrome:///apps
+
+Lec#73 Resource creation Endpoint-POST/TODOS
+	
+	--npm -i express@4.14.0 body-parser@1.15.2
+	The server can then take that Jason and do something with it.
+	Body parser essentially parses the body.It takes that string body and turns it into a javascript object.
+	
+	Now that we have this in place we have a very basic server.All we have to do is start configuring our routes.
+	And as I promised the one we're going to be focusing on in this video is the post route.
+	This is going to let us create new to do's now inside of your rest API.
+	There's the basic crud operations crud being create read update and delete when you want to create a
+	resource.
+	You use the post HTP method and you send that resource as the body.
+	This means that when we want to make a new to do it we're going to send a Jasen object over to the server.
+	It's going to have a text property and the server is going to get that text property create the new
+	model and send the complete model with the id the completed property and completed at back to the client
+	to set up a route.
+	We need to call app dot post passing in the two arguments we've used for every single express route.
+	R U R L and R callback function that gets called with the request and response objects.
+	Now that you are L4 of ISAPI is really important and there is a lot of talk about the proper structure
+	for resources.
+	What I like to do is use a forward slash to do's.
+	This is for resource creation and this is a pretty standard set up forward slash to do.
+	
+	--httpstatuses.com
+	
+Lec#74 Testing POST/TODOS
+	--npm -i expect@1.20.2 mocha@3.0.2 nodemon@1.10.2 supertest@2.0.0 --save
+	--npm run test
+
+Lec#75 List resources GET/TODO
+
+Lec#81 Postman Environments
+	--{{url}}
+
+	
+=========Section 8 Security and Authentication
+Lec#87 Intro
+Lec#88 Setting up the User Model
+	--npm validator
+	--npm install validator@5.6.0 --save
+	
+	
+	
+
+	
+======Section6
+
+
+
+
+
+
+
+Lec#50 Testing
+
+	
+	

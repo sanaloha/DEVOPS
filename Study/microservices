@@ -1,0 +1,229 @@
+Links
+https://join.slack.com/t/edureka-microservice/shared_invite/enQtNDcyMjA0MzkzMzM1LWJlZmY0MDEwNTgwMTRlYmQ1YTM3YTRlNDFhZmE5MmUwZTg3MGI2YTBhNGJiNjhhZTdmMDcyMzM5NDUwMDI4ZTE
+https://docs.google.com/document/d/1TZ2x3xYP-7E8P47ySO90c-xfePsV_SBKVH7HWUBBVYU/edit#
+Q&A https://docs.google.com/document/d/1TZ2x3xYP-7E8P47ySO90c-xfePsV_SBKVH7HWUBBVYU/edit#heading=h.qeoh2bny8k9z
+Dev Setup
+-----------------
+
+Microservices
+=====
+Simple restful microservice in spring boot
+-start.spring.io
+-Dev Tools,Lombok Connecting it to relational database(MySql,Postgres, Oracle)
+-HATEOS
+-Connecting it to no-sql database(Redis,Mongo DB, Cassandra, Neo4j, Couchbase)
+-Connecting to search server(Solr, elasetic Search)
+-Spring Security
+-Integrate with facebook, google
+-Create your own Oauth2 server/Resource server
+-Spring Cloud
+-Central Configuration system
+-Secure ur password(Password Server)
+-Load Balancing
+-Fault Tolerance/Circuit Breakers
+-Naming Servers, Service Discovery
+-Declarative rest client
+-Distributive caching
+-Distributed sessions
+-Build event driven architecture
+-API Gateway
+-Dynamic Routing
+-Distributed tracing
+-Monitor Microservices
+-Log Aggregation
+-Continuous Delivery
+-Microservice Daashboard
+-Microservices admin
+-Test Microservices
+==============================
+Bonus
+Intro to reactive streams
+Spring boot 2 features(reactive terms)
+Reactive end point
+Performance comparision
+===========================
+Webinar ID 
+Evolution
+	-service discovery
+	-Kubernetis: cluster management tool
+	want to really understand microservices in deep and to design architecture from scratch in microservices
+	how to build and deploy these services, would want to learn about all related tools
+	Name
+	Roles and Responsibility
+	Years of experience
+	Hobbies: like learning new technologies and try to implement in my project, others like playing cricket.
+	Its really to differentiate functionalities from  one single large group of functionalities.
+	Slack Request: create an account to join this group
+	https://join.slack.com/t/edureka-microservice/shared_invite/enQtNDcyMjA0MzkzMzM1LWJlZmY0MDEwNTgwMTRlYmQ1YTM3YTRlNDFhZmE5MmUwZTg3MGI2YTBhNGJiNjhhZTdmMDcyMzM5NDUwMDI4ZTE
+	
+============================
+https://docs.google.com/document/d/1TZ2x3xYP-7E8P47ySO90c-xfePsV_SBKVH7HWUBBVYU/edit#
+Reasons
+-production ready code, faster turn around time
+-Scalable
+-Fault Tolerance, Availability
+
+Low latency API's
+Cassandra, Silla
+Cassandra connector in Sping u can find JPA
+EPG Electronics programming guide
+--=====--==--==--==||||||||-----||||----|||||------
+inevitable
+
+Mnolithic
+-Simplicity Very simple
+-Performance
+	-Seating  in close proximity, so easier to communicate.
+-Horizontol Scaling
+	-Vertical scaling
+		-Ram, CPU, Disk(Memory)
+-Maintainability
+
+Microservices brings lot of complexities
+	-if u have large customer base, dont want to down, be available all the time, 
+	-Its also about heterogenity, Resilient, 
+	why Do we need microservices, does it really required, unless it requires good scale, good availablity.
+	SLA's are very less.
+	
+-Cons
+	-Flexibility
+	-Responsiveness
+	-Availability
+		-Domino's affect
+		https://en.wikipedia.org/wiki/Domino_effect
+		-more fault tolerant the system is it will be available more
+	-Heteroginity
+	-Scalability
+	-Managing the code
+	
+** MS can be considered extension of SOA
+** MS is a subset of SOA - Martin fowler
+
+MS- Built arount functionalities
+SOA - Built around technologies
+
+Proxy - Inbound
+Revers Proxy - Outbound
+1 app 1 database
+
+Have u seen the request payload
+	-POST metod signature see, google out
+Q: Latency
+Q: How would we expect..
+
+https://docs.google.com/document/d/1TZ2x3xYP-7E8P47ySO90c-xfePsV_SBKVH7HWUBBVYU/edit#heading=h.qeoh2bny8k9z
+
+Development setup
+https://docs.google.com/document/d/1IFVZ5C3TAWr9t1fTSD-DrmNIGym6uh8IOTZE87UyxpI/edit#
+
+---
+IntelliJ Ultimate
+install Lombok
+maven
+gradle
+MySql
+dev.mysql.com
+with native packages
+ES
+Kafka
+====
+Scale + Velocity = Increased Failures
+Higher Scale + Higher Velocity
+
+--Mount Black - Microservice Testing service
+-Camel - Integration tools, not relevant in Today's class
+==========================================================
+Major Disadvantage
+Integration: Think about latency, what if one of the critical service is down.
+In a nutshell, There r more benefits than disadvantages.
+DB: Having multiple database is challenging, Observable challenge, so we will have monitoring tools which ensure the DB is running good.
+Low latency, maintainability there is much tradeoffs than challenges.
+https://join.slack.com/t/edureka-microservice/shared_invite/enQtNDcyMjA0MzkzMzM1LWJlZmY0MDEwNTgwMTRlYmQ1YTM3YTRlNDFhZmE5MmUwZTg3MGI2YTBhNGJiNjhhZTdmMDcyMzM5NDUwMDI4ZTE
+
+
+Order traces may go to 500 services.
+Role of Devops is very important in microservices, Operational challenges growing much and much, they r looking all performance matrices, alerts.
+Devops go hand in hand with microservices.
+
+Examples from Banking Services
+
+Trading system: Micro services, improvices on this...case studies
+--::--::--::--::--::--::--::--::--::--::--::--::--::--::--::--::--::
+We want to adopt changes very fast, bcause business requirements are changing very fast:
+CAB Theorem:
+
+Multiple writes in multiple DB's
+we would not allow, thus using Master Slave archtecture while load Balancing
+Replication: Replica
+Reconcilliation, Real time data.
+If master goes down, hot stand by.... slave config is very much same as master....
+1 microservices may have 1 logical database.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Do cost and benefit analysis, there r several databases that costs nothing, commodity costs these days are very cheaper.
+
+How to manage normalization in DB's
+Suppose custoemr has orderid, consider a scenario where...
+==========================================================
+spring rx or reactive, tomcat, aka these r new days servers
+vertix.
+Tomcat: latency less than 2 milli secs, with 2-3 database txn...
+
+Use Case and Problem Statements.....
+How Big is a nano second? What latency we would talk about.
+Robustness, Security...
+Design for failure is the basic feature/reason of Micro Services....
+can we have co-existness for monolithic and microservices.
+
+They will be contanorized first, and deployed, they can be hosted on the cloud.
+Infrastructure as a service. Cluster Managers like Kubertneitis is taking care of ...
+
+Links
+
+How do 2 services say order history or paymnet hostory service interact with each other?
+Service Discovery
+	-solutions can be used for service discovery
+	{kuberneitis K8s,Eureka, etd, consult, Envoy, nginx} 
+	
+
+####################
+Case StudyProblem Statement
+
+A  new  age  e  retailer SunHome.com  islooking  to  build  a  ecommerce  website.
+
+ This  scenario  focuses  on building  microservice  for shopping  cart  functionality which  can  be  used with  various  user interfaceslike web,mobile and voice enabled Alexa. 
+ Design a Microservice architecture based Shopping cart solution. 
+ Shopping  cart should have following functionality 
+ 1)Product Catalogue
+ 2)Price
+ 3)Stock
+ 4)Build a Recommendation based on items in shopping cartYou have a functional shopping cart except the  point of checkout.
+ Solution Hints:Apply  the  various  rest  and  Microservice  principals  we  have  gone  though. Consider  you  have  web  front end available to user to place the 
+ requests, you do not need to design that. Your focus area should be to identify the business functional and entities and their interactions. ?
+ 
+ You will search the catalogue ? 
+ Select a product ?
+ Check its price ?
+ Add it to the cart ?
+ 
+ Recommend similar products based on what is added to the cart. Solution Deliverable Outcome should identify all business entities and their 
+ communications. 
+ Break the business functions in appropriate Microservice and define the communication style between them. Finally you shoulddepict all this though a single diagram 
+ (e.g. weused Taxi Servicein module)
+
+############
+Redis
+
+go to hub.docker.com
+
+Open terminal inside intelij
+simple-rest $docker run -p 6379:6379 --name some-redis -d redis
+	
+
+
+
+
+
+	
+	
+
+

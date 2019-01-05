@@ -1,0 +1,148 @@
+Java Script or Jquery
+Source: Udemy
+Web: MDN or developer.mozila.org
+--Json place holder fake json database site
+https;//jsonplaceholder.typicode.com
+
+===============================
+Java scripts
+
+1) use of console log
+2) use of == and ===
+3) WINDOW and DOM
+4) use of document object
+	-getElementsbyTagName getElementsByClassName
+	-querySelectorAll document.querySelector
+	-get instances of elements say parent Lecture #39
+		-use of append parent.appendChild();
+		-parent.insertBefore(div,ul);
+		-parent.insertAdjacentElement("beforeBegin", div)
+		parent.insertAdjacentElement("afterBegin", div), beforeEnd, afterEnd
+		-parent.insertAdjacentHtml("afterEnd""<div>Hi<div>")
+5) Delete
+	-access the class parent = document.querySelector('.parent')
+	-var ul = = document.querySelector('ul')
+	parent.removeChild(u1); or ul.remove();
+========================Events
+-get the instance of button
+	-var button = document.qurySelector('.myButton'); //here myButton is a class usedd in htm div tag
+	-get the event
+		button.onclick= function(){
+			console.log('button clicked');
+		}
+		button.onmouseover = funtion(){console.log('on mouse over');};
+===============eventListener
+-button.addEventListener('click', functionName)
+-document.addEventListener('click', Fname); //provide listener for whole document
+
+=========propagation order lecture 43
+	-create a parent and child div in html
+	-use querySelector to get the instances
+	-use addEventListener for the click of both the instances
+		use case1: when parent is clicked, parent function is getting called
+				   but when child div is clicked both the functions from child and parent is get called as child is inside
+				   parent and child click referes to parent click as well.
+		Solution use case1: -pass the event objct inside child's method
+							-event.stopPropagation();
+	-use of event.target
+===Exercise
+-use of document.createElement
+	-child.innerText
+	-child.style.
+-document.body.appendChild
+
+===========================Arrays
+	-push, pop, shift, unshift
+	-indexOf, splice, slice
+	-concat, join
+	-Filter
+	-map, forEach
+=====Functions
+IIF immediately invoked functions
+MIME
+multi purpose internet mail extensions
+=functions(){}, (functions(){})();
+==============
+-Built in functions
+-typeof, parseInt, toString
+-Math helpers
+===================Objects
+
+var user = {
+	name:"san",
+	lastName:"Singh",
+	cars:['honda','ford'],
+		misc{
+		hobbies:['scates', 'drive'],
+		lang:'ENG'
+		},
+	salute:function(){console.log('HI')}
+}
+console.log(user.name) or console.log(user["name"])
+console.log(user.misc.lang)
+console.log(user.salute())
+user.name = "san1";
+
+=======================================
+var user = new Object();
+user.name = "san";
+user.age = "37";
+==
+var user = {}
+user.addUser = function(){
+console.log("add")
+}
+user.name = "abc";
+user.age = "ef";
+user.addUser();
+===use of this Lecture#72
+==prototype
+
+===Jquey
+webstorm IDE paid one
+
+DOJO, MORE, JQUERY UI are the alternatives
+-console.log($)
+-document.ready
+-$(document).ready(function(){});
+==select by tag
+- document.querySelectorAll('p') all the paragraphs in html
+	$('p')  simplified code with jquery
+	
+-
+	
+===selecting elements by class and id
+
+==Events
+<div class="myButton">Click<div>
+==========================
+js--
+var button = querySelector('.myButton');
+
+button.onCilck = function(){
+
+console.log(click event");
+}
+
+--view events
+--media events
+--mouse events
+--key board events
+--clipboar events
+
+Issue: Overwriting on events
+ if one writes two onClick events then 1st one is get overwritten by the next one to avoid this
+ one may use event listeners eg
+ 
+ var button = querySelector('.myButton');
+ button.addEventListener("click", function1(){})
+ button.addEventListener("click", function12(){})
+ 
+ --Helper funtions
+ toUpperCae
+ toLowerCase
+ concat
+ Split
+ 
+
+ 

@@ -1,0 +1,80 @@
+9920  2018-06-05 10:55:58 grep -i JBOSS_HOME *
+ 9921  2018-06-05 10:56:02 ll
+ 9922  2018-06-05 10:56:18 grep -i JBOSS_HOME domain.sh
+ 9923  2018-06-05 10:56:30 LL
+ 9924  2018-06-05 10:56:34 ll
+ 9925  2018-06-05 10:56:49 vi run.sh
+ 9926  2018-06-05 10:57:02 vi domain.sh
+ 9927  2018-06-05 10:57:17 echo $JAVA_HOME
+ 9928  2018-06-05 10:58:30 printenv
+ 9929  2018-06-05 11:00:07 cd
+ 9930  2018-06-05 11:00:12 vi .profile
+ 9931  2018-06-05 11:00:32 vi .bash_profile
+ 9932  2018-06-05 11:01:20 pwd
+ 9933  2018-06-05 11:02:00 ~/.profile
+ 9934  2018-06-05 11:02:09 ./profile
+ 9935  2018-06-05 11:02:28 ps ax | grep java | grep -v 'grep' | cut -d '?' -f1 | xargs kill -9
+ 9936  2018-06-05 11:02:44 ps -ef | grep java
+ 9937  2018-06-05 11:02:50 cd /apps/
+ 9938  2018-06-05 11:02:50 ll
+ 9939  2018-06-05 11:03:00 cd jboss6dc/
+ 9940  2018-06-05 11:03:01 ll
+ 9941  2018-06-05 11:03:05 cd jboss-eap-6.4/
+ 9942  2018-06-05 11:03:06 ll
+ 9943  2018-06-05 11:03:11 cd bin/
+ 9944  2018-06-05 11:03:11 ll
+ 9945  2018-06-05 11:03:17 ./domain.sh
+ 9946  2018-06-05 11:03:56 ps -ef | grep java
+ 9947  2018-06-05 11:04:01 ./domain.sh &
+ 9948  2018-06-05 11:04:09 pwd
+ 9949  2018-06-05 11:04:19 cd /apps/jboss6/jboss-eap-6.4/bin
+ 9950  2018-06-05 11:04:25 ./domain.sh &
+ 9951  2018-06-05 11:06:44 cd
+ 9952  2018-06-05 11:06:45 ll
+ 9953  2018-06-05 11:06:54 history
+ 9954  2018-06-05 11:07:00 vi .bash_profile
+ 9955  2018-06-05 11:07:13 ~/.bashrc
+ 9956  2018-06-05 11:07:29 ls -lart
+ 9957  2018-06-05 11:08:20 vi .bash_profile
+ 9958  2018-06-05 11:08:29 export JAVA_HOME=/apps/java/jdk1.8.0_171
+ 9959  2018-06-05 11:08:29 PATH=$JAVA_HOME/bin:$PATH
+ 9960  2018-06-05 11:08:35 export JAVA_HOME=/apps/java/jdk1.8.0_171
+ 9961  2018-06-05 11:08:37 PATH=$JAVA_HOME/bin:$PATH
+ 9962  2018-06-05 11:08:45 history
+ 9963  2018-06-05 11:09:08 ps ax | grep java | grep -v 'grep' | cut -d '?' -f1 | xargs kill -9
+ 9964  2018-06-05 11:09:28 ps -ef | grep java
+ 9965  2018-06-05 11:09:36 history
+ 9966  2018-06-05 11:09:44 export JAVA_HOME=/apps/java/jdk1.8.0_171
+ 9967  2018-06-05 11:09:50 PATH=$JAVA_HOME/bin:$PATH
+ 9968  2018-06-05 11:09:58 export JAVA_HOME=/apps/java/jdk1.8.0_171
+ 9969  2018-06-05 11:10:00 PATH=$JAVA_HOME/bin:$PATH
+ 9970  2018-06-05 11:12:14 cd /apps/jboss6dc/jboss-eap-6.4/bin
+ 9971  2018-06-05 11:12:15 ll
+ 9972  2018-06-05 11:12:20 ps -ef | grep java
+ 9973  2018-06-05 11:12:41 rm -rf 43253 43237
+ 9974  2018-06-05 11:12:49 kill -9 43237 43253
+ 9975  2018-06-05 11:12:51 ll
+ 9976  2018-06-05 11:13:00 ps ax | grep java | grep -v 'grep' | cut -d '?' -f1 | xargs kill -9
+ 9977  2018-06-05 11:13:10 ps -ef | grep java
+ 9978  2018-06-05 11:13:48 pwd
+===================================
+
+diff domain.v23.xml ../../domain.xml
+ 4539  2018-09-03 22:09:03 ls -ld /apps/jboss6dc/jboss-eap-6.4/domain/configuration/domain.xml
+
+ SC[0m02:16:55,629 INFO  [org.jboss.as.remoting] (MSC service thread 1-1) JBAS017100: Listening on 10.45.232.241:9999ESC[0m
+[Host Controller] ESC[0mESC[31m02:16:56,579 ERROR [org.jboss.as.host.controller] (Controller Boot Thread) JBAS010932: Caught exception during boot: org.jboss.as.controller.persistence.ConfigurationPersistenceException: JBAS014676: Failed to parse configurationESC[0m
+[Host Controller] ESC[31m       at org.jboss.as.controller.persistence.XmlConfigurationPersister.load(XmlConfigurationPersister.java:141) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]ESC[0m
+[Host Controller] ESC[31m       at org.jboss.as.host.controller.DomainModelControllerService.boot(DomainModelControllerService.java:503) [jboss-as-host-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]ESC[0m
+[Host Controller] ESC[31m       at org.jboss.as.controller.AbstractControllerService$1.run(AbstractControllerService.java:263) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]ESC[0m
+[Host Controller] ESC[31m       at java.lang.Thread.run(Thread.java:745) [rt.jar:1.8.0_60]ESC[0m
+[Host Controller] ESC[31mCaused by: com.ctc.wstx.exc.WstxParsingException: Unexpected close tag </domain>; expected </server-groups>.ESC[0m
+[Host Controller] ESC[31m at [row,col {unknown-source}]: [1626,8]ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.StreamScanner.constructWfcException(StreamScanner.java:606)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.StreamScanner.throwParseError(StreamScanner.java:479)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.StreamScanner.throwParseError(StreamScanner.java:464)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.BasicStreamReader.reportWrongEndElem(BasicStreamReader.java:3283)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.BasicStreamReader.readEndElem(BasicStreamReader.java:3210)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.BasicStreamReader.nextFromTree(BasicStreamReader.java:2829)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1072)ESC[0m
+[Host Controller] ESC[31m       at com.ctc.wstx.sr.BasicStreamReader.nextTag(BasicStreamReader.java:1157)ESC[0m
