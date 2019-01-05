@@ -1,0 +1,145 @@
+so far we have been talking about threads and the Runnable interface and we have used the Runnable
+interface as part of the anonymous senior class in order to construct a strategy basically.
+
+But we are able to use the so called callable interface and we are able to return soundwell you from
+ignorance rather.
+
+So I'm going to create a class of worker or for example processor and it's going to.
+Is going to implements not the Runnable but the callable interface.
+
+And we have to specify that what kind of world view we want to return from that given method.
+So of course we have to implement the unimplemented methods and instead of the wrong method we have
+this cool method.
+
+And in the school that for example I'm going to have a private integer ID and in the constructor we
+are going to get an ID.
+So there's that Id easy to ID.
+So whenever we instantiate a new processor we have to specify an ID.
+
+And here I am just going to sleep.
+So strap Dart's sleep for example a second and then I'm going to return with a string.
+
+Basically the ID concatenated with ID.
+
+**And we don't have to use try catch block because this call method throws an exception.
+
+This is a difference again between the runnable and the callable interface that if you may recall it
+the wrong method for runnable interface doesn't Stroh's an exception bodies call table call methods
+so always an exception.
+
+OK.
+
+And in the main method that I'm going to use an executor service because it's very very convenient
+to start threads.
+
+So executer service is equal to the executors d'arte new Fig's strat pu I would like to create two threads
+and I'm going to create a list of future string.
+So what's very important that we implemented the callable interface and we have defined it is going
+to be E-string.
+
+So we are going to return strings and we would like to order the return strings into a list but we have
+to use this so-called future the future.
+
+And it is generic so we specify that it's going to contain strings.
+This is what's going to store the where you returned from the given Strads.
+
+So this is why the future is very important when we are dealing with the core level interface.
+It's going to be earliest musical to a new A-list.
+
+OK.
+
+We have to import the latest Java that you till that list and the future.
+So Java got you to do that concurrent future.
+
+OK.
+
+And I'm going to create five tasks so integer is equal to zero.
+Use less than five possible PSI.
+
+And I would like to say that the future string.
+So this is what I have been talking about that whenever I'm going to implement it and then I'm going
+to explain it executer service dot.
+
+It's very important that we are not able to call the execute because the execute is waiting for the
+Runnable interface.
+
+As you can see but we have a call Level interface.
+So we have to call the submit.
+
+OK.
+
+And we are going to submit a new processor.
+And the idea is going to be I Paswan because I would like to avoid ID equal to zero.
+
+OK so this executer service sub made because this processor implements the cool interface it's going
+to return with a string.
+
+But it's going to be wrapped around a future object.
+So the sub mate is going to return a future war basically we are going to return.
+
+There's the IED and the concatenated integer value.
+So we just have to audit to the list as the future.
+OK.
+And later on we have the return well use in this array liest.
+So we just have to iterate through
+
+future string for example future in the list and we would like to printout that system out into land
+the future dot get what's very important that these get method is going to get this thing.
+
+We have inserted and returned here and I think that we have to surround it with try catch our case around
+we'd try catch and it shows an execution exception and an interrupted exception.
+But anyways here we created a executer service with two threads that we have created five tasks and
+with the help of the executer service we are going to solve this task to a new processor and the processor
+is going to return strain's basically because we have returned the ID and the concatenated integer value
+but we have to store it in a future object.
+And we have to specify that it is a string.
+As you can see this string and this string has to match OK and then we iterate through and basically
+printout the content of the future it's going to be these values.
+
+OK.
+
+And I think that I haven't mentioned that in the previous video that we have to shut down the executor
+
+service.
+
+So if before the shutdown then executer service is not going to handle any more requests for any spreads.
+
+But it's not going to interrupt the underlying threads that are doing the operations at the given moment.
+
+So shut down.
+
+I think if you hoover your mouth yeah initiate an orderly shutdown in which previously submitted tasks
+
+are executed as you can see.
+
+So Strads are not going to be terminated.
+
+But no new task will be accepted.
+
+So usually we call this Schauder method.
+
+At the end of your procedure Alt-A so we fire on it.
+
+Id 1 2 3 4 and 5.
+
+So basically we just return the IDs from different threads and basically two processors are going to
+
+be handled at the same time because we have to these things Strads as a new extract tool.
+
+OK so this is how we return values from a given Strad and sometimes it is very useful.
+
+So for example when you want to do parallel nurse or and you would like to return the results of the
+
+subproblems then the school level interface may prove to be quite important.
+
+And we have to define that is going to return a string value.
+
+And whenever we submit it it's going to return with a string value.
+
+OK but it's going to be wrap around the future object and read the map of the future that that we are
+
+able to get this string.
+
+We have returned here in the call method.
+
+Thanks for watching.

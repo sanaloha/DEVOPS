@@ -1,0 +1,319 @@
+##########Map Reduce Basic
+In this chapter we are going to talk about the famous map reduce algorithm.
+
+So it is the fundamental building block of big data.
+
+So the first question is what is this map reduce.?
+
+It is a programming model a way of structuring the computation that allows it easily to be run on lots
+of nodes servers or machines.
+
+So when I first met with MAP reduce I was a bit confused because I wasn't sure about the differences
+between the fork-joined frame framework and map reduce model.
+
+So if you may recall in the previous chapters we have been talking about the fork-join the framework
+and we have come to the conclusion that we are able to implement parallel algorithms with the help of
+this framework map reduce is very very similar but it handles different servers with different machines.
+
+So what's very important there with the help of this map reduce architecture
+We are able to make a given algorithm parallel.
+
+OK so this approach has three important steps
+
+1) map: It splits the original data set into smaller subproblems and we are able to solve these problems in
+a parallel manner
+2) shuffle and sort: shuffle and sort is going to rearrange given some data set in order to be able to
+use parallel approaches again.So it makes sure that items with the same keys will get the same reducer.
+
+3) reduce: Combines the final result.
+ 
+basically we have different servers.
+and this is the most important difference between the fork-join framework and map reduce approach that here we have 
+different servers so different machines every single machine in this network has a distinct Java virtual machine.
+
+So this is the main difference where we were dealing with the fork-join the framework we had just a
+single Java Virtual Machine and task of your virtual machine is going to assign different subproblems to
+different threads. And because we have several processor cores.This single job of your virtual machine is 
+able to solve this problem in a parallel manner.
+
+Machines bursting servers really different job of your virtual machines.
+So basically we are going to assign a given sub task to every single Java virtual machine in this network.
+
+OK so for example when dealing with sorting, we have a huge array of integers. We can solve this problem in a
+sequential manner, for example merge sort or sort in order O(N logN) time complexity.
+
+But maybe we can do better if we solve this problem in a parallel manner. And we use lots of lots of machines independently.
+OK so these servers form a cluster or a directed graph as you can see that's why the servers are usually called nodes.
+
+OK so we are going to have to give you an array of integers or 1,5,13,7 up to 43. We are going to split this unsorted array
+into five subsets. Because we have five node so 5 servers within this cluster. OK so we are going to assign a given subproblem
+to every single node. These nodes are going to sort these sub arrays independent of each other. OK so the first one is going to
+sort these integers. OK they are in sorted order by default, this node is going to sort these integers, this node is going to sort 
+these integers and so on. And then finally we have to merge these sub solutions into the final solution.
+And this is how we get this sorted array. 
+
+OK so I don't want to repeat myself over and over again but it's crucial to understand that here we
+are not dealing with different processor cores. Here we are dealing with different machines different servers.
+And why is it good because for example on my machine I have eight processor cores but within a cluster.
+They can be tens of thousands of computers hence we can make the algorithm faster.
+
+So there are three steps map, shuffle and sort and reduce finally.
+
+Map: the input for map is a data set. For example a one dimensional array of integers or the iris-dataset we want to classify.
+I'm not sure whether you are familiar with machine learning. But the  iris-dataset that is the most commonly used data set 
+in artificial intelligence and machine learning. 
+
+Output: List<key,value> pairs The output of the map stage is a list of key value pairs.
+
+Shuffle and sort: is going to combine all key value pairs with the same keys + sort them
+Output: List<key,List<value>> pairs
+So the output is a list of keys and associated a list of values. OK.
+
+reduce:  phase is going to combine the sub results.
+output: List<key, value> pairs
+So the output is going to be a list of key value pairs.
+
+In the next lecture. We consider a concrete example an illustration of how 
+map reduce model works. Thanks for watching.
+
+#################################Map Reduce Introduction Example
+
+In the previous lecture we have been talking about the basics of the map reduce model.
+So let's see a concrete illustration.
+Let's suppose we have a data set like this and we would like to count the number of our occurrences of
+the given words.
+
+windy, hot, cold, windy
+hot,hot, hot, cold,
+cold, cold, windy
+windy, hot
+hot, cold, windy
+cold,hot,hot
+hot,windy,windy
+
+So for example the first line of the data set is windy, hot, cold, windy
+the second line is hot,hot, hot and cold, The third line is cold cold and windy and so on.
+So we have a huge data set.
+
+mapping phase:
+===============
+And of course the first step is the mapping phase. We would like to split the original data set into smaller
+subsets in order to solve the problem in a parallel manner.
+OK so this is the first step in this case.We split the data set into two subsets.Data set number one and the data set number two.
+DataSet #1
+-----------
+windy, hot, cold, windy
+hot,hot, hot, cold,
+cold, cold, windy
+
+DataSet #2
+-----------
+windy, hot
+hot, cold, windy
+cold,hot,hot
+hot,windy,windy
+
+As you can see the first three rows form the first data set and the last four rows in the original data that belong to the data set 2.
+OK so this is how we split the dataset.OK but there is one more step we have to do before the shuffling and sorting procedure.
+In the previous lecture. We have been talking about that the output of the map phase is a list of key value pairs. So somehow we have to
+transform these values into key value pairs. So that's why we are going to end up with something like this. We have the key such as windy,
+hot and cold and we are going to have the values accordingly.
+
+DataSet #1
+----------
+windy=1
+hot=1
+cold=1
+windy=1
+hot=1
+hot=1
+hot=1
+cold=1
+cold=1
+cold=1
+windy=1
+
+DataSet #2
+-----------
+windy=1
+hot=1
+hot=1
+cold=1
+windy=1
+cold=1
+hot=1
+hot=1
+hot=1
+windy=1
+
+
+There's one windy  word in the first row then one hot word. Then a cold word. Then again one windy word then in the second row
+we have one hot. OK then the next word again is hot. Then the next word again is hot often something like this so this is how we are
+going to end up with a list of key value pairs.
+
+As you can see the first data set contains a list of key value pairs. The keys are the given the words and the values are integers
+and it is true for the second data set as well.
+
+The keys are the stream's So the given of words and their use are the integers accordingly.
+That's all about the mapping phase. We split the data set and then we transformed the values into key value pairs.
+
+The second step is the shuffle and sorting phase.
+================================================
+
+We just have to combine all key value pairs with the same keys and then we
+have to sort them in alphabetical order.
+
+For example so the output is a list of keys and a list of values associated with a hidden key. OK so we have the first dataset.
+We have the second data set as a list of key value pairs. And what do we have to do.
+We just have to group the key value pairs based on the keys. OK so as you can see as far as the windy keyword is concerned we
+have 1 2 and 3. So that's why we have 3 one of values.
+
+DataSet #1
+----------
+windy(1,1,1)
+hot(1,1,1,1)
+cold(1,1,1,1)
+
+DataSet #2
+----------
+windy(1,1,1,1)
+hot(1,1,1,1,1)
+cold(1,1)
+
+
+We have 1 2 3 4 hot values. So that's why there are four values within this array.
+Then we have the word cold and we just have to calculate the occurrences 1,2, 3 and 4 so
+that's why we are going to be 4 one values in this array. So this is exactly what happens when we use shuffle and sort.
+So we have to count the occurrences of the given words within the first data set and the second data set
+
+then we have to merge these data sets, so data set one and a data set 2. Again we have to group the values based on the keys.
+
+windy(1,1,1,1,1,1,1)
+hot(1,1,1,1,1,1,1,1,1)
+cold(1,1,1,1,1,1)
+
+So as you can see we have sorry one of values in the first data set. As far as the windy is concerned. 
+we have 4 one values as far as the second data set is concerned where the keys windy. So that's why in 
+the merge data set there's going to be three plus four 1 values.
+
+It is the same for the hot values. We have four plus five 5 one values.
+That's why in the merge data set there's going to be nine 1 values OK and it is the same for the cold Word.
+One two three four plus two. It is going to be 6.
+
+Why do we have to do the last step is to sort this dataset.
+In this case because the keys are strings so we are going to sorted in an alphabetical order.
+
+cold(1,1,1,1,1,1)
+hot(1,1,1,1,1,1,1,1,1)
+windy(1,1,1,1,1,1,1)
+
+That's why the first one will be cold the second one will be hot and a third one will be windy.
+OK so that's all about the shuffle and so what phase.
+
+What about the reduce phase.
+=========================================
+
+Basically we just have to sum up these I'll use so that we start again or we'll be a list of key value
+pairs. A key is a string. The value is the occurrence of the given word in the original data set.
+
+DATASET
+=========
+cold = 6
+hot = 9
+windy = 7
+
+
+
+So the cold has the value 6 hot as the value 9 because we just have to sum up these values windy 7 because there are seven.
+One values in the merged data set.
+
+OK so with the help of the reuse phase we are going to transform a list of key value pairs.
+But it's extremely important that here the value is a list of given integers we are going to transform
+this list of integers into a single integer as you can see.
+
+OK so that's all about the map shuffle and so what. And the reduce operations as you can see the result is a list of key value pairs.
+This is how we can count the occurrences of the given words in a given data set with the help of the map reduce algorithm.
+
+#################################Map Reduce and fork-join
+In the previous lectures we have been talking about that practical background for map reduce.
+And we have seen a concrete example an illustration how it works.
+
+So let's talk a bit about the differences between map reduce and fork join framework.
+
+=>fork-join frame work is designed to work on a single Java virtual machine while on the other
+hand map reduce is designed to work on a large cluster of nodes where nodes are machines or servers
+and every single server has a distinct Java virtual machine.
+So instead of using just a single virtual machine map reduce use is going to use lots of lots of
+virtual machines independently.
+
+=> OK the second difference is that fork-join splits the original task into several sub tasks.
+It is a recursive approach and there may be inter-fork communications.
+
+=> on the other hand map reduce model does only one split. So these splitted subtask do not communicate at all.
+MAPREDUCE is massively scalable!!!!
+
+They are completely independent of each other of course because we are going to assign a given sub task
+to a different node in the cluster which means different Java virtual machine. So they are not able to communicate with each other.
+
+And what's more important that map reduce is a more robust and massively scalable model.
+So we are not able to use fork join a framework or with thousands of different processor for example but we are able to use Map reduce
+with clusters consisting millions and millions of servers.
+
+OK so that's the main difference between map reduce and the fork-join framework.
+
+Thanks for watching.
+
+################
+DISCOUNT FOR OTHER COURSES!
+Section 11, Lecture 68
+If you are interested in my other courses, you can get them for $10.
+
+Blockchain Technology in Java - https://www.udemy.com/learn-blockchain-technology-in-java/?couponCode=HBALAZS_10
+
+Reinforcement Learning in Java - https://www.udemy.com/artificial-intelligence-iv-reinforcement-learning-in-java/?couponCode=HBALAZS_10 
+
+Deep Learning in Java - https://www.udemy.com/artificial-intelligence-iii-in-java/?couponCode=HBALAZS10
+
+Quantitative Finance & Algorithmic Trading II - Time Series (FOREX) https://www.udemy.com/quantitative-finance-algorithmic-trading-ii-time-series/?couponCode=HBALAZS_10
+
+Quantitative Finance & Algorithmic Trading in Python: https://www.udemy.com/quantitative-finance-algorithmic-trading-in-python/?couponCode=HBALAZS_10
+
+Online Business Academy, eCommerce - https://www.udemy.com/online-business-academy-ecommerce/?couponCode=HBALAZS_10
+
+Sorting Algorithms in C++: https://www.udemy.com/sorting-algorithms-in-c/?couponCode=HBALAZS_10
+
+Numerical methods in Java: https://www.udemy.com/numerical-methods-in-java/?couponCode=GSS_10
+
+Java EE with Maven and Vaadin and Spring Boot: https://www.udemy.com/java-ee-with-vaadin-spring-boot-and-maven/?couponCode=GSS_10
+
+Neural Networks in Java: https://www.udemy.com/neural-networks-from-scratch-in-java/?couponCode=GSS_10
+
+Algorithmic Problems in Python: https://www.udemy.com/algorithmic-problems-in-python/?couponCode=GSS_10
+
+Algorithmic Problems in Java: https://www.udemy.com/algorithmic-problems-in-java/?couponCode=GSS_10
+
+Face Detection in Java: https://www.udemy.com/face-detection-in-java/?couponCode=GSS_10
+
+Introduction to SQL: https://www.udemy.com/introduction-to-sql23/?couponCode=GSS_10
+
+Introduction to Collections & Generics: https://www.udemy.com/introduction-to-generics-in-java/?couponCode=GSS_10
+
+Machine Learning in R: https://www.udemy.com/machine-learning-in-r/?couponCode=GSS_10
+
+Machine Learning & Face Detection in Python: https://www.udemy.com/introduction-to-machine-learning-in-python/?couponCode=GSS_10
+
+Artificial Intelligence in Java: https://www.udemy.com/artificial-intelligence-games-in-java/?couponCode=GSS_10
+
+Design Patterns in Java: https://www.udemy.com/basics-of-software-architecture-design-in-java/?couponCode=GSS_10
+
+Multithreading and Parallel Computing in Java: https://www.udemy.com/multithreading-and-parallel-computing-in-java/?couponCode=HBALAZS_10
+
+Data Structures in Python: https://www.udemy.com/algorithms-and-data-structures-in-python/?couponCode=GSS_10
+
+Data Structures in Java II: https://www.udemy.com/algorithms-and-data-structures-in-java-part-ii/?couponCode=GSS_10
+
+Data Structures in Java I: https://www.udemy.com/algorithms-and-data-structures/?couponCode=HBALAZS_10
+
+Advanced Algorithms in Java: https://www.udemy.com/advanced-algorithms-in-java/?couponCode=HBALAZS10
+
+Java SE Desktop Application with Maven and JPA: https://www.udemy.com/java-se-desktop-application-with-swing-jpa-and-maven/?couponCode=GSS_10

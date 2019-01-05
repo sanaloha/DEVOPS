@@ -1,0 +1,163 @@
+Hi in this chapter we are going to talk about another multi-threading related application the so
+called mind project.
+And basically we are going to implement a user interface like this with a chessboard like table and
+basically every single cell can be empty or there may be a boom on that given cell and that's why
+as you can see they are going to be mineLayers and mineSweepers, mine layers are going to put mines
+on given cell on the chessboard life table and minesweepers are going to sweep these mines.
+So if we start this application as you can see the red cells represent mines basically the mine layers
+set these mines and the minesweepers are going to get rid of these mines and that's why the pattern
+is keep changing and changing.
+
+OK.
+
+If you click on stop then the board is going to be cleared.
+We can rerun the application and so on.
+Basically the application is not about the user interface.
+It is about assigning several of mine layers and minesweepers to this distinct spread and basically
+every single mine sweeper and mine layer is going to work independently in the sense that they try
+to put mines on a given cell or they try to get rid of a mine from a given cell.
+
+So basically this is the aim of the application.
+We are going to have several classes as you can see this is what we are going to talk about in the
+coming lectures on a one by one basis.
+
+Thanks for watching.
+
+############################
+
+Hi in this lecture we are going to talk about the constants.
+
+And of course it's going to store all the application related constants number of sweepers number of
+layers.
+
+The board rows the board columns as you can see how many rows are there on this chessboard like table
+how many columns are there on these chessboard like table.
+
+What's going to be the board width what's going to be the board height.
+what's going to be the name of the application this is what we use here in the constructor for the
+Jframe as you can see the super is going to call the parents class constructor.
+
+So this is how we set the application name for the Jframe and the Jframe is basically the whole
+container as you can see with the title Mine simulation.
+So we are going to store these application related constants in the constants class and we are going
+to assign a state to every single cell. Basically within this board we are going to have cells and 
+every single cell is going to be represented by a Java class cell And of course a cell can be empty.
+
+There can be mine on that given cell maybe a minesweeper on that given cell or a mine layer is at
+that given cell. So basically there are four options four possibilities.
+Whether a given cell is empty like this in this case at the beginning.
+Every cell is empty. There can be a mine there can be a minesweeper or a mine layer on a given cell.
+So that's all about a constnts and the state Enum.
+##########################
+
+In this lecture we are going to talk about the mine Layer and the minesweeper we are going to have
+as many layers as the number of layers and as many minesweepers as the number of sweepers as you can
+see 100 and 200.
+And we are going to assign a distinct thread to every single sweepers and layers.
+So in this case we are going to have 300 threads all together assigned to sweepers and layers accordingly.
+So what is a mine layer.
+
+Mine layer of course is going to be runnable.
+It's going to have an ID it's going to get the board because mine layer is going to manipulate
+the board.
+
+What do I mean.
+The mine is going to set mines to given cells the minesweeper is going to get rid of the minds from
+given cells.
+
+So that's why it's going to have an ID a board and a lyer running OK in the constructor it gets an
+ID and a board and basically in the run method is going to generate an index at random.
+
+So we are going to generate a random index for the cell.
+And basically this mine layer is going to set mine to that given cell so we generate a random index.
+
+That's why we have this random.
+We just have to generate an integer basically board rows and board columns we would like to make
+sure that the generated index is going to be in the range 0 and the last cell.
+And then this mine layer is going to set the mine to that give index basically to that given cell.
+And after that it's going to sleep for two hundred milli seconds.
+OK the minesweeper is very similar but instead of putting the mine it's going to get rid a given mine 
+on a given index. So we are going to generate an index and it tries to get rid of mine.
+
+Of course sometimes the given cell doesn't contain a mine And in this case the minesweeper is not going
+to do anything in the sense that there is no mine to get rid off.
+And why do we have to define this boolean variable sweeprunning and layerrunning.
+Because as you can see in the mainframe when we click on the stop button.
+So when we start the application and click on the stop button first we have to iterate through all the
+layers and all the sweepers. And we have to set this boolean flag = false what does it mean if we set it 
+to be false Then this while loop is not going to run.
+And of course we have to check that if the current thread is interrupted we are going to break but we
+are able to return it's going to be a bit better I guess.
+And a minesweeper is going to return as well.
+So when every iteration we have to check whether a given thread is interrupted or not if it is interrupted
+we have to return anyway we have to generate a random index and we have to get rid of the mines or we have
+to set mines to that give an index.
+
+OK so that's all about the mine layers and the minesweepers what's very important that we are going
+to assign distinct threads to every single sweeper as well as to every single layer.
+
+Okay.
+
+Thanks for watching.
+
+############################
+In this lecture we are going to talk about the user interface we are going to have a button listener
+in order to be able to track whether we have clicked on the Start button or the stop button.
+We had a given cell. What does it mean that every single cell is going to be represented by these
+Java class cell.It's going to be a Jpanel.
+Of course it's going to have a lock and a state as well a state because we have to track whether that
+given cell is empty.Is there any mine or are there any mine layers or minesweepers.
+This is why we have four states. Every single cell can be empty.
+There can be a mine there can be a minesweeper or there can be a mine layer.
+And of course we have to lock it because sometimes it may happen that several of mine layers or minesweepers
+tried to manipulate the same cell.So we have to lock it.
+What does it mean that as far as lock is concerned that given mine layer or minesweeper tries to
+acquire the lock for 10 hours. So basically no matter what it's going to wait for that lock.
+What about unlock. It is going to release that given lock. OK why is it important.
+Because the board is going to store one dimensional array of cells.
+Basically we are not going to represent this chessboard like table as a two dimensional array but as
+a one dimensional array.
+And we have to track all the rows basically. OK we have a number of mines.
+We are going to have a grid lay out with as many rows as the Constants.boardrows Constans.boardcolumns is 
+going to represent the number of columns we are able to increment as well as decrement the boom number,
+we are going to initialize the board. As you can see if i%2 = zero it's going to have 
+color white. Anyways it's going to have color gray as you can see this is how we initialize the 
+table every second cell is going to have color gray and all the other cells are going to have the 
+color white. Basically this is how we initialize the border.Then we initialize the class we instantiate size.
+We set number of mines to be zero. And basically we are going to have two important methods.
+OK what about clearBoard It's going to iterate through and restore the original colors as you can see the
+gray and the white colors. OK we are going to have sleep's thread and get number of mines.
+And what's very important that there are two important methods the setMine.
+It's going to get the given cell and it's going to call the lock method.
+It's increment bom number said the background to be read.
+This is how we represent a cell with the mine.So if we started as you can see the red cells are going to 
+have mines. And basically why is it changing. Because minesweepers are going to get rid of those mines.
+So that's why we unlock and then the thread is going to sleep for 500 milli seconds.
+What about the sweep mine, is going to lock on that given cell and is going to restore the color but 
+we have to decide whether the original color is white or gray. So this is what's calculated here that we
+unlock on that given cell and sleeps for 500 milli seconds. OK the toolbar is quite straightforward.
+We have the start button and the stop button with the flow layout flow lay out center with start and stop as
+you can see as the buttons start and stop. And basically what's going to happen when we click on a given 
+button if it is a start button. Then we start click anyways stop clicked.
+And what does it mean. Because the mainframe implemented this button listener.
+That's why as you can see the toolbar is going to have a button listener.
+
+Whenever we click on a given button basically the mainframe is going to handle this action.
+How with the stop click method and with the start click method.OK so basically that's all about the 
+implementation what's very important that we are going to have distinct threads to mine layers and 
+minesweepers we are going to have executer services for layers and sweepers and we are going to store
+these workers in a one dimensional arrays. And of course we have the cell. We have to lock.
+That's why we are going to use a lock with the re-entrant lock.
+And this is what's going to happen when we called a lock method or the unlock method on a  given cell 
+so again let's run the application.
+OK there are several mines we can stop it and of course as the intuition suggests if we have more sweepers
+then basically there are going to be very few red cells.
+OK so if we run it again there are going to be lots of lots of sweepers and as you can see whenever
+a cell is going to be red because there are way more sweepers they are going to collect these mines.
+What if there are way more layers than sweepers. Of course there are going to be lots of lots of mines.
+So I'm going to close it and going to run it as you can see there are going to be lots of lots of mines.
+So that's all about the minesweeper application.
+
+Thanks for watching.
+
+

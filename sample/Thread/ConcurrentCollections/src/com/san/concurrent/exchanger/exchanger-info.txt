@@ -1,0 +1,34 @@
+
+It's quite simple because basically two threads can exchange objects.
+with the help of this exchangor class.
+
+There is the so-called exchange method and it's going to exchange objects between two threads.
+And for example it's quite useful for genetic algorithms or training neural Networks.
+
+I am a huge fan of genetic algorithms and I have implemented back propagation as far as neural networks
+are concerned but to be honest I have never met with the exchanger.
+
+And why is it good to use exchanger.
+But several of my colleagues had used the exchanger for these kinds of techniques.
+Maybe this is because I implemented these algorithms mostly in Python.
+OK neural network in Java but I used low level synchronization instead of the exchanger class but
+they are a huge fan of exchanger for implementing these kinds of algorithms.
+
+So the concept is that we have two threads we have this thread number one and the thread number two.
+And as we have discussed in theoratical section that each thread has a distinct memory allocation.
+So the variable for Thread 1 is not visible for Thread2 vice versa.
+So if we want to exchange some variables for example or some object we have to use this exchanger in
+order to communicate between the threads and it's very very important that we have to change
+pair objects So we are not able to pass for example object one or we are not able to pass
+object two in the opposite direction, if we pass object one from thread one to thread2
+Then we have to pass something some variable some object in the opposite direction.
+So object one is going to go from thread1 to thread2 and the object2 is going to go from thread
+2 to thread1.
+So this is the exchanger.
+So what's very important that each thread is going to add something to the other and it's going to 
+get something from the other, it's not possible that we send the object one without getting the 
+object2 in the opposite direction.
+So let's see a concrete illustration.
+I'm going to have 2 threads, the class for thread , It's going to implement the Runnable interface and
+we are going to have a private integer counter and we are going to have a private exchanger.
+

@@ -1,0 +1,184 @@
+
+High in the previous video we have seen how to use recursive action and the recursive action has a computer
+
+model that is going to be void.
+
+So it's not going to return anything.
+
+For example this recursive action is very very good.
+
+When we want to sort for example a simple array of integers of course we don't want to return with anything.
+
+We just want to sort it but sometimes we want to have a return of value.
+
+Let's suppose the fact that we are looking for the maximum item in a one dimensional array or we are
+
+looking for a given file in the file system.
+
+Of course recursive action is not going to be OK because we would like to return with a given item.
+
+And that's why the recursive TASC have came to be.
+
+So I'm going to create a Java project for the joint simple too.
+
+OK and I'm going to.
+
+First of all we'll close these windows.
+
+Clear the console.
+
+I am going to create an application class in the package kohm that my name does hew to me and I'm going
+
+to create another Clauss.
+
+For example simple recursive task and this simple recursive task is going to extends the recursive and
+
+not action about the recursive task and we would like to return an integer.
+
+So that's why we have to define it like this.
+
+And again I'm going to have a private integer workload simulated.
+
+For example in the constructor we are going to have an integer simulated a work and it does not simulated
+
+Virk is equal to the simulated work.
+
+And here.
+
+Basically I'm going to get rid of this because it's a simulated Virk is greater than hundred.
+
+Again I would like to split over basically and else I'm just going to printout that.
+
+No need for parallel execution and I'm just going to return to times the simulated over for example.
+
+OK and here we just have to create.
+
+First of all I'm going to print out that parallel exiguous needed because of the huge costs and I'm
+
+going to instantiate two simple recursive TASC for example task 1 is equal to a new single recursive
+
+task we dissimulated over a divide by 2.
+
+I am going to do the same with that task to simulated simple recursive task with dissimulated over a
+
+divide by two.
+
+Then we just have to fork So task 1.40 we'd have to order these tasks into the form join joint task
+
+to dark for but because we would like to do some calculations with the return values.
+
+That's why we have to call the join method as well.
+
+So I'm going to have a solution is equal to zero.
+
+And the solution and plus equal to the task of one data join and these join is going to wait for the
+
+return value.
+
+We are going to split D-Star asked until the simulated work is not going to be huge.
+
+If it's not huge then basically this is going to run and it is going to return a value 2 times dissimulated
+
+of error.
+
+And this is what we are waiting for here to be able to audit solutions and the solution applause siecle
+
+to the task to that join.
+
+OK and basically here I'm going to return with a solution.
+
+So if I say that and in the application we just have to create for the join pool as usual.
+
+So for to join a pool pool is equal to a new form join pool and we just have to specify the number of
+
+cores.
+
+So runtime to get run time Dot away whaleboat processors.
+
+I'm going to instantiate a simple a recursive task for example task is equal to a new simpler recursive
+
+task.
+
+And if the workload is smaller than the hundred I'm going to call the Invoke owned task if it's smaller
+
+than 20 it just going to run.
+
+This part of the code and is going to return to times the simulated work so I'm going to print it out
+
+to the console like this.
+
+OK I'm going to save it and run it as a Java application of course.
+
+No need for parallel execution and it's going to return to times 20 or so forth.
+
+But if it's greater than a hundred then basically it's going to be splitted into two tasks parallel
+
+execution needed because of the huge task.
+
+I'm going to printout The
+
+simulate ever simulated work here last.
+
+The simulated work here in order to be able to track that what's happening as you can see parallel execution
+
+needed because of the huge task.
+
+So this one hundred and twenty will be split into two Hoffs.
+
+But after it has been split it into two Hauffe where we call the fork.
+
+Basically this whole simple recursive task is going to be run again.
+
+And 60 is smaller than a hundred.
+
+So basically it's going to be printed out.
+
+No need for pedalo execution.
+
+We do 60 why 60 because we define that dissimulated of work divided by two and a hundred and twenty
+
+divided by two is 60.
+
+So basically we have created two talks that are smaller than hundred.
+
+So we don't have to split it again.
+
+We are able to executed in a C manner and it we return to times that dissimulated over due time 60 is
+
+one hundred and twenty two times six is one hundred and twenty.
+
+So one hundred and twenty plus one hundred and twenty siecle to two hundred and forty.
+
+So basically this is what we have been discussing here in the theoretical section that we do the fork
+
+we are going to split the tasks into soft tasks but of course we did join we have to wait for the subtasks
+
+to finish its execution.
+
+And then we are able to merge these tasks into soft tasks again and then we are able to merge these
+
+subtask finally into the final solution.
+
+So this is why we have to call that joy in it because we are curious about the return value which is
+
+coming from here basically.
+
+So that's all about the recursive tasks and the recursive action.
+
+What's very important that recursive action is not going to return anything recursive TASC We can they
+
+find out what's going to be the return value.
+
+But what's very important that we have to extend the recursive task or recursive action if we want to
+
+make sure that a given class can be inserted into the form join pool and we are able to call the fourth
+
+method and the join method on that given class.
+
+So that's all about the simple example.
+
+Thanks for watching.
+
+
+ 
+ 

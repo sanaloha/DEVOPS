@@ -1,0 +1,106 @@
+So these sops tasks have to be independent.
+
+So was the main concept the main concept is that the four to join framework breaks the task into smaller
+
+subtasks until the subtask are simple enough to solve without further break ups for example parallel
+
+emirate's or or parallel maximum finding is going to be a good example.
+
+Glad to me this cause the most important interfaces and classes as far as the full join framework is
+
+concern.
+
+We have these recursive process.
+
+It is generic because it will return a generic type it can return an integer it can return a double.
+
+It can return a list of strings or a list of custom objects.
+
+So basically a recursive TASC is going to return some value a recursive action is going to do the same
+
+but it's not going to return any value.
+
+So why use it to give these classes because all the task we want to exit qued in parallel is a subclass
+
+of this class.
+
+We have to override the komputer method that will return the solution of the problem.
+
+We are going to do an example for all of these losses it will be clear.
+
+Basically every class that extends this recursive task is able to be executed in parallel so TASC is
+
+something like a given Sohrab al-Qaeda recursive action is the same but is not going to return any value.
+
+Then we have the four join pool and this for join pool is this thread pool for executing for joint tasks.
+
+So basically we are going to OD recursive tasks or recursive actions into the fourth join pool.
+
+Stealing is a very very important concept as far as the framework is concerned because a task is not
+
+Akwe will end to a thread.
+
+If a class extends the recursive class or recursive action it is something like that without the framework.
+
+OK we would like to assign that given class to have this thing spread.
+
+But basically this is not true.
+
+A TASC is not equi will end to a thread because tasks are lightweight threads.
+
+So for join or will be efficient even when there are a huge number of tasks.
+
+And this is what we have been discussing.
+
+In one of the previous lectures that if we have lots of lots of threads then it's not going to be an
+
+efficient algorithm.
+
+Here we can have as many tasks as we want because the number of tasks is not equal to the number of
+
+Strads usually fall join.
+
+Pool creates a fixed number of Strads usually the number of CPQ cores and these threads are executing
+
+the tasks.
+
+But what's very important that if a thread has no task it can steal a given task from more busy threads.
+
+This is the verst healing concept and this is why tasks are distributed to all threads in the strata
+
+pool.
+
+So this is why these four join pool is very very efficient solution for organizing the threads and the
+
+CPP cores.
+
+OK so basically we have a fork when we split the given tasks into smaller subtask that can be executed
+
+in a parallel manner.
+
+So we have that given task and if we fork on this given node we are going to end up.
+
+We need to stop tasks this task and write offs if we call the fork method on this task then we are going
+
+to end up with this subtask and this task so we do the hop of the fork.
+
+We are able to split the given task into smaller Asop task and the join is quite on the contrary the
+
+splitted tasks are being executed.
+
+And after all of them are finished they are merge into one resolved.
+
+So we are able to join these tasks into the final solution then join the D-Star six into a single final
+
+solution.
+
+So fork is when we split the tasks and join is when we merge the given tasks.
+
+So that's all about Atari behind.
+
+For join a framework.
+
+Thanks for watching.
+
+
+ 

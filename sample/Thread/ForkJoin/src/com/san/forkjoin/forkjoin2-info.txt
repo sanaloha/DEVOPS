@@ -1,0 +1,195 @@
+to use three keywords in the coming videos.
+
+The fork did join and they invoke and the fourth method is basically a synchronously exiguous the given
+
+toss in the pool so we can call this method on a recursive action or recursive task.
+
+Then we have the join the join is going to returns the result of the computation when it is done.
+
+So basically it is approximately the same as we have seen for the Strads if we call the spread that
+
+join it makes sure that we wait for that given stretch to finish its execution.
+
+Basically it is approximately the same returns the result of the computation when it is done and we
+
+have to invoke that execute the given task plus return its resolved upon completion.
+
+I'm going to create a very very simple example for example simple recursive action.
+
+And this is what we have been discussing that we have to have a clause that extends for example the
+
+recursive action or the recursive possed here we don't want to return any well use.
+
+So we would like to extend the recursive action.
+
+And because we have extended this class we have to or the unimplemented compute method.
+
+So what is it mean that basically every clause that extends the recursive action order recursive tasks
+
+is able to be all data to the form join the pool.
+
+And basically these tasks are able to executed in a parallel manner.
+
+So I'm going to have integer try with integer simulate the work of are I able.
+
+And in the constructor we are going to get this integer simulated work.
+
+So there's that simulated Verd is equal to the simulated work.
+
+Basically here in this compute method if we have to decide whether we are going to fork at that given
+
+cost because it's too large or we are able to execute with this given task.
+
+So if the workload is greater than 100 then I'm going to printout that
+
+parallel exiguous shun and split TASC Plus we print out assimilated work and usually we create two simple
+
+recursive actions so we instantiate two instance of that given Glaus.
+
+So it's going to be simple a recursive action or warning and we are going to.
+
+OK we have to define the simulated work but we are going to divide it by two because we are going to
+
+have another simpler recursive action with a simpler recursive action to add.
+
+It's going to take the other half of the tasks.
+
+So it is able to do simple recursive action with the similarity to work divided by two.
+
+So what does it mean if work is very very large.
+
+So for example it's greater than a hundred then we are going to split that given Virk and that's why
+
+we create a simple recursive action of one.
+
+It is a task because it extends the recursive action and a simpler recursive action too which is again
+
+a recursive action.
+
+So this task can be executed in parallel.
+
+And that's why we divide it by two because half of dissimulated work is going to be executed by this
+
+task.
+
+And the other half of the simulated work will be executed by this task.
+
+So what's very important that we have to say that are simple recursive action that fork and we have
+
+to correlate on a recursive action too.
+
+So if you hoover your mouth over this fork is going to have a new Java documentation that arranges to
+
+a synchronously exiguous gets task in default join pool the current task is running again.
+
+So we are going to create a food joint pool and basically when we call this fork then these are recursive
+
+actions so the recursive action of one recursive action too is going to be inserted into that given
+
+pool.
+
+So basically the Strads in that given pool are able to exiguous these tasks and basically that so we
+
+don't have to define anything else.
+
+Of course as we know that no need for parallel exit queues shun the conventual algorithm is OK.
+
+And plus we printout simulated to work.
+
+So what does it mean that if we come to the conclusion that we have to do a lot of work then we are
+
+going to split that given over.
+
+OK they are going to be different tasks.
+
+OK in this case we call it recursive action but it's very important to know that it's not going to be
+
+guaranteed that every single task and every single action is going to be assigned to a given thread.
+
+They are just going to be inserted into the Ford unjoin pool.
+
+And if there is any shred or vailable then that given study is going to exec you that given task and
+
+Anyway's there is no need for parallel execution because we come to the conclusion that divert is not
+
+that great.
+
+So we don't have to split it into two subtasks.
+
+We are able to executed in a C manner.
+
+OK so in the application we just have to create for the joint pool.
+
+OK.
+
+It's going to be the for example and it's equal to a new form joint pool and we are not going to define
+
+anything except for the number of processors.
+
+So we can get it from the runtime get the runtime or whaleboat processors.
+
+So what does it mean that we are going to create a full join pool and basically this fall join pool
+
+is going to contain as many spreads as the number of available processors.
+
+And this is what we want to do.
+
+We don't want to create more spreads than the number of processors because then it's not going to be
+
+parallel.
+
+It's going to be a multi-threaded execution but it's not going to be parallel.
+
+So we would like to make sure that we have as many threads in the form join pool as the old whaleboat
+
+processors then I'm going to instantiate the simple recursive action.
+
+For example a simple recursive action simple recursive action and assimilated work is going to be 20.
+
+So we have to invoke this simulated recursive action and this Evoque is going to exit the given task.
+
+You can see that we are able to call this integral method on the form joint pool.
+
+So if we run it there no need for parallel execution sequential algorithm is OK because this 20 is smaller
+
+than any hundred.
+
+But if it's for example a hundred and twenty then it's going to be splitted parallel execution and split
+
+task.
+
+It's going to be split it into two even Hoff's a single task with very close to 60.
+
+And another task where the work load 60.
+
+So if we come to the conclusion that a given task is too complex then we are able to splitted basically
+
+do two tasks the recursive action of one and the recursive action too.
+
+And we have to call this fork and this fork is going to make sure that their tasks are going to be executed
+
+synchronously.
+
+OK so basically this is a very very simple example for the recursive action as you can see.
+
+This class extends the recursive action.
+
+So that's why if we instantiated like this we are able to call up for math.
+
+If dishcloths do not extend the recursive action I'm going to get rid of this then we are not able to
+
+call this four method.
+
+The method for is undefined for that type simple recursive action.
+
+So this is why we have to be.
+
+The recursive action to tell the for joined frame for that.
+
+OK.
+
+The dishcloths the simpler recursive action is able to be inserted into the foreign join pool as a task.
+
+Thanks for watching.
+
+###################

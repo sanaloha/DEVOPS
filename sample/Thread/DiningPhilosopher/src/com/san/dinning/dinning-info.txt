@@ -1,0 +1,347 @@
+
+in this chapter we are going to talk about the story and a concrete implementation for the Dining
+Philosopher or first problem.
+
+1) It was formulated by Dijkstra in 1965.
+2) 5 Philophsers are present at the table + 5 Forks/Chopsticks
+3) They can eat or think.
+4) Philophsers can eat when they have both left and right chopsticks
+5) A chopstick can be hold by one Philophsers at a given time.
+6) The problem: How to create concurrent algorithm such that no Philophsers will starve.
+
+You may be familiar with this name Dijkstra because the shortest path algorithm that Dijkstra algorithm
+has something to do with this scientist.
+
+The problem is that five Philosophers for are present at a given table + there are five forks or chopsticks.
+A philosopher can eat or think and a philosopher can eat when they have both left and right chopsticks.
+
+So basically we are going to have chopstick class and we are going to have a philosopher class and a
+philosopher can eat If both the left and right chopsticks are available and a chopstick can be hold by one philosopher at
+a given time of course and the problem is that how to create a concurrent and algorithm such that no philosopher will starve.
+
+So we have a concrete table. We have five plates. Basically the fellows are us are eating something.
+It doesn't matter what's important that we have the five Philophsers  we are going to assign IDs
+to every single thing those are for.
+
+So these Philophsers are for is going to have the ID 0. This is the ID 2, ID three and ID 4.
+P0,P1,P2,P3,P4
+We have the chopsticks the ID 0 chopstick, Id 1 chopstick ID 2 chopsticks, ID three and four chopsticks.
+C0,C1,C2,C3,C4
+So we are going to have as you can see five philosophers and five chopsticks and what's important
+as you can see that at the same time all the philosophers are not able to eat because for a philosopher
+to be able to eat each must have the left chopstick and right chopstick of course because we have just
+five forks and five philosophers. It's not going to be feasible to eat all the philosophers at the same time.So for example let's consider this 
+philosopher in order to be able to eat. It's going to have left chopstick and he's going to acquire the right chopstick.
+And in this situation the philosopher is able to eat.
+you can see for example this time the zero ID philosopher is not able to eat because that right chopstick is not available for this philosopher.
+This is what we have been discussing that a single chopstick can be acquired by a single philosopher at the same time.
+
+So for example this moment this chopstick is acquired by this philosopher. So this philosopher is not able to acquire it and the same is true 
+for the other philosophers that it is not able to acquire a left chopstick because it is not available.
+So this is what we are going to simulate that in this case we are going to assign a lock to every single
+chopstick and we are going to have some rules.
+
+For example the philosopher tries to acquire the left chopstick and after it is able to acquire the left chopstick it tries to acquire the right
+chopstick OK and if it's possible then the philosopher is going to eat. Then is going to release the chopsticks and it is true for all the philosophers basically.
+So we just have to create philosophers. We just have to create chopsticks and we have to assign locks to every single chopstick.
+
+We are going to use a re-entrant lock's because we have been discussing re-entrant locks in some of
+the previous lectures and basically that's all what we are going to do.
+
+We have to make sure that if the philosopher is not able to acquire a given chopstick it is going to
+tris to acquire it for ten milli seconds and otherwise it's going to let it go in the sense that a given philosophers
+returns thinking and it's not going to eat at that given moment. Again The Philosopher may try to eat again.
+It's right to require a left chopstick than the right chopstick But if the chopsticks are not available
+it's going to go back and it's go going this thing for another random amount of time this is what we
+are going to simulate in the coming videos.
+
+Thanks for watching.
+
+###########################
+
+In this video we start the dining philosophers problem implementation.
+
+I'm going to create an application from where we are going to run or simulation then we are going to have a Constant that's
+going to store the application related Constants and such as the number of philosophers the number of
+chopsticks and so on. So Constants I'm going to have for example a chopstick and I'm going to have a philosopher  class like this.
+And we are going to have a state to be able to track.
+
+By the way it's going to be an enum whatever in order to be able to track whether that chopstick a
+left chopstick or right chopstick.
+
+But first of all let's implement the constants. I would like to prevent instantiating this class because
+it is going to store Constants. So that's why I made the constructor private and I'm going to create public static final integer for
+example NUMBER_OF_PHILOSOPHER = 5 or just to be constant number of philosophers.
+
+I'm going to create constant NUMBER_OF_CHOPSTICKS = 5.
+
+And for example we all have a PUBLIC STATIC final integer SIMULATION_ITERATIONS = 1000;
+
+And in this state as I have mentioned it's going to be just a simple ENUM.  left and right.
+
+Basically we will have a left chopstick and we will have a right chopstick.
+So that's all about this lecture we have created the constant and we have created the State of the chopstick
+to be able to track that. This chopstick is going to be a left chopstick or a right chopstick as you may guess.
+A single chopstick is going to be left chopstick for a given philosopher but it may be right chopstick
+for another philosopher.
+
+Of course that's why we are going to assign two chopsticks to every single philosopher.
+
+################
+
+In this video we are going to implement the chopstick class.
+The chopstick is going to have an integer ID and we have to lock on the chopsticks.
+There may be situations where two philosopher tries to acquire the same chopsticks in order to be
+able to eat. And that's why we have to store a reference to a lock. So this lock in the chopstick constructor we are going to have an integer ID.
+So we'd have to assign this.id =  ID and we have to instantiate that lock as a re-entrant lock.This is just the interface and 
+this.lock =  new RentrantLock().
+
+And let's say that and basically a chopstick can be picked up and it can be put down.
+So we will have two methods public.
+
+It's going to return a boolean so public boolean pickUp.
+Why.
+Because we have to tell the given philosopher better that given chopstick can be picked up or not
+you may pose a question that why this is what we have been discussing in a theoratical section that
+two philosophers are competing for a given chopstick because we have five philosophers and five chopsticks.
+So we have to check that.Whether that philosopher is able to pick up that given chopstick.So we have to get a philosopher as a philosopher
+and we are going to have a state whether a philosopher tries to pick up that left chopstick or right chopsticks.
+And I think it's going to throws interrupted exception.  that's all about to pick up.
+
+If the lock.tryLock() this is what we have been discussing in a theoratical section for re-entrant
+Locks that this is one of advantages for re-entrant locks that we can specify that how much time we can try to acquire that lock.
+For example I would like to try for 10 milliseconds. 
+
+So the philosopher tries to pick up data given chopstick but this chopstick is acquired by another Philo's
+offer. So we wait for 10 milliseconds then have your return.
+If that given philosopher is not able to pick up the chopstick in programming we say that if we are
+not able to lock on that given re-entrant lauk.
+So that's all about to pick up.
+
+Then we have the public who we putDown and it's going to get a philosopher as well and is going to
+get a state as well.
+So state OK we just say that unlock our Lock and we printout that fills up for class put down and we
+point out that chopstick.
+
+It has managed to pull down.
+
+And this is why I like these kinds of simulations because we have been talking about re-entrant Locks
+but I'm sure that you don't remember the advantages for the reentrant locks, Why is it huge to use locks instead of synchronized blocks.
+
+And here are the concrete examples.
+
+First of all because we can call these Try lock we are able to wait for a to given lock for a given time
+interval. We are not able to do this with the help of synchronized blocks.It is very very convenient to use locks for these kinds of simulations.
+So this is the first one. And as you can see in this method we acquire a lock.And another method  be unlock on that given lock what does it mean 
+that we are able to lock in one method and unlock in a different method if we use lock.
+We are not able to do the same for synchronized modes. And with synchronized approach.
+
+So this is why this lock is very very convenient. And of course the concrete implementation of a lock is for example the re-entrant lock.
+So that's all about the chopstick implementation.
+
+We have a pickup and a putDown method.
+We try to pick Cobb but that given chopstick for a given time interval.
+And if we fail to pick it up then we return false anyways always return true.
+So that's why the return value is a boolean.
+The putdown method is going to just unlock on that given.
+What is it mean that the chopstick can be picked up by other philosophers.
+So we will pull down the chopstick. After that given philosophers has eaten.
+OK so that's all about the chopstick class in the next video we are going to consider philosophers Java class.
+
+Thanks for watching.
+#####################
+In this video we are going to implement the philosophers Java class.We are not going to make iterations.
+We are going to define that how many milliseconds we are going to run that application.
+So it's going to have the name of simulation running time for example.
+For example we would like to run it five seconds so five times a thousand milliseconds.
+So it is in milliseconds. And what about the philosopher class we are going to have an ID of course private integer Id We are going
+to assign a left chopstick. So we will have left chopstick and we will have a right chopstick I am going to copy and paste it.
+It's going to be the right choppstick And we will have a random number generator because we would like to make sure that everything goes up
+for is eating for a random amount of time. And every philosopher is thinking for a random amount of time so we will have a random random We will
+have a private integer eating counter at the end of the algorithm we will count that how many times
+a given philosopher has eaten.
+OK so that's important Java that implement that random and in the filters of for us constructor is going to
+get an integer ID it's going to get the left chopstick and  it's going to get the right chopstick.
+
+And of course we have to instantiate the random in order to avoid null pointer exceptions.
+So that's all about the constructor.
+And then this philosopher is going to be runnable. So it's implements the Runnable interface.
+And that's why we have to override an  implemented method run method as usual.
+
+We will have a flag. This is what we have been discussing when we were talking about the volatile keyword that we have to
+use a flag when we want to stop a given thread from running.
+So volatile for example isFull when the philosopher is full We are going to stop that given logarithm.
+
+And first of all the philosopher is going to think so that's implemented things and the eat method.
+Of course we will have several helper methods such as the public avoid setFull It's going to get a boolean
+isFull.
+Why do we have to set it to the Volatile This is what we have been discussing that this is volatile keyword make sure that java and that
+given thread is going to get this variable from the main memory and not from the cache because every
+single thread and basically we are going to assign every philosopher to a new thread. So every thread has its own intrinsic cache and we
+want to avoid a situation where this isFull boolean variable is cached and this while loop is not going to end.
+So OK this is why we have to use the volatile. This is what we have been discussing in one of the previous lectures.
+
+Ok I'm going to override it toString method and  I'm going to printout philosopher + ID
+
+So we identify every philosopher with an  ID and we identify every chopstick with an ID.
+OK so then we have the private void think() its going to throws interrupted the exception and it is
+goin to printout philosopher is thinking Okay.
+And a philosopher is going to think for a random amount of time so thats why we are going to sleep for
+random.nextInteger for example between 0 and 1 seconds 0 and a thousand times a second means that
+it's going to be somewhere in between 0 seconds and 1 second.
+
+OK and I'm going to do approximately the same for eating.
+So we are going to eat of course instead of thinking the philosopher is going to eat and we are going
+to increment eating counter so eating counter++,  OK and we are going to sleep for a random amount
+of time.
+
+And we are going to have this while loop within the try block
+OK so while the philosopher is not fool the philosopher is going to think for a moment then if the
+left chopstick this is what we have been discussing that this is the rule for the algorithm.
+The philosopher tries to pick up the left chopstick if it's available.
+Then he tries to pick up the right chopstick.
+So it left chopstick pick up the pick up method is going to return a boolean variable.
+This is why we have implemented it like this.
+If the chopstick can be picked up it's going to return true.
+
+Not that nice and let's make sure that you import arrived state so the state we have created here and
+not the threads state class.
+
+So the philosopher tries to pick up the left Chopstick and if the right chopstick is available.
+So again if the philosopher has managed to pick up the left chopstick the philosopher tries to pick
+up the right chopstick as wellt this state.right in this moment.
+The philosopher is able to eat and then after eating the philosopher is going to put down the given
+right chopstick. So this state.right and after that the philosopher is able to pick down the left chopsticks so
+put down this.state.right OK.
+
+Basically that's all.
+
+So as you can see we are going to have a try catch block and we will have a while too.
+The philosopher is going to think for a moment then he tries to eat in order to be able to eat.
+We have to pick up the left chopstick first then the right chopstick.
+And that's why this pick up is going to return a boolean the variable.
+Because we have to check that rather that given chopstick is available why it may be unavailable.
+Of course if other philosopher are for is taking that chopstick at the moment then this chopstick is unavailable.
+That's why we have to use a re-entrant Locsk.
+
+OK basically that's all about the implementation at eating counter what about it.
+I think I have implemented it like this and I'm going to create a getter so public integer getCounter
+and we just return this eating counter because at the end we would like to count that how many times
+it didn't feel those are for has eaten.
+
+So that told about the rules of first class implementation.
+
+Thanks for watching.
+
+########################################################
+
+In this video we are going to run re-application and we are going to create an executor service
+in order to be able to start all the philosophers and a simulation in the main.
+So I'm going to create the main method and I'm going to create an executer service ok with the name
+executer service at the beginning.
+
+I'm going to create a one dimensional array of philosophers.
+
+So in the try block I'm going to initialize the one dimensional array of philosophers.
+So it is equal to a new philosopher we have to create the philosopher's array at
+the beginning and I'm going to create one dimensional array of chopsticks.
+We are going to create again a one dimensional array of chopsticks and we are going to create as many
+chopsticks as a number of chopsticks in the Constants class.
+
+Ok then I'm going to create a for loop 
+
+I'm going to initialize the EIF chopsticks to be equal to a new chopstick.
+
+then I'm going to create the executer service which is going to be the executors  new fixedThreadPool
+because we know for certain that we are going to have as many philosophers as the number
+those philosopher in the Constant class.
+
+Basically we are going to assign a single thread to every single philosopher.
+
+So we have to assign for example C1 and C0 so chopsticks zero and chopstick one to the first
+philosopher  for example the philosopher 3 with these two is going to have the
+chopstick 3and the chopsticks 2 and so on.
+Then we are going to execute. So we start this given thread.
+So we execute that. given philosopher and the the in.
+OK then we are going to sleep so we run or simulation as many many seconds as we have defined in the
+simulation running time. Of course it's going to throw an interrupted exception.
+So that's for example threads interrupted exception.
+And then we just have to stop the philosopher.
+So for example in the philosopher array we just have to set isFull True.
+What does it mean.
+This is what we had been discussing that this while loop is going to go on until this isFull is not going
+to be true.
+
+So that's why we are going to stop digging philosophers.
+And finally we are going to shut down the executer service.
+
+But if you hover your mouse over the shutdown it means that previously submitted tasks are executed but
+no new task will be accepted.
+
+So we have to wait for that given threads to finish. And that's why it is not the best solution.
+I mean it is not that nice.
+But while the executer service that isTerminated is not equal to true then we are going to sleep for
+example a second
+So we wait for the executer service to terminate it is going to return through with all task have
+completed, shut down is not going to make sure that the tasks are completed.
+It means that we are not able to execute any more tasks.So we have to wait for that executor's service
+to terminate. So basically we have to wait for the philosopher to abandon their tasks and then we have
+to printout that and going to iterates through philosophers.The philosopher and we are going to
+printout p philosopher, eats. and p.getCounter.
+Basically it's going to tell us if you may recall it is the eating counter that's going to be
+incremental whenever we call the eat method.
+So here we are going to printout at how many times that given philosopher has eaten.
+OK so that's all about the executor service part and how to start threads in the next one we are going
+to test our application.
+#######Running the application 
+In this video we are going to try the application finally.
+So we are going to run the algorithm and we have implemented this executer service part.
+So we just have to run the application and the application is going to run for 5 seconds because we
+have defined the simulation running time to be equal to 5000.It is in milliseconds.
+So this thread is going to sleep for five seconds then we are going to shut down the philosopher by this
+method. As you can see we set isFull to be true then this while loop is going to be exited and basically we wait
+for the executer service to terminate.We shut down the executor service.
+We iterate through the philosopher and count how many times each philosopher has eaten.
+So let's run it.
+It's going to run for five seconds as you can see philosophers are eating philosophers are thinking
+chopsticks can be picked up chopsticks can be put down.
+And as you can see philosopher 0 eats one time.
+philosopher one eats four times then one times three times four times you may guess that OK there may be some
+situations where a given philosopher is not going to eat for a very very long time.
+
+What if we set the simulation wanting time to be for example much more.
+I would like to run the simulation ok not for this one but for example 20 seconds then there's not going 
+to be any starvation.
+And in the average all the philosophers are going to eat for the same amount of time.
+And OK let's wait for it to finish reading simulation and then we are going to take a look at these
+whether a left chopsticks or right chopsticks.
+Chopsticks had been picked up or put down and as you can see.
+OK as you can see approximately the philosophers have eaten the same amount of time.
+Of course the more iteration the algorithm takes there's going to be much less inconsistencies.
+But anyways the first philosopher is going to eat for 10 times then for 20 times then for 13 times then
+four eight times and then for 13 times again.
+So approximately all the philosopher are thinking and eating all the time.
+And as you can see as far as a simulation is concerned first of all the philosopher to be thinking the
+philosopher zero is thinking philosopher 4 is thinking for a random amount of time then philosopher one
+has managed to pick up the left chopstick then it has managed to pick up right chopstick.
+And that's why philosopher one is able to eat that philosophers 2 is thinking the philosopher one 
+put down chopstick 2 it puts down chopstick one.
+And that's why it's going to think again then.OK this time this philosopher one is going to eat again.
+But as you can see for example here philosopher picked up the left chopstick but it seems that the right
+chopstick is not available. So it puts down the given chopstick and is going to think again.
+
+OK.
+
+then philosopher three has managed to picked up the left and right Chopstick.
+And this is why it's able to eat so that's all about this simulation and I think that why is it good
+to do these kinds of simulations because you will get a good grasp on using for example concurrency
+and multi-threading because for chopsticks we have come to the conclusion that we are able to define
+that.How much time a given philosopher wait for a given lock.
+And we have come to the conclusion that we are able to lock on the lock in a given method and we are
+able to unlock on that even lock on a different method.
+This is why it's very very convenient to use and lock.
+So that's all about the dining philosopher problem.
+
+Thanks for watching.
+
+

@@ -1,0 +1,245 @@
+going to use more threads than the number of processors
+
+or number of chords in the given computer.
+
+OK.
+
+So of Strads OK.
+
+And it is just going to return with the news thread and we just have to override this.
+
+I mean we have to define that it's going to be an in or a class.
+
+So like this and here we just have to override the run method and the run method is just going to call
+
+the parallel merge sort method merge sort of the low index the high index and a number of Strads divided
+
+by two because we are going to assign a single thread for.
+
+Laughs Tabaret and a single strike to the right subarray.
+
+So that's why we have to divide the number of threads on every iteration.
+
+And of course we have to create this powerful merge sort.
+
+Sorry for that not like this.
+
+I'm going to get rid of this.
+
+I'm going to create it right here probably it's going to be void.
+
+Parallel merge sort who with the low index high index and the number of threads OK.
+
+And basically if we know that the number of spreads are less than or equal to one we just have to use
+
+the sequence shall merge sort.
+
+So merge sort.
+
+On the low and the high index and we just have to return from these even parallel merge sort method
+
+anyway.
+
+We have to calculate the middle index again.
+
+It's going to be very similar to what we have seen for the sequence.
+
+Mergesort OK.
+
+So the middling DAX is equal to the low index blah's the high in Dag's divide by two.
+
+Then we are going to create the spread for the laughs sorter.
+
+It's going to soar the laughs Tabaret it is going to call them merge sort of parallel with the low index
+
+the middle index and the number of spreads is equal to the number of threads then we are going to create
+
+stret for the right sorter.
+
+So for sorting the rights of Auray sorter merge sort of parallel we just have to define the middle in
+
+daks plus Awam because it's going to be the right subarray and a high in daks Okay.
+
+And the number of threads.
+
+First we have to start these threads.
+
+So that's why I call the Start method on the last quarter and start math on the right sorter.
+
+Then we have to make sure that these threads are going to wait for each other to finish.
+
+So this is why the joint method has came to be.
+
+So we have to use a try catch block surround we try catch going to get rid of this and we have the right
+
+sort or our join.
+
+OK.
+
+And basically after the last quarter and the right sorter has finished we have to wait for each other
+
+because we are going to make disordering operation for the last subarray and the sorting operation for
+
+the rights of Baree we do half of these things Strads.
+
+So that's why they have to wait for each other before we are able to merge them together and merge is
+
+going to be the same as we have seen for the sequence schul Mursau so low in daks.
+
+Dan middling daks and high in daks.
+
+So basically that's all about Perillo merge sort.
+
+It is very similar as we have seen in 4C commercial merge sort but we have to make sure that whenever
+
+we are out of Strads So we are out of processors or processor of course that we have to fall back to
+
+see commercial merge sort.
+
+There's no point in starting for example a thousand threads because it's going to be very slow.
+
+We are going to sign as many threads as a number of processors or the number of course is going to be
+
+parallel because this is what we have been discussing in a tower article section.
+
+We don't want to make the process or applying time slicing.
+
+Of course he would like to make it parallel.
+
+So that's why we just have to create as many Strads as the number of course or processors.
+
+So in every iteration we make sure that it does things that is going to store the last subarray and
+
+it does things Shreddies going to sort the rights of the array as far as we have enough threads.
+
+If there are no threads available then we fall back to see credential merge sort.
+
+So it's going to call this parallel merge sort method in and distinct spread.
+
+Then we start these threads.
+
+We wait for each other.
+
+We make sure that they wait for each other and then we merge them together.
+
+We do half of this method.
+
+What we have been discussing in the previous video.
+
+So that's all about the parallel merge sort as you can see it's quite easy to implement.
+
+And why are we able to paralyze this algorithm.
+
+Because sorting the laughs Tabaret has nothing to do with sorting the right subarray and twice averse.
+
+So they are totally independent from each other.
+
+So we are able to assign these tasks to distinct threads.
+
+OK so this is what we are going to test in the next video.
+
+Thanks for watching.
+
+###########################
+
+High in this video we are going to test whether the parallel implementation is working fine or not.
+
+So first of all this is how we are able to get away Libelle processors or runtime that gets runtime
+
+that away level available processors returns the number of processors available to the job of or to
+
+the machine.
+
+OK let's test whether it's working fine.
+
+I mean parallel sorting going to comment it out and we are just going to instantiate this merge source
+
+or merge sort merge sort is equal to a new merge sort of Eden arms and then I'm just going to call the
+
+parallel merge sort.
+
+The zero Nom's minus one because indices starts at zero.
+
+Sorry for that Nom's that Lankester mine and swan and a number of.
+
+OK is equal to the number of threads.
+
+Now I would like to get the order show resorte or something like this.
+
+Well I see that it's working fine.
+
+Minus 4 0 1 2 4 5 644 78 minus 4 0 wanted to yeah I think it's working fine.
+
+So let's see where it's going to be better than to see commercial merge sort.
+
+So that's commented out and we have a so-called Happer MF.
+
+It does create random array is going to generate for example 100 million items.
+
+So I'm going to copy and paste it here.
+
+100 million times and let's see whether it's better to use parallel sorting dance sequences or thing.
+
+If the array is small daintily is that the sequence Szell's sorting is going to be faster.
+
+OK so that's where it's working find a number of threads are equal to 8 on my computer sorry for that
+
+we have to use something like a dispersant for example the whatsoever like this.
+
+OK.
+
+And at the end I'm just going to create a system out to a new line corrector.
+
+So let's run our algorithm
+
+and as you can see it's going to be faster to use parallel algorithm.
+
+It is two thousand seven hundred twenty seconds and it is 3000 many seconds to use.
+
+See initial merge sort but was the situation where we for example sorted thousand Thai time I think
+
+for a thousand die time it's going to be slower to use parallel algorithms.
+
+So let's see you as you can see it takes approximately 1 minute seconds to sort which parallel emerged
+
+sort and approximately zero.
+
+So that's incremented for example of 10000 or 100000 diatom OK a hundred thousand diatom.
+
+Let's run it as you can see it's going to take more time to sort of parallel merge sort.
+
+Forty many seconds to sort it Perillo and sort and only three mini seconds to sort we see clinician
+
+and merge sort.
+
+So that's why basically it is a good approach that if the size of the array small for example under
+
+10 million we have to use the clinicians sort is going to be faster but even the size of the array is
+
+greater than for example Taddy million or a billion than we should use something like the parallel merge
+
+sort.
+
+So this is how we implement parallel merge sort.
+
+And I think it is a good illustration of parallel algorithms.
+
+Usually it is true for all of the parallel algorithms that own small subsets or small data secret show
+
+algorithms are going to be faster because in sequence all algorithms Strads do not have to communicate
+
+with each other and communication between Strads are quite expensive.
+
+So the conclusion is that we should use parallel algorithms whenever we have millions and billions of
+
+data for example billions of item people would like to sort or of billions of graph nodes in which we
+
+would like to find the minimum spanning tree or the shortest PASADO to them.
+
+But if we would like to find the shortest path for example you know very very little town on a very
+
+very little city with quite a few nodes and vertices in that given graph then there's no point in using
+
+parallel algorithms.
+
+Thanks for watching.

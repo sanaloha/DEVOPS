@@ -1,0 +1,27 @@
+Interface that represents thread safe Queues
+
+we don't have to use wait and notify or any low level synchronization or locks. 
+
+OK so if we take items slower than we put items in this case we are going to sleep for a second and
+if we are going to sleep for approximately third of a second so basically the queue is not going to be
+full.
+
+if we run the app because blocking Q is synchronized with taking items from the queue0.
+Putting items to the queue 0, taking items and putting items.
+But if we make sure that for example we keep putting items to the queue and we keep sleeping for example
+just ten milliseconds then in this case we are going to insert items more frequently.
+But we are not able to exceed the capacity. So basically if the queue is full. Then this thread. 
+So the first thread is going to wait.
+We are going to sleep for 10 milliseconds and we are going to take the items on every second.
+So what does it mean that we are going to insert the items so we are going to put items into the queue
+more frequently. But we are not able to insert more items than 10 so if the queue is fool.
+That is the first worker is going to wait.
+And if the queue is empty so the size is 0 then the second worker is going to wait, the take method
+is going to retrieves and removes the head of the queue, waiting if necessary until an element 
+becomes available. And this put method is going to put items into the queue.
+So basically we are not going to see any difference but I'm going to clear and restart again.
+
+OK so as you can see there's going to be items put into the queue because
+you can see it's very very convenient because we don't have to bother about the level synchronization.
+ blocking queue is going to handle everything for us and we are able to manipulate it from
+two distinct threads the second thread and the first thread.

@@ -1,0 +1,227 @@
+High in this video we are going to talk about Priority blocking cues.
+
+It is the implementation of the blocking queue interface.
+
+It is an unbounded contour and q Basically it uses the same ordering rules as Jarre that are huge that
+
+prior with the Q class.
+
+So we have to implement a comparable interface for a given custom class and a comparable interface will
+
+determine what will be the order in the given priority blocking queue.
+
+It's important to know that a priority can be the same.
+
+So where the compare is equal to zero.
+
+It is well it's two and there is no new items in a priority blocking queue.
+
+So basically it is like the priority queue but it is come here and we don't have to bother about Sarratt
+
+synchronization.
+
+So I'm going to create two threads for example.
+
+First worker that implements the Runnable interface.
+
+Of course we have to or we are implementing methods these are run and I'm going to store a reference
+
+to blocking queue because the priority blocking queue is the implementation of the blocking interface.
+
+It's going to be fine.
+
+It is thought a reference to a blocking queue and I'm going to towards trains for example.
+
+It's going to be the blocking queue.
+
+OK.
+
+And in the constructor it's going to get a blocking queue.
+
+I get this and we just have to initialize the blocking queue is equal to locking.
+
+OK.
+
+In the run method I'm going to get rid of the white spaces.
+
+I'm going to create a try catch block and we are going to catch interrupted exceptions as usual.
+
+So I'm going to print out that print stack trace and here I'm going to put some correctors for example
+
+be that I'm going to it the age than AF than a Dan E. for example.
+
+So e a af and age and for example I'm going to sleep for a second years.
+
+That sleep for a second.
+
+I'm sorry for that.
+
+A thousand millisecond that I'm going to sleep for a second as well.
+
+So sleep a thousand millisecond.
+
+And basically the second VERCO is going to be approximately the same.
+
+I'm going to copy and paste it's going to be the second worker.
+
+And instead of a second of work or for the constructor as well.
+
+And instead of putting items we are going to take items from the queue.
+
+So I'm going to system out Quintilian that are blocking.
+
+Whew.
+
+That take it's going to take the first item according to the priority if we insert items to the priority
+
+queue.
+
+Of course they are going to these three things.
+
+So because it is a priority blocking queue these characters are going to be stored according to the
+
+alphabetical ordering.
+
+So a is going to be the first where we take out then a B then B then af and h.
+
+OK.
+
+So before I take out this A I'm going to sleep for for example 5 seconds I I'm going to sleep.
+
+Another thread that sleep for example a second that I'm going to print out that priority blocking queue
+
+that take I'm going to sleep for example or not for a second.
+
+And again I'm going to take out an item from the queue.
+
+For example I'm going to take out all the items one two three four five one two three four five Cointreau
+
+shift and two out of format and let's say that.
+
+So here is the main method.
+
+I'm going to create a block in Q4 strain's.
+
+Q Is equal to a new priority blocking queue like this.
+
+I am going to create for example two threads so new strategy with the new first ever occur.
+
+And we have to specify the blocking queue.
+
+I gave the name Q And we have to start it and we have to do the same for the second thread.
+
+Of course it's going to be the Satinover occur with the queue and we have to start there.
+
+OK so if I say it and run it at the beginning we sleep for five seconds.
+
+And after sleeping for five seconds as you can see we are going to printout the first item and was the
+
+first item because this is a priority blocking queue.
+
+It's going to be sorted according to the alphabetical ordering.
+
+So that's why a b e f 8 is going to be the alphabetical order for these characters and.
+
+OK it's working fine.
+
+What if we insert for example integers go into inserts for example in danger of course we have to do
+
+something like this in teacher and teacher.
+
+And sorry for that here in teacher and I'm going to insert for example 10 that I'm going to answer to
+
+that I'm going to answer for and I'm going to in 0 0 and I'm going to insert for example 67.
+
+So if I wanted that basically it's going to work just the same.
+
+But instead of the automatic ordering we are going to end up with the numerical ordering and a why is
+
+it convenient.
+
+Because we don't have to bother about synchronization because this priority blocking queue is going
+
+to do everything for us.
+
+So no two threads are going to manipulate the same prior with the blocking queue at the same time.
+
+So the State of the blocking queue is going to remain consistent.
+
+So that's about Priority blocking queue and you are able to create your own Clauss.
+
+This is what we have been discussing here that it has to implement the comparable interface.
+
+So if we define a person with a comparable interface and we would like to compare two person objects
+
+then you could do it without any problem.
+
+Of course we have to define that according to what we would like to compare two persons.
+
+But for example as you can see here for example person and person going to create private integer age
+
+and private strange name in the constructor.
+
+I'm going to define the age and the name.
+
+So this that age is equal to the age and there is that name is equal to the name.
+
+And we would like to compare this person object.
+
+So this is the other person object we would like to compare it according to the name for example.
+
+So return the name dot compared to and the other person got a name.
+
+OK we have to specify the getters and setters.
+
+So I'm going to source generate getters and setters for the age and the name.
+
+And I'm going to override that teaching method for example return name of class age control shift have
+
+to out or format.
+
+In this case if we insert for example New Person objects you're going to create a person aged 12.
+
+Adam
+
+for example.
+
+Forty five.
+
+Joe OK I'm going to have the cat sir.
+
+The four sir the two is going to be.
+
+No well what ever.
+
+Daniel with the age seventy.
+
+And here what's the problem person.
+
+OK because it's going to store person.
+
+If I run it that is priority queue is going to store the person objects sorted according to the person
+
+that name.
+
+As you can see it's going to be the alphabetical ordering according to the name parameter.
+
+Adam Daniel Joe Cavenaugh Well what if we would like to sort them according to the age parameter.
+
+Of course we just have to modify this compared to I think integer.
+
+That compares to wed.
+
+That's that age.
+
+And the other person that get age if we specify the called power of the method like this that is going
+
+to be sorted according to the age parameter.
+
+OK.
+
+Wow certitude 34 45 78.
+
+So this is how we use priority blocking queues for integers for trains and acustom objects we just have
+
+to implement the comparable interface and override the compiler dimethyl.
+
+Thanks for watching.

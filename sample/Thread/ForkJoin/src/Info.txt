@@ -1,0 +1,42 @@
+What is fork join?
+It is a concrete implementation for parallel execution!!!
+
+=>This algorithm helps to make an algorithm parallel
+=>We don't have to bother about low level synchronizations and locks
+=>Divide and conquer algorithms!!!
+=>A larger task-> can be divided into smaller ones + the sub solutions can be
+combined
+=>IMPORTANT: subtasks have to be independent in order to be executed in parallel.
+=> So the main concept fork-join framework breaks the task into smaller subtasks
+until these subtasks are simple enough to solve without further breakup.
+
+=> Example Parallel Merge sort, parallel maximum finding
+
+##########################################################
+
+RecursiveTask<T> it will return a type basically generic type (Integer, String anything)
+	-All tasks we want to execute parallel is a subclass of this class.
+	-We have to override the compute method, that will return the solution of
+	the subproblem.
+	
+RecursiveAction - It is a task but without any return value.
+
+Fork Join Pool
+	-Basically it is a thread pool for executing fork-join tasks
+	all the subclass of RecursiveTask falls here
+	
+Work-Stealing - A task is not equivalent to a thread!!!	Tasks are light weight thread.
+				So fork-join is efficient even when there are a huge number of tasks.
+	
+				So fork-join pool creates a fix number of threads -> usually the number of CPU cores.
+				These threads are executing the tasks but if a thread has no task: it can steal a task 
+				from more busy threads.
+				
+				-Tasks are distributed to all threads in a thread pool.!!! 
+	
+============
+	
+	fork -  split the given task into smaller subtasks that can be executed in a parallel manner.
+	join - the splitted tasks are being executed and after all of them are finished they are merged
+	into one result.
+	

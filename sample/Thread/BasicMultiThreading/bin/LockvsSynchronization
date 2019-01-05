@@ -1,0 +1,8 @@
+With Reentrant Locks
+
+1) We can make a lock fair: prevent thread starvation, Synchronized blocks are unfair by default.
+2) We can check whether the given lock held  or not with Rentrant locks.
+3) We can get the list of threads waiting for the given lock with Rentrant locks.
+4) Synchronized blocks are nicer: We do not need try-catch-finally blocks.
+
+

@@ -1,0 +1,151 @@
+Hi in this video we are going to talk about the parallel implementation.
+So let's get started.
+
+I'm going to create a parallel worker and basically this pattern of worker is going to sum
+up the sub intervals.
+So we are going to have a one dimensional array of numbers and we are going to get low index and we
+are going to get an integer high index because we have to define that a given strategy is not going
+to sum up all the integers within this one dimensional array.
+It's going to sum up within an interval and the start of the interval will be this low integer and the
+end of the interval will be is high.
+Of course the worker is going to X fans the Strat Clauss and that's why we can override the run method.
+OK but in the constructor I would like to in Jagd one dimensional array of integers basically the
+ numbers
+we would like to sum up then the low index and the high index.
+OK.
+So this nons is equal to Nom's.
+This low is equal to low and this high is equal to high.
+OK.
+
+And we are going to store a reference to a partial sum.
+So it's going to be an integer or some it's not going to be the sum of the whole array.
+It's going to be sum within the range between the low index and the high index.
+Hence the name partial sum.
+OK.
+
+And I'm going to create a getter so public integer get partial sum.
+And it's going to return.
+There's that partial sum.
+OK like this.
+And in the run method it's going to be the same as we have seen for the sequence shows some because
+basically we would like to sum up all the numbers  between the low and the high index.
+So I'm going to initialize a partial sum to zero.
+And we just iterate through our is equal to low.
+The army is less than the high I plus plus we would like to make sure that the partial sum is equal
+to the partial sum loss the nums and the index.
+So that's all about the parallel of worker why we extended this thread because we are going to create
+as many parallel worker as the number of processors or the number of course within a single processor
+because these parallel workers are going to create the parallel tasks.
+What are the tasks some of the given integers within an interval between the low and the high.
+OK and I'm going to have a parallel sum..
+And in the parallel some we are going to store a reference to a private one dimensional array
+of parallel occurs.
+For example sums OK and we are going to have a number of strands we are going to have as many threads
+as the number of processors.
+
+OK so in the constructor we are going to inject the number of threads.
+So this number of threads is equal to the number of threads.
+And Death's dark sums easy code to new parallel worker and not like this because you would like to 
+create as many parallel workers as a number of threads of course we are going to assign a thread
+to every single parallel worker.
+OK and we will have a parallel some so public integer is going to return the some of the given
+one dimensional array.
+So public integer sum integer for example and LUMS and we have to define the threads for example not
+that good variable name.
+But anyways we have to decide.
+Moth dot seal for the nums dark lands and we have to divide it so multiply by 1 a dot is 0 divided
+by the number of threads.
+So basically we divide the lengths of the one dimensional array we would like to sum up by the number
+of threads.
+Why.
+Because this is how we are able to divide this one dimensional array to as many portion as the number
+of threads because we would like to assign to every single worker the same amount of numbers.
+So basically the same amount of TASk.
+So I'm going to iterate through you 0 is less than the number of threads plus psi we initialize this
+sum is going to be a new parallel worker by Dunhams Nom's all times the staps is going to be low in
+ X and Y last won times the stops is going to be the high index.
+So sorry for that maybe like this because if you maybe call it a parallel work or is going to get the
+one dimensional array of integers the low index and the high index These are the paramilitaries that's
+going to define that.
+We just want to get a subset from this one dimensional array in the range between the low index and
+the high index.
+OK then we just have to store that Giddens Strad.
+So that sounds OK because there's a typo.
+And the ice position not start.
+Then we have to create a try catch block.
+I would like to catch interrupted exceptions and that creates rectories.
+I would like to join in these parallel worker.
+So for parallel worker in PS..
+I would like to say that workaround I'd join.
+This is what we have been discussing in the first section that we would like to wait for every worker
+to finish its job.
+And then I would like to sum up our subtotals.
+So total is equal to zero for Harilal her worker for example in the Psalms one by emotional array the
+total is equal to the Birchard that get partial sum and then we just have to return the total.
+So I think it's pretty straightforward that we have to define that.
+How many subsets we are going to create.
+Of course if we had more threads so more processors than Basically we are able to create more parallel
+worker.
+
+So we are going to assign a few integers to a single ever occur.
+Then we have to start at them.
+Then we have to make sure that these threads are going to wait for each other to finish their tasks
+and then we just have to get a partial sum and we have to sum it up.
+Oh sorry for that.
+Of course total is equal to total loss.
+The worker get partial sum.
+We could use this last sequel too.
+But just for now for demonstration purposes it's more clear that what's happening which is going to
+order total and a partial sum.
+OK so let's say that and in the next video we are going to compare the two algorithms.
+And so watching.
+=====================================
+
+Hi in this video we are going to compare the two approaches to the sequencial sum algorithm and
+ parallel sum algorithm.
+
+So I'm going to override the start with a system that current time is millies and I'm going to 
+instantiate  the parallel sum is equal to any perilous sum and the number of threads is going to
+be equal to the integer number of processors is going to be equal to the runtime get runtime
+processors and all that.
+See it's working fine.
+I'm going to printout the number of processor going to comment it out.
+And as you can see on my machine there are 8 processors so we are able to create 8 threads
+that's going to make the tasks parallel.
+
+OK so whenever we instantiate this parllel sum I'm going to create something like this and then go
+in the printout that parallel sum.
+Of course we have to define this one dimensional array.
+And Dan I'm going to say that the sum is ok and I'm going to point out that the parallel sum takes
+an applause.
+
+So let's run it as you can see the parallel sum algorithm is faster.
+They are going to be the same.
+
+So the result of the algorithm is the same of course.
+This is what we expect but it takes 36 minutes seconds to get the solution by sequence shows 
+some algorithm and only 29 seconds to do it with parallel summation.
+So if I run again the parallel is going to be faster again faster faster and so on.
+So we can come to the conclusion as you can see that it is much faster than a sequential sum algorithm.
+
+So we can come to the conclusion that in this case if we want to sum up huge numbers because if
+we want to sum up for example 8000 integers.
+Then the sequence shows some may be faster.
+Let's run it.
+Yeah as you can see see sequential some is faster.
+Whenever we pull a little amount of items.
+OK.
+And the parallel algorithms usually better organize where the number of items is enormous.
+For example a hundred million.
+Or if or that million I think not are zero.
+Let's run it.
+Yeah.
+In this case the parallel algorithm is faster.
+So was the conclusion that if we want to manipulate a thousand items for example or 10000 times
+we don't  have to use parallel algorithms we have to use parallel algorithms whenever we would
+ like to manipulate
+millions and billions of times when we want to sort a hundred billion items where we want to sum up
+a hundred billion items in these cases parallel algorithms outperform secret initial approaches.
+So that's all about parallel summation.
+Thanks for watching.
+l

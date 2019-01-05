@@ -1,0 +1,223 @@
+High in the previous video we have been discussing countdown lectures and we have come to the conclusion
+
+that multiple threads can wait for each other if we use a countdown latch and a cyclic barrier is approximately
+
+the same.
+
+So the cyclic barrier is used in situations where you want to create a group of tasks to perform Virk
+
+in parallel plots to wait until they are all finished before moving on to the next step.
+
+This is what we had been discussing for Countdown leches.
+
+So this is why cyclic barrier and Countdown that are very very similar.
+
+So it is something like joy in a way we call the join in a given thread and it's going to wait for that
+
+given stretch to finish.
+
+And it is something like the countdown latch because it is approximately the same.
+
+But whatsoever important that count down that is a one shot event whenever we get to the point where
+
+the counter is equal to zero.
+
+It's over.
+
+We are not able to reuse countdown lache but for cyclic barrier it is quite on the contrary it can be
+
+re-used over and over again.
+
+Clauss psychic barrier has a barrier action around the ball that will run out on metrically when the
+
+counter reaches zero.
+
+This feature is not present for countdown.
+
+So basically two very very convenient to use cyclic barriers.
+
+Because this action basically.
+
+This is why we are using countdown is or cyclic barriers.
+
+We want to make sure that we are going to assign every single task to a distinct and different thread.
+
+And whenever these threads are finished we would like to do something.
+
+This is what we have been discussing in the previous lecture that for example we want to make a good
+
+mastery learning algorithm then we have to download the data.
+
+It can be done in a distinct strata that we would like to normalize that data and we would like to train
+
+an hour on that.
+
+Then we would like to past or in our network and so on.
+
+So this is why cyclic barrier is good because when the count is equal to zero then we are able to use
+
+this now or network for example for predicating stock market related stuff or whatsoever.
+
+And of course we are able to instantiate a new cyclic barrier or something like this and we can define
+
+the.
+
+And then and Strads we'll wait for each other.
+
+And what's very important this is what we have been discussing here that we cannot we use Countdown's
+
+that is but we are able to reduce cyclic barriers.
+
+We just have to call this reset method.
+
+Ok so I'm going to create a class of worker is going to implement the Runnable interface.
+
+As usual is going to have a private integer ID.
+
+It's going to have a private eye thing that for example a random random
+
+and is going to have a private cyclic barrier.
+
+So cyclic barrier as a cyclic barrier.
+
+OK.
+
+Something like this.
+
+So in the constructor I would like to make sure that it's going to get cyclic barrier like this.
+
+So this cyclic barrier is equal to the cyclic barrier.
+
+There's that random is equal to a new random and this dot is equal to the IED.
+
+So sorry we have to define an IED here.
+
+Control shift have two out of format.
+
+And we have to are the unimplemented method.
+
+And we have to import Javid that you tell at random.
+
+OK so in the raw method we would like to do some work.
+
+So let's do some work.
+
+I'm going to create this method that is going to be private it's going to be just fine.
+
+And I would like to see them out when to land that Strad way that ID class ID for example
+
+starts the task what ever I would like to spread that sleep for a random amount of time.
+
+So for example next integer 3 so its going to generate a random integer in the range 0 and 3 seconds
+
+for example around.
+
+We try capture that I would like to printout that Strad where ID laws the Id
+
+finished and we would like to call the cyclic barrier that way.
+
+OK.
+
+Of course it's going to that surround it.
+
+We try multi-cat because it can throw when interrupted the exception as well as a broken barrier exception.
+
+And I'm going to override it to string method.
+
+We're just going to return.
+
+Where did this start.
+
+Id.
+
+OK.
+
+Some string at the beginning control she's after outhaul for a minute.
+
+OK.
+
+And hearing in the main method I would like to create some executer servers so execute or service execute
+
+us or if it is equal to executor's the new phase or a new fix.
+
+Will I would like to create five thread for five tasks five threads for five tasks by create a cyclic
+
+barrier barrier is equal to a new cyclic barrier.
+
+And I would like to create five parties basically So five threads and I would like to specify this is
+
+what we have been discussing in that heretical section that we can specify a runnable that's going to
+
+run out on metrically when the count reaches zero.
+
+So here I'm going to printout that all the mosques are finished.
+
+Ok semicolon at the end.
+
+And here I'm just going to create five or six equal to zero.
+
+It's less than five Prospal sigh.
+
+I'm going to create an executor service execute a new worker.
+
+Basically the idea is going to be the last one because I would like to avoid IDs of zeros and those
+
+cyclic barrier is going to have the name barrier.
+
+OK and at the end I would like to shut down the execute or service executor's is that shut down.
+
+So I would like to run it and as you can see all these threads have started then it is finished because
+
+we had slapped for a random amount of time.
+
+And as you can see where all the tasks are finished then the barriers run the ball is going to be called
+
+and that's what it's going to be printed out that all tasks are finished.
+
+And what's very important that if we specify something after that await then we are able to continue
+
+leader Virk.
+
+So after all wait and a fire on it then the threads are going to work then they are going to finish.
+
+And as you can see it's going to be printed out five times.
+
+Why five times because we have five Strads So we are able to run again some code after a wait before.
+
+Oh wait there's going to be tasks running.
+
+After all the tasks are finished.
+
+Dan this is going to be Iran.
+
+This is how cyclic barrier works.
+
+We have the counter five.
+
+When the five Strads finished the 5.6.
+
+The counter is going to be zero which means that the TSRA method is going to be cold.
+
+So that's why it's going to be printed out and after that we are able to run the code that specified
+
+after the cyclic barrier that await method.
+
+Endeavor Kirk clause that implements the ratable interface.
+
+So this is how we can use cyclic barriers.
+
+And this is why it is very very convenient because we can specify that.
+
+OK.
+
+This is going to run whenever all the tasks are finished.
+
+So for example we can printout that we are able to use the trained now real network because the data
+
+has been downloaded because the normal network has been constructed because the natural network has
+
+been trained and so on.
+
+So this is how we use cyclic barriers.
+
+Thanks for watching.

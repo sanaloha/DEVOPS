@@ -1,0 +1,195 @@
+In this video we are going to talk about countdown lectures.
+
+So what are they good for.
+
+Calm down leches is used to synchronize one or more tasks by forcing them to wait for the completion
+of a set of operations being performed by other tasks.
+
+So you give an initial count to the countdown that we just have to instantiate it like this.
+
+And any task that calls or wait on that object will be blocked until the counter which is zero.
+It may be proved to be very very important.
+
+For example when you want to trigger something after Dan towers and users download an image for example
+then using countdown leches can be a good solution.
+OK
+so other tasks may call countdown on the object to reduce the count.
+Presumably when a task finishes it job and a countdown cannot be reset it's very important.
+
+So if we specify a given account then we are not able to alter that given counter.
+If you want to do something like that you have to use cyclic barrier.
+We are going to talk about it.
+OK.
+The task that called Countdown are not blog when they make that call only the call to A is a blog until
+the count reaches zero and the typical use is to divide the problem into an independent list so all
+the both tasks and create a countdown lache we don't alioth an when each task is finished.
+
+Course countdown on the latch and tasks waiting for the problem to be solved cold or wait on the latch
+to hold themselves back until it is completed.
+OK
+so I'm going to create a worker class for example here.
+So class lurker is going to implement the Runnable interface as usual OK and of course we have to override
+the unimplemented run method.
+OK
+so this worker is going to have an ID private in teacher Id is going to have a countdown and so count
+down or latch like idiots and the name is going to be count down for that.
+And I'm going to create a random random.
+
+OK let's import it.
+
+And divertor constructor is going to get an integer ID and Candolle latch like this.
+OK so this idea is equal to ID and does that count now Laxey is equal to the down that age and we have
+this around method so we are going to do some work.
+I'm going to create to do the work method OK.
+Create method like this.
+And first of all I'm going to system outsprint a land that spread way the ID class.
+I concatenate ID so there is that ID.
+Ok for example starts working and then I'm going to call this thread to sleep for for example a seconds
+
+so 1000 milliseconds.
+
+And of course we have to use try catch blocks because it's always an interrupted exception and in the
+
+main method we just have to instantiate and execute a service.
+
+It's going to be executor's d'arte new singles thread exit queue or so we are going to have a single
+
+thread.
+
+Basically I'm going to have a count down latch for example with the name latch we just have to instantiate
+
+it as a new count down that and we have to specify the count.
+
+It's going to be 5.
+
+Ok so I'm going to create 5 tasks is equal to zero.
+
+Use less than 5.
+
+I fastpass.
+
+I would like to execute the executor so this and I'm going to instantiate some worker with the archive
+
+ID and the latchet south.
+
+OK and we want to.
+
+Oh wait so this is what we have been discussing here.
+
+It was very important that we have this countdown method and a wait and a countdown method is going
+
+to be called reading this through our method of lets implemented.
+
+I would like to Countdown's so would latch d'arte solely for that countdown latch that countdown.
+
+What is it me.
+
+This countdown is going to decremental Well you all.
+
+We have specified where we instantiated these count down latch.
+
+But we are able to call the wait method which is going to wait for every single worker to finish we
+
+need some work.
+
+So of course we have to surround it with try catch because it throws and interrupted the exception and
+
+I would like to printout that all parar with it's are on.
+
+So let's suppose the fact that you make a very very complex physics or mathematics or stock market related
+
+simulation and the simulation has to do something with the data.
+
+So first of all it has to download the data from the web.
+
+Then we have to normalize the data for example.
+
+So we have to transform it into a single arr. then we have to make some for example machine learning
+
+algorithm.
+
+For example training in our role in that.
+
+And then we have to test it whether it's working fine or not.
+
+All of these are single staps and all of these steps can then be assigned to a single thread.
+
+We can use and execute a service and the first worker is going to download the data from the web.
+
+The second worker is going to normalize the data.
+
+The server is going to train the now run network.
+
+And what's very important that we have to call the oh wait.
+
+Because we would like to make sure that every single stage.
+
+I mean every single worker is done or we do our job and then we are able to for example make some stock
+
+market related production according to the simulation we have make that happen.
+
+Now real networks but of course if we do not wait for the workers to finish with its task this production
+
+is not going to work well.
+
+So we have to call this Lachish that await.
+
+What does it mean that we make sure that every single ever worker is going to finish the job.
+
+OK.
+
+So after that all the parish visits are done.
+
+And I'm just going to call with ads the cuter service that shut down.
+
+So Wi-Fi.
+
+Run it.
+
+OK said Warren.
+
+Maybe I'm going to delegate.
+
+I pass on in order to get rid of zero whiteys right.
+
+If I run into again stratabound Id want starts working spreadsheet we don't need to start working three
+
+starts working for starts working the last thread starts working.
+
+And as you can see after all these threads are finished then all the perquisites are done.
+
+So we know for certain that the workers are finished with their job.
+
+OK this friend them has no use for that.
+
+So this is how we use countdown leches you specify that was going to be the counter and we can call
+
+the count down here for example as many times as the count we have specified here.
+
+And the low weight is going to track that.
+
+OK we have five.
+
+And after five times the countdown has being called this all weight is going to last.
+
+The mainstream had to step over.
+
+I mean it's not going to be in a waiting state.
+
+Here we are going to wait until the calendar method has been called five times because we have specified
+
+five here.
+
+And after the 5 countdown is over then we are able to go on a wider implementation and agree on this
+
+part of the code.
+
+So basically the main strategy applications thread is going to be blogged until the countdown methods
+
+are called five times.
+
+OK so that's all about count down there.
+
+Cheers.
+
+Thanks for watching.

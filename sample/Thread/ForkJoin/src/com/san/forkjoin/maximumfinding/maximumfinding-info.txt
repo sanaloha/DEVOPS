@@ -1,0 +1,326 @@
+High in this video we are going to talk about for the joint framework again and we are going to implement
+
+the maximum finding algorithm.
+
+So I'm going to create a new Java project for example for join Max.
+
+OK I'm going to close all the other projects Kloves project and I'm going to create a new class for
+
+example application.
+
+From there we are going to task the algorithm the package name is going to be mining that shoot me and
+
+I'm going to create another class for the C.
+
+Max finding and we will have the parallax finding.
+
+So parallel Max finding and a sequential next finding is quite straightforward.
+
+We are going to have our public integer for example sequence showed max fine and is going to get a one
+
+dimensional array of integers and it's going to get for example high.
+
+That's OK.
+
+And we just have to define that.
+
+For example the max is going to be equal to the first item at the beginning.
+
+And we just iterates through integer I's equal to 1 or less than the index i pass plus and if done numbers
+
+add the I position is greater than the max.
+
+Of course we have to update the max accordingly.
+
+And at the end we just have to return with the maximum.
+
+This is a typical or though and so linear time complexity algorithm because we have to sequence show
+
+we iterate through this one dimensional array.
+
+So let's suppose the fact that there are an items in this one dimensional array.
+
+In this case the algorithms run in time is going to be all right.
+
+And so a typical linear running time algorithm.
+
+OK so what about parallax finding it's going to be executed in parallel.
+
+So it has to extends the recursive TASC recursive task because we would like to return with a given
+
+integer.
+
+So that's why we have to override the compute method that is going to return with an integer.
+
+We are going to store a reference to a one dimensional array of integers the numbers we are have integer
+
+low when X and we will have the integer high.
+
+That's because basically what we are going to do is that we have the whole array this one dimensional
+
+array of integers but every single task.
+
+So basically every single thread is going to find a maximum in a given range and range is going to be
+
+between the low index and the high index.
+
+So in the constructor this parallel Max finding is going to get the nuns.
+
+It's going to get the low in daks and it's going to get the ha x.
+
+So this dark nams is equal to the Nom's
+
+does that Lovi x is equal to the low in X days that high index is equal to the high index.
+
+And what about the compute method.
+
+We just have to decide that if high index minus the lovin X is smaller than a given threshold threshold
+
+we are going to define the threshold in the application that Java class.
+
+So if the interval is very small of course we don't have to split that given taskin to sop task.
+
+For example when there are five items in a one dimensional array of course we are able to iterate through
+
+it and find the maximum.
+
+We don't have to split over and over again every array.
+
+So we're just going to return the sequence show.
+
+Max finding and the secret show next finding is going to be approximately like this.
+
+So I'm going to copy and paste
+
+of course it's going to be private so private control shift to outhaul format.
+
+And it's not going to get anything because we store a reference to the number here.
+
+So we get the numbers.
+
+And while it's equal to the we do not start at zero we start from the low index.
+
+And that's why this low index is going to be the maximum at the beginning.
+
+So maybe we are able to do something like this Slovene That's plus one because we have already considered
+
+the low index.
+
+OK and then we returned with the max.
+
+So this is what we are going to do.
+
+C-clamp show Max fine sorry for that.
+
+And as we have to split the tasks so as we have to calculate a middling daks to be equal to split the
+
+array evenly into two sub arrays.
+
+So it's going to be low in X clause the time daks divide by 2 and then we have a Macsyma Tarullo next
+
+finding.
+
+So basically this is a recursive tasks.
+
+So we are able to insert it into the fall into it's going to be the task wanted is equal to a new parallel
+
+and that's finding the Nom's the index and the middle index.
+
+And then we are able to create an order along the part to basically it's going to be the second subtask
+
+is equal to a new parallel max.
+
+Finding a way Nom's the middling daks plus one because we don't have to consider it anymore and the
+
+high end acts.
+
+OK then we can call this interval all the method.
+
+This inable all method is going to take these task 1 and Task 2.
+
+And if you over your mouth over this interval call for the given tasks returning or when it's done holds
+
+for each task.
+
+So what does it mean that we have created two parallel Anax finding which stands a recursive task.
+
+So these are the task one and the tasks to are recursive tasks.
+
+So basically this initial call is going to fork see it what does it mean that these tasks are going
+
+to be executed in a parallel manner.
+
+So they are inserted into the forward join pool and after that we have to return with them moth dart
+
+maximum because we are looking for the maximum task of one to join and that task to join.
+
+What does it mean that we would like to find the maximum.
+
+We start at all one dimensional array of numbers.
+
+We come to the conclusion that this is a huge problem.
+
+So we are going to create the first subtask we have over the Erny between the lower index and the middle
+
+index.
+
+Then we assign the other half of the earth to the second task.
+
+Then we keep running them in a parallel manner.
+
+Then we join them.
+
+What does it mean that we would like to find out that what's the maximum item in discovery.
+
+And it was the maximum lifetime in discovery.
+
+Then we calculate the maximum out of these numbers because we are looking for the maximum time and this
+
+threshold has something to do with the away label processor on the given systems.
+
+So we are going to talk about it in the next video.
+
+Thanks for watching.
+
+
+ 
+ ###########################3
+ 
+ So in this video we are going to Castor-Perry maximum finding algorithm.
+
+So I'm going to create the main method.
+
+I'm going to create a public static integer Suresh hall is equal to zero at the beginning and we are
+
+just going to create a one dimensional array of numbers.
+
+Initialize nons for example.
+
+This method is going to create a random one dimensional array of integer.
+
+So random random is equal to any random
+
+for integer equal to zero.
+
+I use less than for example of 10000.
+
+OK first of all we create Nunn's is equal to a new one dimensional array of integers Nom's that the
+
+position is equal to around the next integer.
+
+For example in the range 0 and thousand and then we just return with the numbers.
+
+OK and this is what is going to get the value of this array.
+
+Then this threshold is going to be equal to the Nom's dark lengths divide by the runtime to get runtime
+
+and dart away level processors.
+
+So basically this threshold is going to be equal to the number of items in the one dimensional array
+
+divide by the way level processors because if the high index minus the low index so even the size of
+
+the subinterval is smaller then that threshold that we are going to solve the problem in a C manner
+
+we are just going to iterate through and find the maximum item accordingly.
+
+And then I'm going to instantiate.
+
+See Cashell maximal finding sequence on X finding like this.
+
+I'm going to create a start time which is equal to the system that current time in Minna's and go to
+
+printout that the maximum is equal to seek attention and X finding that sequence and Max finding for
+
+the numbers and the Nom's that Lance is going to be the next and I'm going to Greentown that time take
+
+on laws the system that current time in Minnies as the star is going to tell us that how much time does
+
+it take for the algorithm to find the maximum.
+
+Plus I find the many second at the end OK.
+
+And I'm going to have a new line.
+
+I'm going to create a for joy.
+
+Cool.
+
+And we just have to define the runtime get runtime Owais level processors then we will have the parallel
+
+Max finding parallel and next finding is equal to and parallel and X finding we did Nom's 0 and the
+
+nonstop Landsat.
+
+OK.
+
+Say that.
+
+And we just have to override the start.
+
+So the start is equal to the system that current time in millions.
+
+Then we printout that Max is equal to the pool that invoke this parallel Max finding TASC.
+
+And then we are going to printout that time taken for the parallel algorithm is the system that current
+
+time in minutes minus the start last year and the many second.
+
+So let's take a look of better the pattern little algorithm is faster or not for 10000 times.
+
+Of course it's not going to be faster because of the overload.
+
+As far as Strads are concerned so was a job application.
+
+As you can see the maximum is 999 which is approximately fine but as you can see the sequence schul
+
+approach is going to be faster.
+
+For example see where emotional approach and time take and Wade
+
+take Wade see approach and a parallel approach.
+
+So as you can see the sequence approach is going to be faster.
+
+But if we use 300000000 items for example then the parallel algorithm is going to be faster.
+
+And as you can see each to 1:54 many seconds for the parallel algorithm to find the maximum while do
+
+approximately twice as much time for the C shell algorithm to find a maximum.
+
+So this is the conclusion when we are dealing with parallel algorithms that if we have a huge dataset
+
+we want to sort we want to find a maximum item.
+
+Then of course we have to use parallel algorithms but just for standard software.
+
+For example I have a thousand records in an axle sheet.
+
+Of course you don't have to use any parallel algorithms and this is why basically it's very very important
+
+to use these algorithms when you are a software engineer at Google or Amazon or Microsoft because you
+
+have to deal with a huge amount of data.
+
+But to be honest for example as far as I am concerned I've been working as a software engineer for more
+
+than seven years and I have never had to use for example for joint frame work because we don't have
+
+to deal such huge amount of data but I think it is a quite interesting topic and the conclusion is that
+
+you have to use parallel algorithms only and only if you have a huge data set because as you can see
+
+if you have for example just Townsend nighttimes Dan the parallel algorithm is going to be way more
+
+Slover Arcade's not that Slover.
+
+But basically it took approximately zero time to finish we'd see traditional approach and one many seconds
+
+do we do with parallel.
+
+So basically when you have a small amount of data don't use parallelize diddums.
+
+Thanks for watching.
+
+
+ 

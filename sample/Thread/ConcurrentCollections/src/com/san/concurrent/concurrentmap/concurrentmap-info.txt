@@ -1,0 +1,21 @@
+Hi
+in this video we are going to talk about concurrent hash maps.
+
+I'm not sure whether you're familiar with data structures but the collections framework in Java 
+contains lots of lots of built in data structures such as Array lists link list stacks to use 
+hash maps tree maps, sets and so on.
+So we are able to store the data in a very very convenient manner.
+But there's a huge problem with these kinds of collections related data structures that if we want to
+manipulate the data within these data structures with multiple threads then the data may end up in an
+inconsistent state which means that we are going to manipulate the same data in the given data 
+structure. And the problem may arise.
+What we have seen in the first section. OK here we are going to talk about the most important 
+concurrent And so basically thread safe data structure the so-called concurrent hash map.
+
+So I'm going to create two threads for example the first thread is going to put items into the hash 
+table and the other thread is going to take item from the hash table.
+OK so I'm going to create our first ever worker that implements the Runnable interface as usual it's
+going to store a reference to concurrent map as an interface.
+We are going to store key value pairs as usual the keys are going to be string and the values are
+going to be integers.
+

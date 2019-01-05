@@ -1,0 +1,330 @@
+Parallel methods vs multithreading
+
+=> We have sequential algorithms -> we execute the tasks one after each other
+=> Parallel Algorithms => we execute different tasks with processors + combine the results
+=> Some problems easy to parallelizable....other problems are completely sequential.
+
+Some problems are easily parallelizable other problems are completely sequential for example checking
+prime numbers in the range. Of course it can be parallel because we just have to make subsets and find primes sequence surely in
+subsets.
+So we just have to find the prime sequence showing that given subsets then we have to combine the results
+together and basically big data is the same.
+For example we would like to make a so-called linear regression.
+We just have to make subsets of the given data set.
+We have to make the single linear regression for all the given subsets then we have to merge the results
+together.
+So these problems are parallelizable.
+OK.
+====
+Parallel Algorithms:
+	-Checking prime numbers in a range
+	-We have to make subset, find the primes sequentially
+	in the subset: Combine the results together!!!
+
+
+Sequential Algorithms:
+	-Numerical methods
+	-every algorithm where the next step relies heavily on the previous one!!!
+	-For Example: Newton method, Euler method.
+
+And this is the typical feature for an American method such as Newton method for finding the root of
+a given function or the Euler method for solving differential equations.
+
+So the motivation: We have multicore processors, maybe we could boost our algorithms with
+making them parallel.
+
+your algorithms we'd making 10 parallel.
+
+Let's take the example that Krust shorter Spaza algorithm.
+It would be great if we would be able to compute it with the help of multiple processors.
+OK we could do it.
+This is the so-called parallel dash Cozaar.
+
+Go to them for finding the shortest path between two given no the negative and graph.
+
+=============
+There's a huge difference between parallel execution and a concurrent programming.
+Because if we use threads it is not necessarily going to be executed as parallel.
+It depends on the concrete operating system or the machine.
+
+If it has a single processor of course it's not going to handle two or more threads at the same time.
+It makes the so-called time sharing between the threads which is slower than simple sequential implementation.
+
+So as far as single-A processor is concerned a single processor can handle one thread at a given time.
+So that's why it's going to be called concurrent programming.
+
+But on the other hand it's not going to be parallel we are going to handle multiple threads it is OK
+but with the help of time timesharing.
+So for a little time we are going to handle thread 1, for a little time we are going to handle
+thread 2, for a little time we are going to handle the thread 3.
+
+
+And while we handle given thread the other threads are waiting for the operating system and for the
+processor on the other hand parallel execution means that we can execute more threads at the
+same time.
+
+For example the first processor is handling thread 1 the second processor is handling thread 2.
+They are being executed at the same time. No timesharing in this case.
+So this is very important to see that we have the concurrent programming.
+OK we could use multiple threads but it doesn't mean that it is a parallel algorithm parallel execution.
+
+We have to have multiple cores, on multiple processors to be able to make parallel execution.
+So that's why during the implementation we are going to ask the operating systems that how many processors
+are there in the given system.
+
+Of course there are some downsides or problems as far as parallel algorithms are concerned.
+
+POBLEMS:
+
+There are two main issues.
+
+1) Communication:
+
+=>First of all communication between the processes and then the load balance. and so for serial algorithms
+we have memory and time complexity.
+Parallel Algorithms: We have to take the communication between the threads in consideration.
+
+"parallel slowdown": Sometimes parallel algorithms are slower.
+
+If you are not familiar with the structures or sorting algorithms Anyways it's not that important but
+what's important that we usually describe algorithms we the help of memory complexity and time complexity
+for a linear search we have the (O)N and linear time complexity for a binary search the search we have
+the O log n and so logarithmic time complexity for hash tables. If the hash function is perfect we have 
+the O 1 time complexity and so on.
+But for parallel algorithms we have to take the communication between threads into consideration.
+So it doesn't matter that the single threads are going to have O1 time complexity we have to consider
+that what's the cost of the communication between these threads and because of this this is the so-called
+parallel slow down that sometimes parallel algorithms are slower, we are going to take a look at merge
+sort and if we are going to see that if we use several threads then for small data sets it's going to
+be slower than sequential sort because of this parallel slow down, because when we merge the
+results together we have to communicate between the threads if we have for example 10 million or a
+hundred million items we have to sort of course we have the parallel slow down  as well.
+But it's going to be faster than the sequential approach.
+So very important this parallel communication. 
+
+
+2) Load Balance:
+
+The second one is the so-called load balance, We have to make sure that we split the work evenly among the processors.
+For example we want to find prime factors for numbers starting from [0 .. 1000.]
+If we make two subsets and the first thread is going to calculate the prime factors for numbers between
+0 and 500.
+
+And the second strategy is going to calculate the prime factors between [501... 1000]
+It's not going to be a good division because calculating the prime factors for small numbers is going
+to be an easier task than calculating the prime factors for greater numbers.
+So that's why thread one that calculates the prime factors for the numbers between 0 and 500 is
+going to finish before the second thread and waits instead of making computation..
+
+Instead of making computation.
+
+So it's very very important this load balance  that we have to make sure that we split the work evenly
+among the processors and in parallel computing big data and so on.
+It is a very very hard work to do so by the way. But anyways we have to make sure that the communication is going to be as optimal
+as possible between the threads and the load balance we have to make sure that work is going to be evenly distributed
+and splitted amongst the processors.
+That's all about parallel algorithms theory.
+Thanks for watching.
+################################Merge Sort Introduction 1
+
+1) Merge Sort is a divide and conquer algorithm that was invented by John Von Newmann in 1945.
+2) Comparison based algorithm with running time complexity O(N logN)
+(comparison based algorithms cannot do better than O(N logN) running time.)
+3)It is a stable sorting algorithm.
+4) Not an in-place algorithm.(It needs additional memory)
+4) Although heap sort has a same timebound as Mergesort-> HeapSort requires on O(1) auxiliary space instead of O(n) space complexity of
+merge sort.
+And we have to allocate a one dimensional array with the size of the original array.
+We are going to see the concrete implementation.We are not able to do any better.
+So merge sort is not in place we don't which means that it needs some additional memory.
+
+5) Efficient quicksort implementations generally outperforms mergesort.
+So for example as far as Java is concerned it uses merge sort for sorting the referenced types and uses
+quicksort for sorting primitive types such as integers characters and so on
+
+6) Mergesort is often the best choice for sorting linked list: in this situation it is relatively easy to implement mergesort
+in such a way that it requires only O(1) extra space.
+
+
+OK so let's compare quicksort and merge sort.
+
+Quicksort is an inplace algorithm so it does not need any additional memory.
+
+Merge sort. On the other hand it is not any place algorithm.
+So merge sort does need additional space.
+Quicksort is not a stable sorting algorithm.
+But merge sort is a stable sorting algorithm.
+
+Quicksortsort of worst case running time complexity quadratic  as slow as bubbles sort while on the other
+hand. merge sort has O(Nlogn) running time.
+So it is guaranteed that it's going to be forced.
+
+As you can see again there is a tradeoff whether to use quicksort or mergesort quicksort is going to
+be in place but it's not going to be stable.
+Quicksort is usually faster than merge sort but in a worst case scenario it can have quadratic running
+time.
+
+So again it's quite common concerning algorithms and data structures that there is a tradeoff what algorithms
+to use.
+OK so what is the merge sort algorithm.
+
+Merge Sort:
+-----------
+1) We have to divide the array into two sub arrays recursively 
+2) and we have to sort out these sub arrays recursively with merge sort again again.
+3) if there is only a single item left in the subway we consider it to be sorted.
+4) Merge the subarrays to get the final sorted array.
+
+
+This is why it is a typical divide and conquer algorithm we keep splitting the given array into smaller
+and smaller subarrays until we bump into the situation that the given subarray contains only a single
+item is going to be the base case of the recursive method call because we consider it to be sorted by
+definition and then we have to merge the subarrays in order to get the final sorted array.
+
+OK so what about the divide phase. We have an array 32,-12,0, 3, 1, 12 and 20.
+We have to divide the array we call the sort method over and over again.
+
+mergesort(0,6)
+middleindex = (low + high)/2;
+
+At the beginning we call the merge sort on the end time your array starting with the zero index and the last in that
+in the array. Then generate the middle index in order to partition the array the middle index is going to be the
+low index + high index divide by two.
+
+In this case zero plus six divided by two. So this is how we partition the array. Its going to be the pre-vote
+and we are going to call this merge sort  recursively on the left subarray and on the rights subarray.
+
+32,-12,0,3 mergesort(0,3)and 1,12,20 mergesort(4,6)
+This is why it is the divide and conquer algorithm, this is the divide part.
+
+OK then it's very important if we are going to merge the left  and the rights subarray recursively
+with merge sort. So we keep splitting this array again and we are going to have a left subarray in the left subarray
+32,12 and the right subarray in the left subarray i.e 0,3 then we are going to call them merge sort again on the left
+subarray and the right subarray and we bump into the situation that in this case as you can see the
+left subarray contains only a single item and the rights subarray contains only a single item.
+So in this case we consider these subarrays to be sorted.
+
+OK.
+
+So after several recursive method calls we end up with single items.
+We consider them to be sorted by default. So we keep merging these already sorted items.
+So basically this is the diagram as far as mergesort is concerned we have the initial array.
+We keep splitting the array. This is why we have to generate the middle index and we will have the left subarray and the right 
+right subarray and then we are going to split the left subarray to a left subarray and the right subarray into a left subarray and
+right subarray until we bump into the situation where there are single items and then we keep merging these items as you can see in order
+to end up with the final result. Basically the sorted one dimensional array. 
+
+So we have been discussing the divide phase in the next lecture we are going to talk about the conquer phase
+how to merge these sub arrays in order to get the final solution and solve watching.
+
+==============Merge Sort Introduction II
+
+Hi in the previous lecture we have been talking about merge sort and we discuss the divide  part in
+this lecture we are going to talk about the conquer part of the algorithm.
+
+3|5|6|10 and 1|4|8
+
+So what does it mean. We have been discussing that it is a divide and conquer algorithm.
+First of all we are going to divide the original arrays into smaller and smaller subsets until we just
+have to consider single items. This is the divide phase.
+
+And after that we have to merge these sub arrays in order to get the final solution.
+This is the conquer part how to merge these sub arrays into bigger and bigger sub arrays.
+
+OK so let's suppose the situation that we had two sub arrays 3 5 6 and 10 and 1 4 8.
+
+So after the split operations we have several of distinct arrays that are already sorted.
+So very important that the sub arrays are going to be sorted and we have to merge these arrays into a single
+one.
+So basically we are going to have the merged result array and we will have the left sub arrays and right
+sub arrays we are going to assign index i for the left sub array index j for the right sub arrays
+And we are going to track the indexes in the result array, with the help of K as an index.
+
+result array ||||||||||
+
+So we just have to compare the items accordingly. We start at the beginning of the sub arrays.
+We keep comparing them. We insert the smaller into the result array because we are looking for an ascending order starting with
+the smaller items. If we are looking for a descending order of course we have to start with the greater ones.
+In this case the ascending order that we are after.So we compare one and three.
+We come to the conclusion that one is smaller so we inserted into the result array and we keep incrementing
+the J in index because we have already considered this one and keep comparing the damned three or four.
+Three is smaller than four. So we insert three into the result array and keep incrementing the index, five or four for the smaller.
+So we keep inserting it into the result array and keep incrementing the index, 5 or 8 of course 5 and
+keep incrementing index i, 6 or 8 of course 6 is smaller so we insert it and keep incrementing the index, 10 or 8 8 is smaller.
+So we inserted into the array and it was very important that after we come to the conclusion that one of the sub arrays are empty
+in the sense that we have considered every single item of a given sub array in this case the right sub array.We have to merge all
+the remaining items in the other array. In this case we have to insert 10 which is the remaining in the left sub array into the result array.
+And as you can see we are going to end up with the merged array, that's going to be in numerical order and going to contains all the items from the last sub array
+and the right sub array.
+OK.
+
+So it's very important that we have to iterate through the left and right arrays if there are some more
+items left
+
+In this case the 10 in the left sub array.
+OK so this is the final result array.
+And let's take a look at the source code. We are going to have merged sort method and merge method because it's going to be a recursive algorithm
+we check that if the low index is greater than high we return any way we calculate the middle index and we keep splitting the array into
+a sub array.
+And the right sub array as you can see it's going to be the divide part.
+Then there's going to be the conquer part that we have to merge the left sub array and the right sub array.
+
+So for us this is the base case for recursive method calls where we look for the middle index to partition
+the array into two equal Sub array's then we call the merge sort method recursively on the left sub array
+because of the middle index. There will be always more items in the left sub array.
+OK then we call the merge sort recursively on the right sub array.
+And this is the conquer part of the algorithm. We keep merging the sub arrays. What about the merge method.
+ First we create a temporary array the size is equal to the size of the input.
+This is why we have been discussing that mergesort has O(N) memory complexity.
+We need some additional memory. It's not like heapsort.
+It's not like quick sort, merge sort does need an additional memory.
+OK and this is how we that even a one dimensional array that we are going to have variables to be
+able to track the indexes, this is what we have been discussing.
+We will have I j and k as you can see i = low, j= middle + 1, k = low. What does it mean.
+This is what we have been discussing when merging the arrays.
+We are going to assign the index i to the left sub array index j to the right sub array
+And we are going to have an index k to deal with the result array. While we have items in the left or right sub arrays we just have to check that.
+If the given item is smaller than the other one in this case we insert it to the result array and keep incrementing the index of the last sub array.
+
+Anyways we keep inserting the item from the right sub array into the result array and keep incrementing
+the index accordingly. This is what we have been discussing that we have to compare the items.
+If it is smaller we inserted into the result array and keep incrementing the index.
+If this item is smaller we keep inserting it into the result array and keep incrementing the index as
+far as the left sub arrays concern.
+And of course on every insertion we have to increment the page index. This is how we track the result array actual index.
+OK so this is how we decide whether we are going to insert from the left sub array or the right sub array.
+And of course we have to increment the K the result array indices at the end. 
+And of course sometimes we have items left in the left sub array. So copy all of the items to the final 
+nums array. It is in sorted order so we just have to copy them.
+Let's consider a situation like this. We keep inserting items from the right sub array.
+And in this case we come to the conclusion that there are items left in the left sub array So we just
+have to copy the items to the result array. OK so while i <= middle, We are just going to copy the items 
+and keep incrementing the result array index and the left sub array index. Of course we have to consider 
+the other situation when there are items left in the right sub array.
+We just have to copy it to the final result array.It is in sorted order so we just have to copy it.
+So while J <= high we just have to copy the items.
+What is it mean that for example we have a situation like this.
+We come to the conclusion that we have already copied all the items from the left sub array for example
+in this case as you can see 1 2 3 5,  1 2 3 5 is already in the result array but we have some additional
+items in the rights of array.
+Of course we have to consider every single item we haven't considered so far and we have to inserted
+into the result array.
+
+So this is how we deal with the left sub array and the right sub array leftover.
+And basically that's all about merge sort. 
+We had an initial array. We keep dividing the early and we keep splitting it into a left sub array and the right sub array until
+we bump into the situation that we have single items. We are going to consider these single items to be sorted by definition.
+Then we keep merging the sub array until we end up with the final results.
+That's going to yield the numerical ordering when we are dealing with integers.
+Of course we can use it for characters for strings and it's going to yield the alphabetical ordering
+accordingly.
+So that's all about merge sort.
+Thanks for watching.
+
+
+
+
+
+
+
+ 

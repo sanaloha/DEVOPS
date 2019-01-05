@@ -1,0 +1,53 @@
+*********************************
+It was invented by Dkishtra in 1962.
+**********************************
+
+	If you are familiar with the name of Dkishtra he's the inventor of shortest path algorithm
+	semaphores are abstract data types that are used for controlling access to a common resource
+	and it's very important for example in operating systems.
+	
+	So semaphores is a record of how many units of a particular resource are available.
+	
+	For example we want to download something and we can track it with the help of semaphores we can track
+	how many units we have in them loading and so on.
+	
+	So we wait until a unit of the resource becomes available and the counting semaphore an arbitrary
+	resource count.
+	There are two types of semaphores that counting semaphore and a binary semaphore the binary
+	semaphore which are restricted to the use zero and 1.
+	It may be proved to be very important.
+	
+	So the library analogy makes it easier to understand the basic concept of semaphore.
+	
+	So suppose a library has 10 identical study rooms to be used by students at a time.
+	And when students must request a room from the front desk if they wish to make use of the study
+	room and if no rooms are free then students wait at a desk until someone relinquishes a room when a
+	student has finished using the room the student must return to the desk and indicate that one room has
+	become free.
+	So this is in these kinds of situations we can use semaphores in order to simulate and create an application
+	for example.
+	So semaphore tracks only how many resources are free.
+	It doesn't keep track of which of the resources are free. It's only tracks how many are down and the same
+	for Count may serve as a useful trigger for a number of different actions.
+	
+	Example we will be allowed to download for example or hundred units from a web server and
+	we create a semaphore and after a hundred download for example we pop out and other dialogue with java script
+	or whatever that you have already downloaded.
+	
+	Allowed number of films for example movies or whatever in a given period of time.
+	So it may prove to be very very important in huge applications to sort of produce our consumer problem
+	can be implemented with the help of semaphores.
+	
+	And that's what their aspiration for days so that's I use of force in order to solve the producer consumer
+	problem was decently Allawi a few words about mutexes and mutex mutual exclusions is essentially
+	the same thing as a binary semaphore so it can have two states zero or one that while a binary semaphore
+	may be used as a new tax a mutex is a more specific use case.
+	
+	Some mutexes have a concept of an owner only the process that logged the mutex is supposed to allocate.
+	It's very important.
+	Mutex may provide priority in burgeoned safety if the mutex knows its current owner.
+	
+	It is possible to promote the priority of the owner whenever a higher priority task starts waiting on
+	mutex and UTIs can provide deletion safety.
+	So mutex are something like binary semaphores.
+	Thanks for watching.

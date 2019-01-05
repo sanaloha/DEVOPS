@@ -1,0 +1,67 @@
+	
+	Hi
+	
+	In this video we are going to see a concrete illustration for the semaphore, semaphore maintains
+	a set of permits and it has two important methods 
+	
+		-> acquire and release.
+	
+	If we call that a acquire then if a permit is available then it's going to take the lock
+	And otherwise if we called the release its going to adds a permit and semaphores just keeps count of
+	the number available it's not going to track the thread that's got the lock and so on.
+	So it just keeps a count of the number available. And we have to instantiate semaphore like this maybe
+	a new keyword is missing. And we have to define the number of permits and then we can define
+	the fairness parameter.	And this is the same what we have been discussing for several times that if we set it
+	to be true it means that the longest waiting thread is going to acquire. They give locks. We make sure that
+	there's not going to be any threads that's going to wait for an infinite time.
+		
+	So we are going to simulate that. We would like to download data from the web and I'm going to create the so-called 
+	singleton pattern. And the best implementation is to use enums for implementing the singleton pattern.
+	
+	So I'm going to create this downloader and I'm going to create an instance out like this and I'm going to have a private
+	semaphore for example semaphore work is equal to a new semaphore.
+	
+	And we can define that out how many permits do we want to follow. For example I would like to olo street permits at 
+	the same time and I would like to set it to be true
+	so the fairness parameter is going to be true.	We don't want to make any thread to starve and wait for an indefinite time.
+	Okay.
+	And I'm going to have a method.
+	Public void download data and first of all it's going to call the semaphore.acquire
+	OK.
+	And it's going to throw an interrupted exception.So we have to surround with try catch.
+	And finally I would like to call the semaphore.release.
+	OK we would like to release that given lock And of course here after acquiring the lock I would like
+	to make some download.So I'm going to create this method. Download OK and this download is going to simulate downloading data from the web.
+	I'm just going to printout that downloading data from the web.
+	And after it I would like to sleep for example so Thread.sleep for two seconds.
+	And of course we have to surround it with try catch. And in the application I'm going to create several threads and I don't want
+	to create them manually. This is why the executor service has came to be. OK we haven't covered executor services so far. We are going
+	to talk about it in the next lecture in this video.	We are just going to use them. OK first of all we have to import it. And I think that 
+	we have a new cached so therefore for that we don't need the new keyword.
+	Of course it is a static method. So new cached thread pool like this and.I passed laws that I would like to create a thread.	
+	So I'm going to execute a new runnable.	This is how you are able to create several 	threads you don't have to create threads manually.
+	I think executer services are quite convenient. I'm just going to call the downloader. This is how we can use this singleton pattern that downloader.
+	We get the instance and we the help of the instance we are able to call the methods.So this is how this implementation works.I'm not sure whether
+	you are familiar with design patterns it doesn't matter. This lecture we are going to focus almost the threading and semaphores.
+	But what's very important that this implementation is thread safe so this is why we prefer this kind
+	of implementation over the Orthodox run. OK so I'm going to run it and downloading data from the web as you can see at the same time.
+	There can be multiple threads downloading data from the web because we have specified that semaphore can
+	have up to three permits and by the way semaphore can prove to be very very important and we have used
+	it several times in enterprise additions.
+	because let's suppose the fact that you have a server and if you want to prevent server request at the same time. 
+	For example Facebook there may be a situation where for example a thousand people want to
+	download the same image and it's going to crash the server.
+	
+	So that's why if you use semaphore can set a maximum amount of thread accessing the given server.
+	And that's why if you say for example 5 then there's going to be five threads downloading data from
+	the web at a given time. And the other threads are waiting for these spies threats to finish.
+	So I think using semaphores are very very easy and only are on hand to be very very convenient.
+	There may be several situations where semaphores can prove to be very very convenient.
+	So we have the acquire method.	OK I would like to get a lot and then I would like to download the data and I would like to release
+	the lock
+	And because we have specified these five it means that five threads.........in the
+	sense that five threads can download data from the web at the same time and all the other threads because
+	we had 12 threads all the other threads are going to wait for these threads to finish their operations
+	and tasks.
+	So this is how semaphore works.
+	

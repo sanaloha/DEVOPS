@@ -1,0 +1,56 @@
+http://www.globalsoftwaresupport.com/multithreading-java/
+
+1) Sequential Processing
+	-Create two class with methods to print the count from 0-10 and see the behavior
+	-Call those methods
+	
+2) RunnableExample
+	-Create two runnable classes with run methods to print 1-10.
+	-Create two separate threads and start them, see the behavior.
+	
+3) ThreadExample
+4) JoinExample
+	-Create 2 thread class with runnable to print 1-10
+	-Write on sysout in the main thread or class
+	-start the threads
+	-call the join methods on threads
+	-see the difference of out put without using join and after using join
+	
+5) VolatileExample
+	-Create a thread a with run method
+	-Use volatile variable as a condition inside the while loops
+	
+6) DeadLock (LiveLock)
+7) Synchronize
+	1) Create a class with member variable counter
+	2) Create a method say increment to increase the counter by 1
+	3) Create a method say process with two anonymous threads
+		3.1) Call the increment method for each thread where loop through 1000 times and call the increment method
+		3.2) Mark the method increment as synchronized and see the behavior without synchronized keyword and with the keyword.
+	4) 
+	
+	
+7.1) Synchronized Blocks: Describe the problem of intrinsic locks.
+	1) Create a class with two counter variables count1 and count2...
+	2) Create a method add to increment count1 and addAgain to increment cont2.
+	3) Create method compute where call methods add and addAgain 100 times
+	4) In the main method create two anonymous threads and call the compute method in their run.
+	
+	 
+8) Wait and Notify
+	-Create a class called Process
+		-create two methods called producer and consumer
+			-producer(): print something, call wait and then again print something
+			-consumer(): sleep for 20 milliseconds print something, call notify and then again sleep for 30 milliseconds
+		-create two threads t1 and t1, call producer inside run of the t1 and call producer inside run of the t2.
+	
+
+
+9) Producer and consumer
+10) Locks
+	-producer consumers with locks
+11) Lock vs Synchronization
+12) Semaphores
+		-SemaphoresII
+13) Executors
+14) Callables and Future

@@ -1,0 +1,125 @@
+Hi
+In this lecture we are going to talk about how to do parallel Merge sort.
+And because we have already discussed the sequential merged sort.
+I'm not going to implement it again from scratch.
+This is the sequential merge sort or Basically we are going to get a one dimensional array of 
+integers if there is just a single item left in the array.
+We consider it to be sorted. So that's why we return.
+This is the base case.
+And anyways this is a recursive algorithm a divide and conquer one.
+So that's why we have to define the base case.
+Anyways we are going to create a left sub array and the right sub array.
+And that's why we define middle index and then we are going to sort the left sub array and
+the right Sub array in a recursive manner we do the same sorting algorithm.
+So basically with merge sort again then we are going to merge left and right sub array into the
+nums one dimensional array and basically them merges is this one we have already been discussing
+this algorithm that we are going to merge up left sub array.
+Right sub array into the original one we have to check whether the item in the left sub array is 
+greater or smaller than the item at the given index in the right sub array.
+And according to this we have to decide which item to insert into the original array.
+OK.
+So that's all about a sequential merge sort.
+So what I'm going to create a parallel merge sort because these subtasks So basically sorting
+the left sub array and sorting the right sub array had nothing to do with each other.
+They are completely independent operations.
+That's why we can do the sorting operation in a different thread so  in a parallel manner.
+OK so I'm going to create class parallel merge sort task for example and because we would like to
+make these parallel merge sort parallel as the name suggests that's why we have to extends the
+recursive action.
+We don't want to return any values.
+Sorry for that.
+That's why we are not going to use the recursive task but the recursive action.
+So the compute method is going to be override.
+OK I'm going to get rid of the recursive task and we are going to have an integer nums.
+This is that array we want to be sorted and in the constructor we are going to get this one 
+dimensional array of nums.
+So this.nums = nums and I'm going to copy and paste it because we are going to
+have sequential merge sort as a sub task basically.
+So I'm going to copy and paste it here and I'm going to say in the compute method that if nums.length
+<= 10.So if we have just 10 items in the one dimensional array we want to sort then we are going to do
+the merge sort.
+Basically the sequence merge sort on this one dimensional array and then we return.
+And basically why is it good.
+Because we don't want to create a different thread in a parallel manner just the sort for example two
+or three items.
+In that case the sequential merge so it will be just fine.
+Of course we have to define the middle index.
+We have two define the left sub array and I'm going to use the copy of range.
+I would like to copy nums as a one dimensional array from 0 to the middle index.
+So it's going to return with a one dimensional array. Basically it's going to be the left sub array.
+Ok then I'm going to create a parallel merge sort tasks because we are going to split these tasks
+then we have to invoke all.
+So we would like to run the left task and the right task in a parallel manner.
+So that's why we have to call this invoke All Method.
+And then we have to merge it so we would like to merge the last sub array the right sub array into the
+nums original array.
+OK so we could make this to be private as well.
+And basically that's all about the parallel and merge sort, it is very very similar to what we have
+seen here.
+But instead of calling this merge sort left and merge sort Right on the same thread.
+Basically we are going to create two distinct threads but fork join framework is going to do 
+everything for us.
+
+So we have to create a left task right task and we have to invoke all which means that we would like
+to run and execute this task in a parallel manner.
+And if we want to execute this task in a parallel manner and of course then we have to merge it.
+We are not able to skip this step because of course that end we have to merge the left sub array and
+the right sub array.
+
+Am going to create for example of nums 1 5 4 4 -1 0 4 5 7 8 9 and I would like to create
+fork join pool and run time and get runtime that available processors as
+usual.
+I'm going to create a parallel merge sort task something like this with the nums one dimensional array
+and I would like to invoke this parallel merge sort task.
+OK then I would like to iterate through.
+nums, I would like to print out numbers.
+OK so let's save it and let's run it as a java application.
+And as you can see -1 1 4 4 4 5 5 7 8 9 9 we have 1 2 3 4 5 6 7 8 9 10 11 1 2 3 4 5 6 7 8 9 10
+11.
+
+So basically it's going to be consistent.
+It's going to sort all one dimensional array of integers in this case and it's going to sorted in a
+parallel manner.
+So it's going to be faster then to sequential approach and see the next video we are going to
+compare the two approaches.
+And we are going to come to the conclusion that if we have tens of millions or billions of items then
+parallel merge sort is going to out perform sequential merge sort.
+
+Thanks for watching.
+
+###########################################
+Hi 
+In this video we are going to compare the running times for the parallel merge sort and 
+sequential merge sort.
+
+Let's see at the beginning and I'm going to create a one dimensional array of integers for for example
+10000 items.
+
+As you may guess in these cases the sequential merge sort is going to be faster.
+OK.
+you can see the parallel algorithm is going to be slower when the number of items is relatively small.
+So for 10000 items.
+
+But what if I would like to sort for example 10 million items.
+Ok something like this.
+In this case the sequential algorithm is going to be slower than the parallel one.
+And I think that it's not going to be OK to have as many integers.
+Yeah we have 1 billion items in this one dimensional array of integers.
+
+And I guess that the parallel algorithm is going to be way more faster than the sequence show.
+
+
+So I don't want to repeat myself over and over again but make sure that you use parallel algorithms
+when you have a huge number of items.
+
+
+For example you want to find the shortest path in a graph with billions and billions of nodes.
+Google maps for example.
+In these situations of course the parallel algorithms will be fine but if you have just for example a
+hundred or thousand or 10000 or even a million records for example integers doubles custom objects you
+want to sort or something like that you don't have to use parallelism.
+It's going to be slower than the original sequential warm.
+So that's all about the merge sort.
+
+Thanks for watching.
+

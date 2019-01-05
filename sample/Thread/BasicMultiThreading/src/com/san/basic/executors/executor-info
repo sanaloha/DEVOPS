@@ -1,0 +1,102 @@
+
+So we have to be instantiated a Thread class with an anonymous inner class we usually instantiated the
+new runnable interface and it's not that convenient.
+
+And if you want to create for example 10 or 100 threads then you have to instantiate down one by one.
+And this is why executor service has came, it's very very convenient to create
+as many threads as we want.
+
+So we can use three types of executer services we can instantiated.
+We off a static method.
+
+--newCachedThreadPool()
+
+If we instantiate the executer service like this it's going to return and execute a service that can
+dynamically reuse threads.
+
+So before starting a new thread and a new job, executer service is going to check whether there are any
+threads that finished with their job, if there is some waiting thread that executer service is going to 
+reuse that waiting thread. if there are no waiting threads executor service is going to create another thread 
+for that given particle or tossed it is good for the processor.
+
+This is a very very effective solution.
+We are not going to create more threads than necessary because we track on every creation of matter.
+
+Are there any threads that are in a waiting state. OK that thread is in a waiting state so we reuse it.
+
+So this is the new cache thread pool.
+
+--newFixedThreadPool(N)
+Of course we are able to create a fixed number of threads with the help of the newFixedThreadPool(N);
+and we have to define the number of threads it maximizes the number of threads that can be used.
+And if we want to start a job then executor's service is going to check that OK.
+If all the threads are busy we have to wait for one to terminate when it's task.
+If all the threads are busy then we have to wait. What's the difference between the two of them.
+
+As you can see in this case if all the threads are busy that executor service is going to create a new
+one for us here executor is not going to create a new one for us.
+
+It's going to wait for a given thread to terminate with each job.
+
+--newSingleThreadExecutor()
+ and we are able to create a single thread exit which means it is going to use a single thread for the given job so important that we can
+call the execute and submit method on the executor service the execute is able to handle the Runnable
+interface and the callable interface.
+
+We are going to talk about the callable interface in the next video but the Submit can handle only the
+Runnable interface.
+
+So let's see a concrete example.
+
+I'm going to create a class for example here.
+Worker.
+It's going to implement the Runnable interface.Ok let's all the unimplemented run method.
+And here I'm just going to create a simple for loop is equal to zero in less than 10 I-PASS 
+class and I'm going to print out for example the I and I'm going to sleep all day.
+
+So thread does sleep for 3 milli seconds.
+Of course we have to handle the interrupted exception so let's surrounded retry catch.
+And here in the main method we are able to create an executor service for example exit queue service
+is equal to the executer as Dot.
+
+New fix thread pool for example.We create 5 threads OK and we would like to iterate through our Navy in a new line.
+So for integer is equal to zero is less than 5 people would like to create 5 threads for 5 tasks.
+
+And as you can see there are 5 threads available in the fix thread.
+You would because we have specified that we would like to create 5 threads so if we create 5 jobs they
+can run at the same time.
+
+OK and I just have to call the executor service and this is what we have been talking about that we
+are able to call the exit.
+You tend to submit as well because all of them are able to accept the Runnable interface as you can
+see.
+The worker is a runnable so I'm going to create or submit read a new for example a worker like this
+and if you run it it's going to be a multi-threaded algorithm in the sense that as you can see 0 0 0
+are going to be printed out five times that ones and twos or threes and so on.
+Because we have created five tasks as you can see with these four LWB created 5.6 with five workers
+and we have exactly five threads.
+So all of the jobs can be associated with a given thread.
+
+What if I specify for example.
+
+Sorry Dan. There's going to be sweet threads so there's going to be five jobs.
+But all these three threads can do these five jobs.
+It is a new Sikh's Rathcoole as you can see there's going to be three zeros three wands sorry to use.
+
+And after it has finishes with its work as you can see we have two more jobs left and that's why there's
+going to be two wants to use and so on.
+
+If I create for example a single new single thread executer there's just going to be a single thread.
+So the result is going to be 0 1 2 3 4 5 0 1 2 3 4 5 again and so on.
+Because there's going to be a single thread.
+Ok as you can see we are not able to do approximately any multitasking because our seamless track is
+going to do all the five tasks sequentially right after each other.
+And if we create for example this new cache thread to the operating system is going to create as many
+threads as needed.
+So in this case five threads are usually in the applications I have used these new tasks read.
+That is very very convenient to do so because you don't have to Buttar about OK this time I have to
+create a new thread.
+This time I have to stop that given right because the executer service is going to handle everything
+for us.
+So this is how we use executer services.
+Thanks for watching.

@@ -1,0 +1,296 @@
+
+Hi in the coming videos we are going to talk about Parallel Sum.
+So how to sum numbers with the help of multiple threads in a parallel manner.
+OK so basically it is quite straightforward in the sense that we have several numbers 5 2 8
+1 11 17 9 and 3 and we would like to sum up these numbers.
+
+OK.
+What about the sequential algorithm. We just have to iterate through these numbers.
+This is the one dimensional array containing these integers and we are going to add these numbers.
+So the total is going to be equal to the total plus the numbers at these position.
+So the algorithm is quite intuitive.
+So basically like a human would do it.
+OK so we just iterate through in a one dimensional array.
+So the time complexity is going to be O(N), so linear algorithm because we have to consider
+every single item.
+
+OK what about the other approach the Parallel sum because of multiple processors or 
+multicore processors. We can assign a task to every single processor.
+
+This is the background for parallel computing.
+So for example if we have two processors then we are able to assign these integers to the first
+processor and these integers to the second processor.
+Why is it good.
+Because we are able to sum up these numbers in a parallel manner.
+So at the same time.
+So the first thread is going to have 5,2,8,1 and on the second thread is going to be 11 17 9 and
+3.
+We are going to calculate the partial sum of these integers is 16.
+The partial is some of these integers is equal to 40.
+
+And then we just have to sum up these two integers at the end.
+So I think the technical background is quite straightforward.
+We would like to do the computation with as many threads as the number of 
+processors or the number of cores in a single processor.
+
+Thanks for watching.
+===================================Sum Problem Sequential Approach
+####################################
+
+Hi in this video we are going to implement a sequential or some algorithm.
+So let's create a Java project for example parallel some.
+
+And I'm going to create several classes we are going to have an application from where we are going
+
+to task for algorithms for example package name is my name and you to me and I'm going to have this
+
+video we are just dealing with the seat rational.
+
+PS. OK so basically it is quite straightforward.
+
+We have a public it's going to return the total.
+
+For example some it's going to get a one dimensional array of integers and we just have to declare a
+
+total the arrival at the beginning we initialize it to be zero.
+
+Then we iterate through so integer is equal to zero is less than the nonce dot.
+
+Lance cross-class psi we are going to sum up that the total is equal to the total loss.
+
+Nom's at the index and then finally we're just going to return with the total.
+
+So that's passed around with them and going to have a main method and the main method.
+
+First of all we are going to generate a random array of integers.
+
+So new random let's import Javid are still at random.
+
+Oh sorry for that a typo random like this.
+
+OK I'm going to create a one dimensional array of numbers.
+
+For example I'm going to create 10 million integers and I'm going to create integer zero I's less than
+
+Tamilian So the Nom's dark lanced plus plus sign.
+
+We are going to generate random integers so the norms are equal to the random dot next integer in the
+
+range 0 and 100.
+
+OK I'm going to get the system time.
+
+So for example start is equal to the system that current time in Minnis.
+
+OK I'm going to instantiate the see clamshells see clamshells sum is equal to see my actual sum.
+
+We are going to printout the result of the sequence shows some dot sum and we would like to some of
+
+these numbers and this method is going to return with the total.
+
+So that's why I'm going to print it out OK and done.
+
+I am going to print out that sequence shows some takes along the system that current time in the middle
+
+is minus the start.
+
+Basically this is the end of the algorithm and I'm going to concatenate.
+
+For example many seconds because it's going to return the time in milliseconds time really is OK.
+
+So if I want it I'm going to say that and if we run it it's going to say that it takes six minutes and
+
+for the sequence algorithm to complete and it is going to some are basically the integers contain by
+
+this one dimensional array.
+
+OK maybe I'm going to increment something.
+
+I think that we are able to run around with something like this.
+
+And each to 40 mini seconds for the sequel algorithm to finish with its task.
+
+What's the task.
+
+Basically it's going to get a one dimensional array.
+
+It's going to iterate through so wizzy every single item in this one dimensional array.
+
+And he just going to solve these integers are OK so that's all about sequential approach in the next
+
+video we are going to talk about the parallel implementation.
+
+Thanks for watching.
+
+###########################
+
+So this nons is equal to Nom's.
+
+This low is equal to low and this high is equal to high.
+
+OK.
+
+And we are going to store a reference to a partial sum.
+
+So it's going to be an integer or some it's not going to be the sum of the whole array.
+
+It's going to be disarmed within the range between the low index and the volume X..
+
+Hence the name partial sum.
+
+OK.
+
+And I'm going to create a getter so public integer get partial sum.
+
+And it's going to return.
+
+There's that partial sum.
+
+OK like this.
+
+And in the run method it's going to be the same as we have seen for the sequence shows some because
+
+basically we would like to sum up all the numbers we didn't interwar between the low and the high index.
+
+So I'm going to initialize a partial sum to zero.
+
+And we just iterate through our is equal to low.
+
+The army is less than the high I plus plus we would like to make sure that the partial sum is equal
+
+to the Parshall's some loss the Nom's and the index.
+
+So that's all about the parallel of worker why we extended this thread because we are going to create
+
+as many parallel Vereker as the number of processors or the number of course within a single processor
+
+because these Parola workers are going to create the parallel tasks.
+
+What are the tasks some of the given integers within an interval between the low and the high.
+
+OK and I'm going to have a parallel some.
+
+And in the parallel some we are going to store a reference to a private one dimensional array of parallel
+
+occurs.
+
+For example soms OK and we are going to have a number of strands we are going to have as many strands
+
+as the number of processors.
+
+OK so in the constructor we are going to inject the number of Strads.
+
+So this number of Strads is equal to the number of threads.
+
+And Death's dark soms easy code to new peril Virk her and not like this because you would like to create
+
+as many parallel workers as a number of strands of course we are going to assign a Strad to every single
+
+Aperol over occur.
+
+OK and we will have a parallel some so public integer is going to return the some of the given one dimensional
+
+array.
+
+So public integer sum integer for example and LUMS and we have to define the stacks for example not
+
+that good variable name.
+
+But anyways we have to decide.
+
+Moth dot seal for the Nom's dark lands and we have to divide it so multiply by 1 a dot is 0 divided
+
+by the number of spreads.
+
+So basically we divide the lengths of the one dimensional array we would like to sum up by the number
+
+of Strads.
+
+Why.
+
+Because this is how we are able to divide this one dimensional array to as many portion as the number
+
+of threads because we would like to assign to every single worker the same amount of numbers.
+
+So basically the same amount of TASC.
+
+So I'm going to iterate through you 0 is less than the number of strides plus psi we initialize this
+
+sum is going to be a new peril Rickerby Dunhams Nom's all times the staps is going to be low in X and
+
+Y last won times the stops is going to be the high index.
+
+So sorry for that maybe like this because if you maybe call it a parallel work or is going to get the
+
+one dimensional array of integers the low index and the high index These are the paramilitaries that's
+
+going to define that.
+
+We just want to get a subset from this one dimensional array in the range between the low index and
+
+the high index.
+
+OK then we just have to store that Giddens Strad.
+
+So that sounds OK because there's a typo.
+
+And the ice position not start.
+
+Then we have to create a try catch block.
+
+I would like to catch interrupted exceptions and that creates rectories.
+
+I would like to join in these parallel Vereker.
+
+So for parallel Verd occur worker in PS..
+
+I would like to say that workaround I'd join.
+
+This is what we have been discussing in the first section that we would like to wait for every worker
+
+to finish its job.
+
+And then I would like to sum up our subtotals.
+
+So total is equal to zero for Harilal her worker for example in the Psalms one by emotional array the
+
+total is equal to the Birchard that get partial sum and then we just have to return the total.
+
+So I think it's pretty straightforward that we have to define that.
+
+How many subsets we are going to create.
+
+Of course if we had more threads so more processors than Basically we are able to create more parallel
+
+worker.
+
+So we are going to assign a few integers to a single ever occur.
+
+Then we have to start at them.
+
+Then we have to make sure that these threads are going to wait for each other to finish their tasks
+
+and then we just have to get a partial sum and we have to sum it up.
+
+Oh sorry for that.
+
+Of course total is equal to total loss.
+
+The worker get partial sum.
+
+We could use this last sequel too.
+
+But just for now for demonstration purposes it's more clear that what's happening which is going to
+
+order total and a partial sum.
+
+OK so let's say that and in the next video we are going to compare the two algorithms.
+
+And so watching.
+
+####################
+Compare sum
+
+
+
+

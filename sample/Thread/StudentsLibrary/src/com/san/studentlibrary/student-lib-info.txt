@@ -1,0 +1,180 @@
+
+
+Hi
+in this chapter we are going to talk about the students library simulation.
+So the concept is quite straightforward that we have several students for example S0 S1 S2 S3
+So again we are going to assign IDs to every single student.
+This is the ID 0 ID on ID 2 and ID 3.
+So we are going to identify each students according to their ID numbers and of course we have the books
+for example b0 b1 b2 b3 b4 b5 b6 b7
+Again we are going to assign id's to every single book.
+
+This is how we are going to identify every single book as we are going to do for the students was the
+problem that for example there may be a situation when two students want to read the same book of course.
+
+This is why we have to solve it with the help of some concurrent programming.
+We are going to use locks with the reentrant lock implementation in order to avoid a situation where
+two students want to manipulate the same book at the given time.
+
+Thanks for watching.
+
+#######################################
+ 
+in this lecture we start implementing the student library simulation.
+
+And this Constant class is going to have a private constructor.
+What does it mean.
+Why is it good.
+Because if the constructor is private instead of public we are not able to instantiate that given class
+and it is fine because it is going to store public static constants, so public static final integer number
+of students is equal to 5.
+
+So we will have five students and we will have another constant the public static final integer number
+of books is equal to 7.
+So we will have five students and these five students are going to read the books and we will have seven
+books. So in the next lecture we are going to discuss the book and the students implementations.
+Thanks for watching.
+
+###############################
+let's start implementing the book class as we have discussed earlier.
+Every single book is going to have an ID.
+This is how we are going to identify a single book and because we have to lock on that given book.
+Why.
+Because at a given time a single student can read a book.
+So this is why we have to use a lock in the book constructor.
+We are going to have first of all an ID and this.ID = ID and this.lock = new RentrantLock().
+
+So Lock is an interface and the re-entrant block is the concrete implementation of that given lock interface.
+We are going to have a method so public void read and it's going to get a student and it's going to
+throws an interrupted exception.
+
+I'm going to use the try lock because if a given student is reading that book then the other students
+are not able to read that given book.
+So every student try to lock on that given book for 10 milliseconds so the TIMEUNIT is going to be
+10 milliseconds.
+
+If the given student is able to acquire the lock that we printout that the student
+
+OK.
+
+It's going to be something like STUDENT 1 Start reading book 1 STUDENT 3 starts reading book 0 and
+so on.
+
+After that you are going to simulate that thread.sleep for example reading takes for example two seconds
+so two thousand milliseconds.
+
+And then we are going to unlock and we printout that the student
+has finished reading this given book.
+
+OK so that's all about the book class again.
+We have to use a lock as a re-entrant lock because no two students can read the same book at the same
+time.
+So that's why we have to look on that given.
+I mean on Facebook basically before the student is able to read their given book after the read operation
+of course we can unlock on the lock because the student has finished reading that given book in the next
+video we are going to implement a student's class.
+
+Thanks for watching.
+#############################
+ 
+In this lecture we are going to implement a student's class
+Basically every students is going to be identified by a private ID as we have seen for the book
+as well.
+It's going to have a one dimensional array of books and in the constructor we are going to get an ID
+so integer ID and a one dimensional array of books.
+This books is equal to books and of course we are going to create a thread to every single student.
+
+So it's going to implement a runnable interface.
+
+OK so in the run I'm going to instantiate a random random random is equal to any random.
+While it's true we are going to make any finite simulation
+we generate a book ID at random.So bookID = random.next.
+Next integer in the range 0 and the number of books and then we are going to create a try catch block.
+We are going to catch interrupted exceptions.
+
+So books on the given ID we are going to read that a given book and the student is going to be this.
+So basically at the beginning we are going to inject all of the books to that given student and we generate
+a random book and the students tries to read that given book.
+It is not always possible for the students to read the given book because there may be a situation
+where other students acquire this lock and this book basically is going to wait for 10 milliseconds
+and it tries to lock on that given lock for 10 milli seconds and if it's not possible it's going to try again
+generate a new random book ID and try these things again.
+Thanks for watching.
+
+##################################3
+ 
+ In this lecture you are going to talk a bit more about locking.
+So in one of the previous lectures we have been talking about the implementation of this read method
+in the book class and we have used try lock.
+But the problem with that try lock it is going to return a boolean value if the given thread is
+able to acquire the lock it returns true and anyways it returns false.
+And basically this thread is not going to be block in the sense that there may be cases that more students
+can read the same book.
+So if you take a look at try lock implementation.
+First of all we usually have to use try catch and finally blocks.
+But what's more important that let's take a look at try lock.
+This has a boolean return value as I have mentioned earlier it acquires the lock only if it is free at the
+time of invocation.
+So acquirer's the lock if it is available and returns immediately with the value true if the lock is
+not available then this method will return immediately with the value false.
+So the first option is we can use if else statements.
+So if we can get the lock then we have to do this anyways.
+We do nothing.
+Or the second option is to use basic lock.lock() because what's the main difference between try lock
+and Lock.
+Let's take a look at the documentation.
+If the lock is not available then the current thread becomes disabled for scheduling purposes and lies
+dormant until the lock has been acquired.
+
+This is exactly what we are after.
+We would like to make sure that when a book is being read by a given student no other student can manipulate
+that given book.
+
+So we have to wait for that given Lock we have to wait for that other thread to finish its job.
+So the simple solution is to use lock or if you want to use try locks then you have to use if else statements.
+So basically we just have to make sure that if the try lock is true what does it mean that the
+actual thread is able to get the lock.
+
+So this is the first solution of course without the lock lock or a bit better solution is just to use
+lock.lock().
+
+Thanks for watching.
+
+ ##############################
+ 
+in this video we are going to run our application.
+
+So let's create the main method in the main method we are going to create a one dimensional array of
+students.
+Now we are going to create a one dimensional array of books, now we are going to create an
+executor service. like this for example execService =  Executors.newFixedThreadPool(Constant.NUMBER_OF_STUDENTS)
+and the number of threads are going to be equal to the number of students of course because we
+are going to assign a single thread to every single student.
+Then we are going to create a try catch block.
+
+We have a finally block in the finally block we make sure that we shutdown executeor service.
+OK.
+
+And in the try we are going to create a one dimensional array of books.
+Of course we are going to create as many book as we have defined in the Constants class then we are going
+to create a student's array.
+And we are going to create as many student as we have specified in Constants class.
+OK we are going to iterate through books
+
+So here we have created the books as many books as we have defined in the constants class and every
+single student get that 1 dimensional array of books.
+
+Give them one dimensional array of books and this is why the students class we are going to generate
+and random book ID and the given students tries to read that given book OK and of course then we have
+to execute it.
+
+OK and maybe in the book Class let's modify it not 10 milliseconds but let's wait it for for example
+one minute because the given students definitely want to read that given book OK.
+And if we run or simulation like this as you can see so you s1t reading books 6 students zeros
+reading book2 students4 starts reading 3  and so on.
+So we are able to make sure that the books are not going to end up with an inconsistent state.
+What does it mean that we have to make sure that a given book can be read by single students at a given
+time and no other students are able to acquire that given book and acquire that given Lock when a given
+student is reading a book.
+OK so that's all about the students library simulation.
+Thanks for watching.
