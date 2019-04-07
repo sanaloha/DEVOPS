@@ -24,9 +24,9 @@ https://aws.amazon.com/certification/
 *** Lambda u can create career
 	server less architecture.
 
-*** Platform as a service
-*** Infrastucture as a service
-*** sas softwae as a service
+*** PAS Platform as a service
+*** IAS Infrastucture as a service
+*** SAS softwae as a service
 ====================
 Storage
 Glacier
@@ -63,6 +63,17 @@ S3,sqs,Amazon Route 53
 Fault Tolerant
 	https:/aws.amazon.com/free/
 	
+===============================================
+How to install Web server
+1) login to aws accout with ec2-user
+2) sudo su -
+3) yum update -y
+4) yum install httpd -y
+5) service httpd start
+6) cd /var/www/html and create index.html file with any content
+eg <h1>Welcome to ec2</h1>
+
+go to the browser and enter ec2 public ip address
 		
 	
 	
